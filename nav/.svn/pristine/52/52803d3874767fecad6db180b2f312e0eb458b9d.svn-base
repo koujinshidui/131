@@ -1,0 +1,54 @@
+<div class="zm-dialog-box zm-movableBox" data-animate="fade" style="width: 1150px; height: 620px; ">
+    <div class="zm-dialog">
+        <div class="zm-dialog-header zm-movable-header">
+            <span class="zm-dialog-title">轮播图片管理</span>
+            <span class="zm-dialog-close">×</span>
+            <span class="zm-tooltip zm-dialog-help"
+                  data-zm-title="您正在“管理轮播图像”，可以<br/>上传、删除、设置轮播图片的命<br/>名和链接！">?</span>
+        </div>
+        <div class="zm-dialog-content">
+            <div class="zm-dialog-carousel-header">
+                <span style="padding-left: 20px;">您可以通过拖拽文件到窗体里的方式，添加上传图片文件！（文件大小不超过5mb）
+                <!--支持.bmp、.jpg、.png、.gif、.jpeg、.tiff-->
+                </span>
+                <div class="zm-dialog-carousel-btns" style="display: inline-block;float: right;margin: 0 20px;">
+                    <button class="imgDelete">批量删除</button>
+                    <button class="ImgUpdate">上传图片
+                        <!--<input type="file">-->
+                    </button>
+                </div>
+                <div class="zm-dialog-carousel-search">
+                    <span class="fa fa-search"></span>
+                    <input type="text" placeholder="搜索">
+                </div>
+            </div>
+            <div class="zm-dialog-carousel-content">
+                <div id="zm-dialog-carousel-contLeftImgGroup" class="zm-dialog-carousel-contLeftImgGroup"></div>
+                <div class="zm-dialog-carousel-contRightImgManage">
+                    <div class="zm-dialog-carousel-crimTitle" style="padding: 10px 0;">图片设置</div>
+                    <div class="zm-dialog-carousel-crimNameImg">
+                        <span>图片命名：</span>
+                        <input type="text" placeholder="" style="width:150px;border-radius: 3px;">
+                    </div>
+                    <div class="zm-dialog-carousel-crimIsShow" style="padding: 10px 0;">
+                        <span>是否展示：</span>
+                           <label class="zm-switch-box zm-switch-box-on" style="margin-left: 15px">
+                            <span class="zm-switch"><span class="fa fa-check"></span></span>
+                           </label>
+                    </div>
+                    <div class="zm-dialog-carousel-crimSetHref" style="padding: 10px 0;">
+                        <span>链接：</span>
+                        <label class="zm-switch-box" style="margin-left: 43px">
+                         <span class="zm-switch"><span class="fa fa-minus"></span></span></label>
+                        <button class="zm-edit-carousel-setHrefBtn" style="width: 70px;margin:0 0 0 10px;">设置链接</button>
+                        <div class="zm-dialog-carousel-thePageName" style="padding: 5px 0;color: #4AB1A7;">页面：折叠按摩床</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="zm-dialog-footer" style="line-height: 50px;padding:0 20px; background-color: #daf1ec;">
+            <span class="zm-dialog-btnCancel">取 消</span>
+            <span class="zm-dialog-btnOK zm-dialog-carousel-manageSave">保 存</span>
+        </div>
+    </div>
+</div>

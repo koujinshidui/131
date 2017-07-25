@@ -1,0 +1,87 @@
+/*绿*/
+@baseColorDeep2:#29877e;//深+2
+@baseColorDeep1:#439e9e;//深+1
+@baseColor:#4ab1a7;//基础颜色
+@baseColorLight0:#00c3b0;//浅+0  以baseColor为背景色的按钮鼠标滑过背景色或者边框颜色
+@baseColorLight1:#dbefed;//浅+1
+@baseColorLight2:#badedb;//浅+2
+@baseColorLight3:#a4d8d3;//浅+3
+/*蓝*/
+//@baseColorDeep2:#2b81cb;//深+2
+//@baseColorDeep1:#2b81cb;//深+1
+//@baseColor:#3899ec;//基础颜色
+//@baseColorLight0:#00c3b0;//浅+0
+//@baseColorLight1:#eaf7ff;//浅+1
+//@baseColorLight2:#d3edff;//浅+2
+//@baseColorLight3:#a4d8d3;//浅+3
+
+
+/*红*/
+//@baseColorDeep2:#2b81cb;//深+2
+//@baseColorDeep1:#439e9e;//深+1
+//@baseColor:#4ab1a7;//基础颜色
+//@baseColorLight0:#00c3b0;//浅+0
+//@baseColorLight1:#dbefed;//浅+1
+//@baseColorLight2:#badedb;//浅+2
+//@baseColorLight3:#a4d8d3;//浅+3
+
+@baseColorGray1:#aaa;
+@baseColorGray2:#bbb;
+@baseColorGray3:#ccc;
+@baseColorGray4:#ddd;
+@baseColorGray5:#eee;
+@baseColorWhite:#fff;
+@baseColorBlack:#000;
+@baseFontColor:#333;
+@baseFontColorLight1:#aaa;
+@baseFontColorLight2:#ccc;
+@baseFontColorLight3:#eee;
+@baseColorOpacity5:rgba(255,255,255,.5);
+@baseColorOpacity9:rgba(255,255,255,.9);
+@baseColorBlackOpacity5:rgba(0,0,0,.5);
+/********************************/
+@shadowColor: rgba(255,255,255,.9);
+@shadowIndex: 999;
+//选中状态颜色
+.choiceColor {
+  color: @baseColorWhite !important;
+  background-color: @baseColor !important;
+  cursor: pointer;
+}
+//划过状态颜色
+.choiceColor:hover {
+  background-color: @baseColorDeep1 !important;
+}
+//多选框
+.checkbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  border: 1px solid @baseColor;
+  position: relative;
+  cursor: pointer;
+}
+.checkboxAfter {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: @baseColor;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+/********************************/
+
+.baseBorderRadiusMin{border-radius: 3px;};
+.baseBorderRadiusSmall{border-radius: 6px;};
+.baseBorderRadius{border-radius: 10px;};
+.baseBorderRadiusBig{border-radius: 20px;};
+.baseBorderRadiusMax{border-radius: 999px;};
+.baseBorderRadiusPer50{border-radius: 50%;};
+.baseBoxShadowMin{box-shadow: 0 0 1px #ccc;};
+.baseBoxShadow{box-shadow: 0 0 3px #ccc;};
+.baseBoxShadow2{box-shadow: 0 0 6px #ccc;};
+
+
+

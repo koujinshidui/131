@@ -1,0 +1,703 @@
+@import "base.less";
+/*组件列表中的样式*/
+fieldset li .zm-component-carousel-main{
+  overflow: hidden;
+  width: 300px;
+  height: 130px;
+  position: relative;
+  border: 1px dashed transparent;
+}
+fieldset li .zm-component-carousel-main:hover{
+  border: 1px dashed @baseColor;
+}
+fieldset li .zm-component-carousel-main .zm-component-carousel-box img{
+  width: 100%;height: 100%;
+}
+fieldset li .zm-component-carousel-main .zm-component-carousel-pageCutBtn{
+  position: absolute;
+  width: 100%;
+  top: 46px;
+  color: @baseColorOpacity9;
+  font-size: 30px;
+  left: 8px;
+}
+fieldset li .zm-component-carousel-main .zm-component-carousel-pageCutBtn .fa-angle-left{
+  left: 8px;
+  position: absolute;
+}
+fieldset li .zm-component-carousel-main .zm-component-carousel-pageCutBtn .fa-angle-right{
+  right: 22px;
+  position: absolute;
+}
+fieldset li .zm-component-carousel-main .zm-component-carousel-point{
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  bottom: 5px;
+  left: 100px;
+}
+fieldset li .zm-component-carousel-main .zm-component-carousel-point span{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: @baseColorOpacity5;
+  border-radius: 5px;
+  margin: 0 0 5px 18px;
+}
+/*组件列表中的样式 end*/
+
+/*页面中组件样式*/
+.zm-component-carousel-main,.zm-component-carousel-slide,.zm-component-carousel-box,
+.zm-component-carousel-box>div,.zm-component-carousel-slide img{
+  width: 100%;
+  height:100% ;
+}
+.zm-component-carousel-main .zm-component-carousel-box{
+  overflow: hidden!important;
+  box-shadow: 0 0 0 @baseFontColor;
+  border: 1px solid transparent;
+}
+.zm-component-carousel-box .zm-component-carousel-slide{
+  position: absolute;
+}
+.zm-component-carousel-box .thePieces:nth-child(1),
+.zm-component-carousel-box .thePieces:nth-child(8),
+.zm-component-carousel-box .thePieces:nth-child(33),
+.zm-component-carousel-box .thePieces:nth-child(40){
+  overflow: hidden;
+}
+.zm-component-carousel-picTip{
+  position: absolute;
+  top:-32px;
+  right: 0;
+  width: 150px;
+  height: 30px;
+  font-size: 14px;
+  background-color: @baseColor;
+  border-radius: 30px;
+  text-align: center;
+  color: @baseColorWhite;
+  line-height: 30px;
+  display: none;
+}
+.zm-component-carousel-prevPic,.zm-component-carousel-nextPic{
+  font-size: 24px;
+  border-radius: 24px;
+  position: absolute;
+  top:3px;
+  background-color: @baseColor;
+  cursor: pointer;
+  /*z-index: 100;*/
+  color: @baseColorLight1;
+}
+.zm-component-carousel-nextPic{
+  right:3px;
+}
+.zm-component-carousel-prevPic{
+  left: 3px;
+  transform:rotate(180deg);
+  -ms-transform:rotate(180deg); 	/* IE 9 */
+  -moz-transform:rotate(180deg); 	/* Firefox */
+  -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+  -o-transform:rotate(180deg);
+}
+.zm-component-carousel-nextPic:hover,.zm-component-carousel-prevPic:hover {
+  color: @baseColorWhite;
+}
+.maxWidth1200{
+  max-width: 1200px;
+  max-height: 500px;
+}
+/*页面中组件样式end*/
+
+/*组件编辑样式*/
+.zm-component-carousel-autoCut{
+  width: 100%;
+  height: 90px;
+  left: 0;
+  top: 38px;
+  position: absolute;
+  background:@baseColorOpacity9;
+  z-index: 3;
+}
+.zm-edit-carousel-cutStyle{
+  /*width: 265px;*/
+  height: 95px;
+  overflow: hidden;
+  background:@baseColorLight1;
+  position: relative;
+  margin-top: 5px;
+  border-radius: 3px;
+}
+.zm-edit-carousel-cutStyleList{
+  /*margin-left: 30px;*/
+}
+.zm-edit-carousel-cutBtn{
+  width:30px;
+  height: 100%;
+  position: absolute;
+  background-color:@baseColorGray5 ;
+  color: @baseColor;
+  padding: 26px 4px;
+  border-radius: 3px;
+  z-index: 1;
+}
+.zm-edit-carousel-cutBtn:hover{
+  background-color:@baseColor;
+  color: @baseColorWhite;
+  cursor: pointer;
+}
+.zm-edit-carousel-cutBtn.left{
+  left: 0;
+}
+.zm-edit-carousel-cutBtn.right{
+  right: 0;
+  top: 0;
+}
+.zm-edit-carousel-cutStyleList li{
+  float: left;
+  width: 90px;
+  height: 88px;
+  position: relative;
+  padding: 6px;
+  font-size: 12px;
+  text-align: center;
+  margin: 4px 6px  8px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.zm-edit-carousel-cutStyleList li:hover{
+  border: 1px @baseColor solid;
+  box-shadow: 0 0 3px @baseColor;
+  background-color: @baseColorLight1;
+  cursor: pointer;
+}
+.zm-edit-carousel-cutStyleList>li.styleCheck{
+  border: 1px @baseColor solid;
+  box-shadow: 0 0 3px @baseColor;
+  background-color: @baseColorLight1;
+  cursor: pointer;
+}
+.zm-edit-carousel-cutStyleList li img{
+  width: 70px;
+  height: 60px;
+  opacity: .9;
+  margin-bottom: 3px;
+}
+/*.zm-tab-child-title li.zm-tab-child-title-cur {*/
+/*background-color: @baseColorWhite;*/
+/*color: @baseColorDeep1;*/
+/*}*/
+.zm-component-carousel-controlBtn{
+  position: absolute;
+  color: @baseColorWhite;
+  display: none;
+  cursor: pointer;
+  /*z-index: 2;*/
+  /*opacity: .6;*/
+}
+.zm-component-carousel-controlBtn.left{
+  left:10px;
+}
+.zm-component-carousel-controlBtn.right{
+  right:10px;
+}
+.zm-edit-carousel-arrowList{
+  height: 70px;
+  overflow: hidden;
+  background:@baseColorLight1;
+  position: relative;
+  margin-top: 5px;
+  border-radius: 3px;
+}
+.zm-edit-carousel-arrowList li{
+  float: left;
+  width: 93px;
+  height: 65px;
+  color: @baseColorWhite;
+  position: relative;
+  font-size: 24px;
+  text-align: center;
+  margin: 5px 3px;
+  padding: 7px 5px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+.zm-edit-carousel-arrowList li div{
+  float: left;
+  width: 40px;
+  height:50px;
+  background-color: @baseColor;
+  padding-top: 11px;
+}
+.zm-edit-carousel-arrowList li:hover{
+  border: 1px @baseColor solid;
+  box-shadow: 0 0 3px @baseColor;
+  cursor: pointer;
+}
+.zm-edit-carousel-arrowList li.arrowCheck{
+  border: 1px @baseColor solid;
+  box-shadow: 0 0 3px @baseColor;
+  cursor: pointer;
+}
+
+.zm-component-carousel-iSarrow{
+  width: 100%;
+  height: 92%;
+  left: 0;
+  top: 38px;
+  position: absolute;
+  background: @baseColorOpacity9;
+  z-index: 3;
+}
+.zm-component-carousel-showPageNum{
+  width: 100%;
+  height: 466px;
+  left:0;
+  top: 41px;
+  position: absolute;
+  background: @baseColorOpacity9;
+  z-index: 3;
+}
+.zm-component-carousel-pointGroup{
+  position: absolute;
+  bottom: 15px;
+  /*z-index: 2;*/
+  color: transparent;
+  text-indent: 999px;
+}
+.zm-component-carousel-pagePoint{
+  display: block;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  float: left;
+  margin: 0 5px;
+  background-color: @baseColorOpacity5;
+  box-shadow: 0 0 20px @baseColorWhite;
+}
+.zm-component-carousel-pagePoints0{
+  border-radius: 5px;
+}
+.zm-component-carousel-pagePoints1{
+  border-radius: 0;
+}
+.zm-component-carousel-pagePoints2{
+  border-radius: 0;
+  width: 14px;
+  height: 4px;
+}
+.zm-component-carousel-pagePoints3{
+  border-radius: 0;
+  text-align: center;
+  width: 15px;
+  height: 24px;
+  color: @baseColorWhite;
+  background-color: transparent;
+  box-shadow: none;
+  border: 1px solid transparent;
+  text-indent: 0;
+}
+.zm-component-carousel-pagePoints3.itsTurn{
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+.itsTurn{
+  background-color: @baseColorWhite!important;
+}
+
+.zm-edit-carousel-pageNumList li{
+  float: left;
+  width: 82px;
+  height: 58px;
+  color: @baseColorWhite;
+  position: relative;
+  font-size: 24px;
+  text-align: center;
+  margin: 6px 10px;
+  padding: 14px 5px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+.zm-edit-carousel-pageNumList li:hover{
+  border: 1px @baseColor solid;
+  box-shadow: 0 0 3px @baseColor;
+  cursor: pointer;
+}
+.zm-edit-carousel-pageNumList li.pointCheck{
+  border: 1px @baseColor solid;
+  box-shadow: 0 0 3px @baseColor;
+  cursor: pointer;
+}
+.zm-edit-carousel-pageNumList li span{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 6px 4px;
+  float: left;
+  background-color: @baseColorGray1;
+}
+.zm-edit-carousel-pageNumList .pagePointStyle1 span{
+  border-radius: 0;
+}
+.zm-edit-carousel-pageNumList .pagePointStyle2 span{
+  border-radius: 0;
+  width: 18px;
+  height: 5px;
+  margin: 11px 2px;
+}
+.zm-edit-carousel-pageNumList .pagePointStyle3 span{
+  border-radius: 0;
+  margin: 0 4px;
+  color: @baseColorGray1;
+  background-color: transparent;
+}
+.zm-edit-components-pageNumAlign{
+  display: inline-block;
+  text-align: center;
+  width: 74%;
+}
+.zm-edit-components-pageNumAlign span{
+  display: inline-block;
+  margin: 0 10px;
+  padding: 6px;
+  color: @baseColorGray1;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+.zm-edit-components-pageNumAlign span:hover{
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px @baseColor;
+  background-color: @baseColorLight1;
+  cursor: pointer;
+}
+.zm-edit-components-pageNumAlign span.alignCheck{
+  border: 1px solid transparent;
+  box-shadow: 0 0 3px @baseColor;
+  background-color: @baseColor;
+  color: @baseColorWhite;
+  cursor: pointer;
+}
+/*************图片编辑***************/
+.zm-edit-carousel-imgManage{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 465px;
+}
+.zm-edit-carousel-imgManage .zm-edit-carousel-removeImg{
+  color: @baseColorWhite;
+  cursor: pointer;
+  font-size: 16px;
+  right: 3%;
+  top: 2%;
+  width: 26px;
+  height: 26px;
+  background-color: @baseColor;
+  line-height: 26px;
+  text-align: center;
+  border-radius: 52%;
+  position: absolute;
+  z-index: 1;
+}
+.zm-edit-carousel-imgManage .zm-edit-carousel-removeImg:hover{
+  background-color: @baseColorLight0;
+}
+.zm-edit-carousel-imgManage .zm-edit-carousel-cutPicBtn{
+  top:18%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.zm-edit-carousel-imgManage .zm-edit-carousel-cutPicBtn div {
+  width: 25px;
+  height: 25px;
+  background-color: @baseColorOpacity9;
+  color: @baseColor;
+  line-height: 25px;
+  border-radius: 50%;
+  font-size: 25px;
+  position: absolute;
+  padding-left: 10px;
+  cursor: pointer;
+}
+.zm-edit-carousel-imgManage .zm-edit-carousel-cutPicBtn div:hover{
+  background-color: @baseColorWhite;
+}
+.zm-edit-carousel-imgManage .zm-edit-carousel-box{
+  /*height: 220px;*/
+  overflow: hidden;
+}
+.zm-edit-carousel-imgManage .zm-edit-carousel-box img{
+  width: 100%;
+  height: 180px;
+}
+.zm-edit-carousel-imgManage .zm-edit-carousel-box .zm-edit-carousel-slide{
+  float: left;
+  /*height:220px;*/
+  width: 100%;
+}
+.zm-edit-carousel-imgManage .zm-edit-carousel-box .zm-edit-carousel-slide .zm-edit-carousel-pages{
+  position: absolute;
+  width: 40px;
+  text-align: center;
+  right: 10px;
+  top: 150px;
+  background-color: @baseColor;
+  color: @baseColorWhite;
+}
+.zm-edit-carousel-imgManage .zm-edit-carousel-box .zm-edit-carousel-slide .zm-edit-carousel-isCover{
+  width: 100%;
+  height: 100%;
+  background-color: @baseColorWhite;
+  opacity: .5;
+  z-index: -2;
+}
+.zm-edit-carousel-imgManage .zm-edit-carousel-box .zm-edit-carousel-slide input[type=text]{
+  width: 230px;
+  z-index: 1;
+  position: absolute;
+  border: 1px solid @baseColorGray3;
+  top: 190px;
+  left: 80px;
+  outline: none;
+  border-radius: 5px;
+}
+.zm-edit-carousel-imgManage .zm-edit-carousel-box .zm-edit-carousel-slide input[type=text]:focus{
+  border-radius: 4px;
+  border: 1px solid @baseColorLight0;
+  box-shadow: 0 0 3px @baseColorLight0;
+}
+.zm-edit-carousel-imgManage .zm-edit-carousel-imgCommitBtn{
+  position: absolute;
+  width: 100px;
+  text-align: center;
+  color: @baseColorWhite;
+  left: 38%;
+  top: 30%;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  background: @baseColor;
+  border-radius: 15px;
+  box-shadow: 0 0 15px @baseColor;
+  cursor: pointer;
+}
+.zm-edit-carousel-imgManage .zm-edit-carousel-imgCommitBtn:hover{
+  background: @baseColorLight0;
+  box-shadow: 0 0 15px @baseColorLight0;
+}
+.zm-edit-carousel-imgManage .zm-edit-carousel-imgCommitBtn input[type=file]{
+  width:100%;height: 100%;cursor: pointer;
+  font-size: 0;text-indent: 1999px;
+  position: absolute;left: 0; border-radius: 15px;
+  outline: none;border: none;
+}
+.zm-edit-carousel-setHrefBtn{
+  float: right;
+  margin-right: 10px;
+  width: 90px;
+  border-radius: 15px;
+  cursor: pointer;
+  color: @baseColorWhite;
+  border: none;
+  background-color: @baseColorGray3;
+  box-shadow: 0 0 10px @baseColorGray3;
+  outline: none;
+}
+.setHrefBtn{
+  background-color: @baseColor;
+  box-shadow: 0 0 10px @baseColor;
+}
+.setHrefBtn:hover{
+  background-color: @baseColorLight0;
+  box-shadow: 0 0 10px @baseColorLight0;
+}
+.zm-edit-carousel-slideImgController{
+  border-bottom: none;
+  margin: 0;
+  border-top: 1px solid @baseColorGray5;
+  width: 100%;
+  height: 50px;
+  padding: 14px 115px;
+}
+.zm-edit-carousel-slideImgController button{
+  width: 120px;
+  height: 32px;
+  border: none;
+  outline:none;
+  background-color: @baseColor;
+  color: @baseColorWhite;
+  font-size: 14px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.zm-edit-carousel-slideImgController button:hover{
+  background-color: @baseColorLight0;
+  box-shadow: 0 0 10px @baseColorLight0;
+}
+.zm-dialog-carousel-header{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: @baseColorLight1;
+}
+.zm-dialog-carousel-btns button {
+  width: 100px;
+  height: 26px;
+  border: none;
+  outline:none;
+  background-color: @baseColor;
+  color: @baseColorWhite;
+  border-radius: 15px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.zm-dialog-carousel-btns button:hover{
+  background-color: @baseColorLight0;
+}
+.zm-dialog-carousel-btns input[type=file]{
+  width:100px;height: 26px;cursor: pointer;
+  font-size: 0;text-indent: 1999px;
+  border-radius: 15px;
+  outline: none;border: none;
+  position: absolute;
+  right: 25px; top: 7px;
+}
+.zm-dialog-carousel-search{
+  display: inline-block;
+  float: right;
+  position: relative
+}
+.zm-dialog-carousel-search span{
+  position:absolute;
+  font-size:16px;
+  left:10px;
+  top:12px;
+  color: @baseColor;
+}
+.zm-dialog-carousel-search input{
+  outline:none;
+  width:200px;
+  border-radius:15px;
+  padding-left:30px;
+  border: 1px solid #cbece9
+}
+.zm-dialog-carousel-search input:focus{
+  border: 1px solid @baseColorLight0;
+  box-shadow: 0 0 3px @baseColorLight0;
+}
+
+.zm-dialog-carousel-content .zm-dialog-carousel-contRightImgManage{
+  width: 250px;
+  height: 480px;
+  float: right;
+  padding: 25px 10px 0 10px;
+  border-left: 2px solid @baseColorOpacity5;;
+}
+/*.zm-dialog-carousel-crimSetHref button{*/
+/*width: 70px;*/
+/*border: none;*/
+/*outline:none;*/
+/*background-color: @baseColor;*/
+/*border-radius: 10px;*/
+/*color: @baseColorWhite;*/
+/*box-shadow: 0 0 5px @baseColor;*/
+/*margin-left: 10px;*/
+/*}*/
+/*.zm-dialog-carousel-crimSetHref button:hover{*/
+/*background-color: @baseColorLight0;*/
+/*box-shadow: 0 0 5px @baseColorLight0;*/
+/*}*/
+.zm-dialog-carousel-content .zm-dialog-carousel-contLeftImgGroup{
+  width: 900px;
+  height: 480px;
+  float: left;
+  padding:0 0 0 20px;
+}
+.zm-dialog-carousel-contLeftImgGroup .zm-dialog-carousel-slidePic{
+  width: 200px;
+  height:115px;
+  float: left;
+  /*margin: 20px 20px 0 0;*/
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.zm-dialog-carousel-slidePic .zm-dialog-carousel-checkbox{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border-radius: 3px;
+  border: 1px solid @baseColorGray1;
+  background-color: @baseColorWhite;
+  color: @baseColor;
+  display: none;
+  cursor: pointer;
+}
+.zm-dialog-carousel-slidePic .zm-dialog-carousel-namePic{
+  position: absolute;
+  width: 100px;
+  left: 0;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  padding: 0 4px;
+  border-radius: 3px;
+  margin: 3px;
+  border:1px solid transparent;
+  display: none;
+}
+.zm-dialog-carousel-slidePic .zm-dialog-carousel-picSetting{
+  position: absolute;
+  width: 100%;
+  color: @baseColorWhite;
+  font-weight: normal;
+  height:24px;
+  overflow: hidden;
+  background-color: @baseColorBlackOpacity5;
+}
+.zm-dialog-carousel-slidePic:hover .zm-dialog-carousel-picSetting{
+  transform: translateY(-24px);
+  transition: all .1s;
+  -webkit-transition:all .1s;
+  -moz-transition:all .1s;
+}
+.zm-dialog-carousel-slidePic .zm-dialog-carousel-picSetting span{
+  float: left;
+  font-size: 16px;
+  margin-left: 8px;
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  cursor: pointer;
+}
+.zm-dialog-carousel-slidePic .zm-dialog-carousel-picSetting span:hover{
+  color: @baseColor;
+}
+.zm-dialog-carousel-crimNameImg input:focus{
+  outline: none;
+  border: 1px solid @baseColorLight0;
+  box-shadow: 0 0 3px @baseColorLight0;
+}
+.zm-dialog-carousel-slidePic .transparent{
+  color: transparent;
+}
+
+.zm-dialog-carousel-contLeftImgGroup{
+  width: 900px;height: 480px;float: left;border: 1px dashed transparent;
+}
+.zm-dialog-carousel-contLeftImgGroup .zm-drag-box>li{list-style: none;float: left;  margin: 20px 19px 0 0;}
+.dragLocalImgTip{
+  border: 1px dashed @baseColor;
+  box-shadow: 0 0 10px @baseColor;
+}
+.zm-edit-carousel-thePageName{
+  padding: 5px 0;
+  color: @baseColor;
+}
+.zm-dialog-carousel-thePageName{
+  padding: 5px 0;color: @baseColor;
+}

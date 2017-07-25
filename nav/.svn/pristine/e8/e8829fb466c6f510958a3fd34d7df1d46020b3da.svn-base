@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预览网站</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <link href="js/farbtastic/farbtastic.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/zmDialog.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/settingsPanel.css">
+    <link rel="stylesheet"  href="css/nav.css" class="navStyleMax">
+    <link rel="stylesheet" href="css/tab.css"><!-- liu -->
+    <link rel="stylesheet" href="css/product.css"><!-- liu -->
+    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="css/colpick.css"/>
+    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/img.css">
+    <link rel="stylesheet" href="css/shape.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/function.css">
+    <link rel="stylesheet" href="css/radio.css">
+    <link rel="stylesheet" href="css/newsBlogger.css">
+    <link rel="stylesheet" href="css/video.css">
+    <link rel="stylesheet" href="css/choiceFile.css">
+    <link rel="stylesheet" href="css/action.css">
+    <link rel="stylesheet" href="css/audio.css">
+    <style>
+        body{height:100%;overflow: hidden}
+    </style>
+</head>
+<body>
+
+
+</body>
+<script src="js/plugins/jquery-1.11.3.min.js"></script>
+<div id="zmPreviewScript">
+    <script src="js/plugins/jquery-1.11.3.min.js"></script>
+    <script src="js/plugins-zm/zmJqExtend.js"></script>
+    <script src="js/plugins-zm/zmDialog.js"></script>
+    <script src="js/zmEditor.js"></script>
+    <script src="js/plugins-zm/zmJqExtend.js"></script>
+    <script src="js/plugins-zm/zmDialog.js"></script>
+    <script src="js/plugins-zm/zmRightClick.js"></script>
+    <script src="js/plugins-zm/zmKeyDown.js"></script>
+    <script src="js/router/router.js"></script>
+    <script src="js/pageManage.js"></script>
+    <script src="manage/js/zmManage.js"></script>
+    <script src="js/zmGlobal.js"></script>
+    <script src="js/component/setItems.js"></script>
+    <script src="js/component/zmSlider.js"></script>
+    <script src="js/component/text.js"></script>
+    <script src="js/component/shape.js"></script>
+    <script src="js/component/carousel.js"></script>
+    <script src="js/component/img.js"></script>
+    <script src="js/component/map.js"></script>
+    <script src="js/component/news.js"></script>
+    <script src="js/component/blog.js"></script>
+    <script src="js/component/function.js"></script>
+    <script src="js/component/btn.js"></script>
+    <script src="js/component/container.js"></script>
+    <script src="js/component/tab.js"></script><!--liu-->
+    <script src="js/component/product.js"></script><!--liu-->
+    <script src="js/component/nav.js"></script>
+    <script src="js/component/jquery_color.js"></script>
+    <script src="js/component/banner.js"></script>
+    <script src="js/component/video.js" ></script>
+    <script src="js/index.js"></script>
+    <script src="js/plugins-zm/zmDragSort.js"></script>
+    <script src="js/farbtastic/farbtastic.js"></script>
+    <script src="js/plugins/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!--carousel test start-->
+    <script src="js/plugins/box-slider.jquery.js"></script>
+    <script src="js/plugins/box-slider-style.js"></script>
+    <!--carousel test end-->
+    <script src="js/plugins/colpick.js" ></script>
+    <script src="js/component/radio.js" ></script>
+    <script src="js/choiceFile/choiceFile.js" ></script>
+    <script src="js/choiceFile/choiceRadio.js" ></script>
+    <script src="js/zm-select.js" ></script>
+    <script src="js/component/audio.js"></script>
+    <script>
+        $(window).resize(function(){
+            windowH = $(window).height();
+            $(".zm-components").find(".zm-components-ul").css({"height":windowH-200});
+            $(".zm-components").find(".zm-components-detail-term").css({"height":windowH-200});
+            //$('.zm-dialog-box .zm-dialog-content').css({"height":windowH-200})
+            var w = parseInt($(".zm-editor-ruler-x-width").html());
+            zmEditor.setRuler(w)
+        })
+    </script>
+</div>
+<script>
+    if (localStorage.getItem("previewObject") != "") {
+        document.body.innerHTML = localStorage.getItem("zmPreviewHtml")
+//        document.head.innerHTML = localStorage.getItem("zmPreviewStyle");
+//        document.title="网站预览"
+        //document.getElementById('zmPreviewScript').innerHTML=localStorage.getItem("zmPreviewScript");
+    }
+    $(function(){
+        $(".zm-all").css("height","100%")
+        $(".zm-row").css({"border":"1px solid transparent","border-top":"none"});
+        $(".zm-row-resize,.zm-row-line").remove();
+        $(".zm-row-type").remove();
+        //移除box1中编辑类
+        $(".zm-component-box1").removeClass("zm-component-editor zm-component-movable");
+        //移除组件操作以及编辑元素
+        $('.zm-component-main-temp').remove();
+        //移除可编辑组件的对应属性
+        $(".zm-component-main").attr("contenteditable",false);
+        $('.zm-dialog-box').remove();
+        $('.zm-component-box1').each(function(){
+            var _this = $(this);
+            var type = zmEditor.component.attrType(_this);
+            zmEditor.component[type].preview(_this);
+        })
+//        $(".zm-component-box1").each(function(){
+//            var _this = $(this);
+//            var main = _this.find(".zm-component-main");
+//            main.attr("contenteditable",false)
+//            _this.removeClass("zm-component-editor zm-component-movable");
+//            _this.find(zmEditor.component.str.optionArea).remove();
+//        })
+    })
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<img class="source" style="float: left" src="imgs/carousel01.png" alt="">
+<div class="color" style="width: 150px;height: 150px;float: left;margin: 50px;background: #eee;"></div>
+<script src="js/plugins/jquery-1.11.3.min.js"></script>
+<script>
+    (function ($) {
+        $.fn.pickerColor=function (option) {
+            var opt ={
+                ck:function () {}
+            },_this=this
+            opt=$.extend(opt,option);
+            _this.on('click',function (e) {
+                var canvasObj = '<canvas id="canvasPickerColor" style="position: fixed;left: 50000px;top: 500px;"></canvas>';
+                $('body').append(canvasObj);
+                var cvs = document.getElementById("canvasPickerColor"),ctx =cvs.getContext('2d')
+                cvs.height=1;cvs.width=1
+                var img = new Image();
+                img.src=_this.attr('src');
+                var osX=e.offsetX,osY=e.offsetY
+                ctx.drawImage(img,osX,osY,1,1,0,0,1,1);
+                var imgData=ctx.getImageData(0,0,1,1);
+                console.log(imgData)
+                if(opt.ck) opt.ck(imgData.data[0]+','+imgData.data[1]+','+imgData.data[2]);
+            })
+        }
+    })(jQuery)
+    $(function () {
+        $('.source').pickerColor({
+            ck:function (data) {
+                console.log(data)
+                $('.color').css('background','rgba('+data+',1)')
+            }
+        })
+    })
+</script>
+</body>
+</html>

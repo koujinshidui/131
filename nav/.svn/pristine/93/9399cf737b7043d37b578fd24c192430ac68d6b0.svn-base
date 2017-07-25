@@ -1,0 +1,72 @@
+<div class="zm-choiceFile-wrap">
+    <div class="zm-choiceFile-top">
+        <ul class="zm-choiceFile-toptext">
+            <li class="zm-choiceFile-topR">
+                <span class="fa fa-search zm-choiceFile-search-ico"></span>
+                <input class="zm-choiceFile-search" type="text" placeholder="请输入新闻标题" data-type="news">
+                <span class="zm-choiceFile-searchBtn">搜索</span>
+            </li>
+
+        </ul>
+    </div>
+    <div class="zm-choiceRadio-top">
+        <div class="zm-choiceRadio-topL">合计<span class="zm-choiceFile-allListNumber">1</span>个新闻，已选择<span class="zm-choiceFile-allListCheckNumber" style="color: orange;font-size: 18px;">0</span>个新闻！</div>
+        <div class="zm-choiceRadio-topM">
+            <div class="zm-choiceFile-btn1 zm-choiceNewsBtn-allCheck">全选</div>
+            <div class="zm-choiceFile-btn1 zm-choiceNewsBtn-backCheck">反选</div>
+            <div class="zm-choiceFile-btn1 zm-choiceNewsBtn-noCheck">全不选</div>
+            <div class="zm-choiceFile-btn1">刷新</div>
+        </div>
+        <div class="zm-choiceRadio-topR">
+            <div class="zm-choiceFile-btn2 zm-choicePicture-upPicWtn" style="background-color: #49b1a6;color: #FFFFFF;">添加新闻</div>
+            <div class="zm-choiceFile-btn2 " onclick="zmChoiceRadio.batchDeleteFileTitle(this)" data-deleteType="news">批量删除</div>
+            <div class="zm-choiceFile-btn2" onclick="zmChoiceRadio.choiceAddclassify(this)" data-choiceAdd="news">移动到分类</div>
+        </div>
+    </div>
+    <div class="zm-choiceRadio-middle">
+
+        <div class="zm-choicePicture-middleL">
+            <div class="zm-choicePicture-middleLTop"></div>
+            <div class="zm-choicePicture-bottom">
+                <span class="zm-choiceFile-btn4  choicePicture-addBigclassify">添加新闻大类</span>
+            </div>
+        </div>
+
+        <div class="zm-choiceRadio-middleR">
+            <ul class="zm-choiceRadio-spli">
+                <!--***新闻列表-->
+                <!--<li class="zm-choiceNewsList zm-choiceFile-check">-->
+                    <!--<div class="zm-choiceNewsListLeft">-->
+                        <!--<span class="zm-ChoiceNews-cheak fa"></span>-->
+                        <!--<img class="zm-choiceNewsImg" src="imgs/carousel05.png" alt="">-->
+                    <!--</div>-->
+                    <!--<div class="zm-choiceNewsListRight">-->
+                        <!--<div class="zm-choiceNewsLrtop">-->
+                            <!--<input class="zm-choiceNlist1" value="" type="text" >-->
+                            <!--<div class="zm-choiceNews-ListTitle">新闻标题</div>-->
+                            <!--<span>品论（36）</span>-->
+                            <!--<span>|</span>-->
+                            <!--<span>收藏</span>-->
+                            <!--<span>|</span>-->
+                            <!--<span>转发（15）</span>-->
+                            <!--<span>|</span>-->
+                            <!--<span>点赞（58）</span>-->
+                            <!--<span class="zm-choiceNewsListTime">2017-03-01 10:18</span>-->
+                        <!--</div>-->
+                        <!--<div class="zm-choiceNewsLrboom">-->
+                            <!--<div class="zm-choiceNewsList-contentText">故天将大任与是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，信佛乱其所为，所以动心忍性，曾益其所不能,所以，上天将要下达重大使命给这样的人</div>-->
+                            <!--<span class="fa fa-trash" onclick="zmChoiceRadio.deleteFileTitle(this)" delete-title="news1"></span>-->
+                            <!--<span class="fa fa-pencil zm-chNlist-pencil"></span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</li>-->
+                <!--新闻列表****-->
+            </ul>
+        </div>
+    </div>
+    <div class="zm-choiceFile-bottom">
+        <div class="zm-choiceFile-btn3">
+            选择并添加
+        </div>
+    </div>
+</div>

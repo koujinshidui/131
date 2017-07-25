@@ -1,0 +1,171 @@
+.zm-components-detail-term fieldset li .zm-component-img-main{
+    overflow: hidden;
+    /*width: 300px;*/
+    /*height: 80px;*/
+    position: relative;
+    border: 1px dashed transparent;
+}
+/*.zm-components-detail-term fieldset li .zm-component-img-main:hover{*/
+/*border: 1px dashed #4ab1a7;*/
+/*}*/
+.zm-components-detail-term fieldset li .zm-component-img-main img{
+    width: 100%;height: 100%;
+}
+
+.zm-component-img-main,.zm-component-img-content,.zm-component-spImg-content,.zm-component-img-main img{
+    width: 100%;
+    height:100%;
+}
+.zm-component-img-main,.zm-component-img-content{
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+/*正菱形样式*/
+.zm-components-detail-term fieldset li .zm-component-img-main .zm-component-img-rhombus img{
+    width: 143%;
+    height: 143%;
+}
+.zm-component-img-content.zm-component-img-rhombus{
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    transform: rotate(45deg);
+}
+.zm-component-img-content.zm-component-img-rhombus img{
+    width: 143%;
+    height: 143%;
+    transform: rotate(-45deg);
+    position: absolute;
+    top:-21%;
+    left: -21%;
+}
+
+.zm-component-img-content.zm-component-img-border10{
+    border: 10px solid #ccc;
+}
+.zm-component-img-content.zm-component-img-circleBd5{
+    border: 5px solid #ccc;
+    border-radius: 50%;
+}
+.zm-component-img-content.zm-component-img-bdRadius50{
+    border-radius: 50%;
+}
+.zm-component-img-content.zm-component-img-noBd{
+    border:none;
+}
+/**/
+.zm-component-img-hexagonLine{
+    width: 50%;
+    height: 1px;
+    background-color: transparent;
+    position: absolute;
+    /*z-index: 1;*/
+    border-radius: 5px;
+}
+/**/
+.zm-dialog-img-showImg{
+    margin: 0 10px;
+    padding: 10px 0 0 0;
+    border-bottom: none;
+}
+.zm-dialog-img-showImg img{
+    width: 100%;
+    height: 180px;
+}
+.zm-dialog-img-showImg .zm-edit-img-imgCommitBtn{
+    position: absolute;
+    width: 100px;
+    text-align: center;
+    color: #fff;
+    left: 38%;
+    top: 38%;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    background: #4ab1a7;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #4ab1a7;
+    cursor: pointer;
+}
+.zm-dialog-img-showImg .zm-edit-img-imgCommitBtn:hover{
+    background: #00c3b0;
+    box-shadow: 0 0 15px #00c3b0;
+}
+.zm-dialog-img-showImg .zm-edit-img-imgName{
+    margin:  10px 15px 0 15px;;
+    padding: 10px 0 15px 5px;
+    border-bottom: 1px solid #ccc;
+}
+.zm-dialog-img-showImg .zm-edit-img-imgName input{
+    margin-left: 20px;
+    width: 208px;
+}
+.zm-dialog-img-showImg .zm-edit-img-imgName input[type=text]:focus{
+    border-radius: 4px;
+    border: 1px solid #00c3b0;
+    box-shadow: 0 0 3px #00c3b0;
+    outline: none;
+}
+.zm-edit-img-borderStyleBox{
+    float: left;
+    width: 180px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 15px 0;
+    position: relative;
+}
+.zm-edit-img-borderStyleBox:focus{
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #00c3b0;
+    box-shadow: 0 0 3px #00c3b0;
+}
+.zm-edit-img-showBs{
+    width: 80%;
+    margin: 14px 5px;
+    height: 1px;
+    border-bottom:1px solid #ccc;
+    display: inline-block;
+}
+.zm-edit-img-bsList{
+    position: absolute;
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #fff;
+    z-index: 3;
+    box-shadow: 0 0 10px 0 #eee;
+    top: 29px;
+}
+.zm-edit-img-bsList li{
+    width: 100%;
+    height: 31px;
+    border-bottom: 1px dotted #dedede;
+    line-height: 30px;
+    padding-top: 14px;
+}
+.zm-edit-img-bsList li:hover{
+    background-color: #00c3b0;
+}
+.zm-edit-img-bsList li div{
+    width: 94%;
+    height: 1px;
+    border-bottom-width: 2px;
+    border-color: #ccc;
+    margin: 0 auto;
+}
+.zm-edit-img-borderStyleBox .zm-edit-img-icon{
+    position: absolute;
+    width: 12%;
+    height: 29px;
+    text-align: center;
+    line-height: 25px;
+}
+.zm-edit-components-product-scale .zm-edit-function-choicePoint{
+    display: inline-block;
+    margin: -2px 10px;
+}

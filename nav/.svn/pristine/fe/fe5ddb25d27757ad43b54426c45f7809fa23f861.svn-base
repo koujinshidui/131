@@ -1,0 +1,70 @@
+<div class="zm-choiceFile-wrap">
+    <div class="zm-choiceFile-top">
+        <ul class="zm-choiceFile-toptext">
+            <li class="zm-choiceFile-topR">
+                <span class="fa fa-search zm-choiceFile-search-ico"></span>
+                <input class="zm-choiceFile-search" type="text" placeholder="请输入音频标题" data-type="album">
+                <span class="zm-choiceFile-searchBtn" onclick="zmChoiceRadio.searchFileListBtn(this)" data-searchType="album">搜索</span>
+            </li>
+            <li class="zm-choiceFile-topL zm-choiceFile-topL1">
+                <span style="margin-top: 5px;display: inline-block">条件筛选：</span>
+                <!--<select name="" class="zm-choiceFile-select">-->
+                    <!--<option value="全部创作人">全部创作人</option>-->
+                    <!--<option value="流行创作人">流行创作人</option>-->
+                    <!--<option value="摇滚创作人">摇滚创作人</option>-->
+                    <!--<option value="爵士创作人">爵士创作人</option>-->
+                <!--</select>-->
+                <input class="zm-choiceFile-options" type="text" onblur="zmChoiceRadio.getChoiceAlbumOptionAlbumList(this)" onkeyup="zmChoiceRadio.choiceConditionOption(this)" placeholder="请输入创作人姓名">
+                <div class="zm-choiceFile-optionsList">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="zm-choiceRadio-top">
+
+        <div class="zm-choiceRadio-topM">
+            <div class="zm-choiceFile-btn1 zm-choiceFilebtn-allCheck">全选</div>
+            <div class="zm-choiceFile-btn1 zm-choiceFilebtn-backCheck">反选</div>
+            <div class="zm-choiceFile-btn1 zm-choiceFilebtn-noCheck">全不选</div>
+            <div class="zm-choiceFile-btn1 zm-choiceAlbumBtn-refresh">刷新</div>
+        </div>
+        <div class="zm-choiceRadio-topL">合计<span class="zm-choiceFile-allListNumber">1</span>个图片，已选择<span class="zm-choiceFile-allListCheckNumber" style="color: orange;font-size: 18px;">0</span>个图片！</div>
+        <div class="zm-choiceRadio-topR">
+            <div class="zm-choiceFile-btn2" onclick="zmChoiceRadio.addAlbum(this)" style="background-color: #49b1a6;color: #FFFFFF;">添加专辑</div>
+            <div class="zm-choiceFile-btn2" onclick="zmChoiceRadio.batchDeleteFileTitle(this)"  data-deletetype="album">批量删除</div>
+        </div>
+    </div>
+    <div class="zm-choiceAlbum-middle">
+        <div class="zm-choiceFile-middleWrap">
+            <div class="zm-choiceFile-middleInner">
+
+        <!--*****列表-->
+        <!--<li class="zm-choiceR-lists zm-choiceFile-check">-->
+            <!--<img class="zm-choiceR-listsimg" src="imgs/carousel01.png" alt="">-->
+            <!--<input class="zm-choiceRlist1" value="" type="text" >-->
+            <!--<div class="zm-choiceRlist4">-->
+                <!--<span class="zm-choiceRlist2" style="color: #FFFFFF">音频名称</span>-->
+            <!--</div>-->
+
+            <!--<span class="zm-choiceRadio-cheak zm-choiceRadio-cheakPosition fa"></span>-->
+            <!--<div class="zm-choiceRlist3">-->
+                <!--<span class="fa fa-pencil zm-chRlist-pencil"></span>-->
+                <!--<span class="fa fa-trash zm-chRlist-trash"></span>-->
+                <!--<span class="fa fa-download zm-chRlist-download"></span>-->
+                <!--<span class="fa fa-history zm-chRlist-history"></span>-->
+            <!--</div>-->
+            <!--<div class="zm-choiceR-listWrap">-->
+                <!--<div style="width: 126px;height: 126px;opacity: .5;background-color:#9ad5d3"></div>-->
+            <!--</div>-->
+        <!--</li>-->
+        <!--列表*********-->
+            </div>
+        </div>
+
+    </div>
+    <div class="zm-choiceFile-bottom">
+        <div class="zm-choiceFile-btn3 zm-choiceFile-choiceAddAlbum">
+            选择并添加
+        </div>
+    </div>
+</div>

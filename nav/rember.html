@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript" src="js/plugins/jquery-1.11.3.min.js"></script>
+<body>
+	
+
+
+	<div class="father" style="background-color: red;width: 100px;height: 200px; float:left;position: relative;margin-right: 5px;">
+    <div class="son"  style="background-color: yellow; width: 100px;height: 200px;position: absolute;top: 200px;display: none;"></div>
+	</div>
+	<div class="father1" style="background-color: red;width: 100px;height: 200px; float:left;position: relative;margin-right: 5px;">
+    <div class="son1"  style="background-color: yellow; width: 100px;height: 200px;position: absolute;top: 200px;display: none;"></div>
+	</div>
+	<div class="father2" style="background-color: red;width: 100px;height: 200px; float:left;position: relative;margin-right: 5px;">
+    <div class="son2"  style="background-color: yellow; width: 100px;height: 200px;position: absolute;top: 200px;display: none;"></div>
+	</div>
+	<div class="father3" style="background-color: red;width: 100px;height: 200px; float:left;position: relative;margin-right: 5px;/">
+    <div class="son3"  style="background-color: yellow; width: 100px;height: 200px;position: absolute;top: 200px;display: none;"></div>
+	</div>
+	<div class="father4" style="background-color: red;width: 100px;height: 200px; float:left;position: relative;margin-right: 5px;">
+    <div class="son5"  style="background-color: yellow; width: 100px;height: 200px;position: absolute;top: 200px;display: none;"></div>
+	</div>
+
+</body>
+</html>
+<script type="text/javascript">
+	
+$("div").on("mouseenter",function(){
+
+	$(this).children("div").show();
+})
+
+$("div").on("mouseleave",function(){
+
+	$(this).children("div").hide();
+})
+
+	function AA(aaa){
+    console.log("bbb");
+	}
+   AA.cc=function(){
+	    console.log("pp");
+   }
+   console.log(AA);
+   console.log(AA.cc);
+   AA.cc();
+
+</script>

@@ -1,0 +1,27 @@
+
+<div id="zm-template-publish" class="zm-dialog-box zm-movableBox" data-animate="slide" style="width: 700px; height: 500px; ">
+    <link rel="stylesheet" href="manage/css/zmManage.css">
+    <div class="zm-dialog zm-template-publish">
+        <div class="zm-dialog-header zm-movable-header">
+            <span class="zm-dialog-title">模板发布</span>
+            <span class="zm-dialog-header-btn zm-tooltip zm-dialog-close " data-zm-title="关闭">×</span>
+            <span class="zm-dialog-header-btn zm-tooltip zm-dialog-help" data-zm-title="帮助中心">?</span>
+        </div>
+        <div class="zm-dialog-content zm-template-publish-content">
+            <div class="zm-template-publish-content-main clearFloat">
+                <ul>
+                    <li><label><span><span class="zm-template-publish-flag">*</span>模板名称：</span><input type="text"><span class="zm-template-publish-tag">模板名称不得包含除"-"外的其他特殊字符</span></label></li>
+                    <li><label><span><span class="zm-template-publish-flag">*</span>模板大类：</span><select class="zm-select-template-type1" onchange="javascript:zmManage.template.getType2ByType1(this.value);"></select><span class="zm-template-publish-tag">模板大类必选</span></label></li>
+                    <li><label><span><span class="zm-template-publish-flag">*</span>模板小类：</span><select class="zm-select-template-type2"></select><span class="zm-template-publish-tag">模板小类必选</span></label></li>
+                    <li><div class="zm-template-publish-view"></div></li>
+                </ul>
+            </div>
+        </div>
+        <div class="zm-dialog-footer">
+            <span class="zm-dialog-btnCancel" >取 消</span>
+            <span class="zm-dialog-btnOK" onclick="zmManage.template.publishSubmit(this)">保 存</span>
+            <span class="zm-dialog-btnOK" onclick="zmManage.template.publishSave(this)">保存并提交</span>
+        </div>
+    </div>
+</div>
+</div>

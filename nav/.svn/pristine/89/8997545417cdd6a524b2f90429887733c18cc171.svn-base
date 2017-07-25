@@ -1,0 +1,406 @@
+<!--<div class=" zm-radioWrap">-->
+    <!--<div class="zm-radioTop">-->
+        <!--<ul class="zm-radioTopList">-->
+            <!--<li>选择新闻</li>-->
+            <!--<li>选择博客</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+    <!--<div class="zm-radioMiddleAll">-->
+        <!--<div class="zm-radioMiddle radioWrap0">-->
+            <!--<div class="zm-newsMiddleLeft">-->
+                <!--<div class="zm-newsLeftop">-->
+                    <!--<div class="imgCategory-level-tit">-->
+                        <!--<span class="left-level-tit-con margin-l20">新闻类目</span>-->
+                    <!--</div>-->
+                        <!--<div class="level1-box level1-box1">-->
+                            <!--<div class="level1">-->
+                                <!--<div class="level-con">-->
+                                    <!--<span class="level1-tipImg"></span>-->
+                                    <!--<a href="javascript:void(0);">-->
+                                        <!--<input type="text" value="我的全部新闻" readonly>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="level1-box level1-sort">-->
+                            <!--<div class="level1">-->
+                                <!--<div class="level-con">-->
+                                    <!--<span class="level1-tipImg"></span>-->
+                                    <!--<a>-->
+                                        <!--<input type="text" value="未分配类目新闻" readonly>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                      <!--&lt;!&ndash;大类目&ndash;&gt;-->
+                        <!--<div class="level1-box level1-sort">-->
+                            <!--<div class="level1">-->
+                                <!--<span class="level1-tipImg zm-addele">-</span>-->
+                                <!--<div class="level-con">-->
+                                    <!--<span class="level1-tipImg"></span>-->
+                                    <!--<a>-->
+                                        <!--<input type="text" value="大类目1" readonly>-->
+                                    <!--</a>-->
+                                    <!--<div class="level1-tipSet">-->
+                                        <!--<div class="tipSet-con">-->
+                                            <!--<i class="tipSet-con-dot"></i>-->
+                                            <!--<div class="tipSet-con-list tipSet-con-list-add">-->
+                                                <!--<i class="add"></i>-->
+                                                <!--添加子类目-->
+                                            <!--</div>-->
+                                            <!--<div class="tipSet-con-list tipSet-con-list-rename">-->
+                                                <!--<i class="rename"></i>-->
+                                                <!--重命名-->
+                                            <!--</div>-->
+                                            <!--<div class="tipSet-con-list tipSet-con-list-delete1">-->
+                                                <!--<i class="delete"></i>-->
+                                                <!--删除-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="level2-box">-->
+                                <!--<div class="level2">-->
+                                    <!--<div class="level-border-l1 fl"></div>-->
+                                    <!--<div class="level-line"></div>-->
+                                    <!--<div class="level-con level-con1">-->
+                                        <!--<a>-->
+                                            <!--<input type="text" value="小类目1" readonly>-->
+                                        <!--</a>-->
+                                        <!--<div class="level1-tipSet">-->
+                                            <!--<div class="tipSet-con">-->
+                                                <!--<i class="tipSet-con-dot"></i>-->
+                                                <!--<div class="tipSet-con-list tipSet-con-list-rename">-->
+                                                    <!--<i class="rename"></i>-->
+                                                    <!--重命名-->
+                                                <!--</div>-->
+                                                <!--<div class="tipSet-con-list tipSet-con-list-delete2">-->
+                                                    <!--<i class="delete"></i>-->
+                                                    <!--删除-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="level2">-->
+                                    <!--<div class="level-border-l1 fl"></div>-->
+                                    <!--<div class="level-line"></div>-->
+                                    <!--<div class="level-con level-con1">-->
+                                        <!--<a>-->
+                                            <!--<input type="text" value="小类目1" readonly>-->
+                                        <!--</a>-->
+                                        <!--<div class="level1-tipSet">-->
+                                            <!--<div class="tipSet-con">-->
+                                                <!--<i class="tipSet-con-dot"></i>-->
+                                                <!--<div class="tipSet-con-list tipSet-con-list-rename">-->
+                                                    <!--<i class="rename"></i>-->
+                                                    <!--重命名-->
+                                                <!--</div>-->
+                                                <!--<div class="tipSet-con-list tipSet-con-list-delete2">-->
+                                                    <!--<i class="delete"></i>-->
+                                                    <!--删除-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="level2">-->
+                                    <!--<div class="level-border-l1 fl"></div>-->
+                                    <!--<div class="level-line"></div>-->
+                                    <!--<div class="level-con level-con1">-->
+                                        <!--<a>-->
+                                            <!--<input type="text" value="小类目1" readonly>-->
+                                        <!--</a>-->
+                                        <!--<div class="level1-tipSet">-->
+                                            <!--<div class="tipSet-con">-->
+                                                <!--<i class="tipSet-con-dot"></i>-->
+                                                <!--<div class="tipSet-con-list tipSet-con-list-rename">-->
+                                                    <!--<i class="rename"></i>-->
+                                                    <!--重命名-->
+                                                <!--</div>-->
+                                                <!--<div class="tipSet-con-list tipSet-con-list-delete2">-->
+                                                    <!--<i class="delete"></i>-->
+                                                    <!--删除-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--&lt;!&ndash;大类目&ndash;&gt;-->
+                    <!--<div style="width: 200px;height: 120px"></div>-->
+                <!--</div>-->
+                <!--<div class="text-center margin-top20 col-w-10">-->
+                    <!--<div class="btn btn-addImgSort" onclick="addBigtype(this)"> 添加新闻类目</div>-->
+                <!--</div>-->
+        <!--</div>-->
+            <!--<div class="zm-radioMiddleRight">-->
+                <!--<div class="zm-radioRt">-->
+                    <!--<div class="zm-newsCheak">-->
+                       <!--<span class="zm-newsCheak1 fa"></span> <span>全选</span>-->
+                    <!--</div>-->
+                    <!--<div class="zm-newsRtl">-->
+                        <!--<span class="fa fa-search"></span>-->
+                        <!--<input class="zm-newsSearch" type="text" placeholder="搜索">-->
+                    <!--</div>-->
+                    <!--<div class="zm-radioRtbtn">-->
+                        <!--<div class="zm-radioRtbtn1" choiceAdd="news" onclick="zmChoiceFile.choiceAndd(this)">移动到分类</div>-->
+                        <!--<div class="zm-radioRtbtn2" onclick="zmChoiceFile.deleteallradio(this)" delete-all="news1">批量删除</div>-->
+                        <!--<div class="zm-radioRtbtn3">添加新闻</div>-->
+                    <!--</div>-->
+
+                <!--</div>-->
+                <!--<div style="width: 890px;height: 1px;background-color: #cccccc;margin-left: 5px;"></div>-->
+                <!--<div class="zm-radioRm">-->
+                    <!--<ul class="zm-radioSpli">-->
+                        <!--&lt;!&ndash;***新闻列表&ndash;&gt;-->
+                       <!--<li class="zm-newsList">-->
+                           <!--<div class="zm-newaListLeft">-->
+                               <!--<span class="zm-newsCheak2 fa"></span>-->
+                               <!--<img class="zm-newsimg" src="imgs/carousel05.png" alt="">-->
+                           <!--</div>-->
+                           <!--<div class="zm-newaListRight">-->
+                               <!--<div class="newsLrtop">-->
+
+                                   <!--<h4>新闻标题</h4>-->
+                                   <!--<span>品论（36）</span>-->
+                                   <!--<span>|</span>-->
+                                   <!--<span>收藏</span>-->
+                                   <!--<span>|</span>-->
+                                   <!--<span>转发（15）</span>-->
+                                   <!--<span>|</span>-->
+                                   <!--<span>点赞（58）</span>-->
+                                   <!--<span>2017-03-01 10:18</span>-->
+                               <!--</div>-->
+                               <!--<div class="newsLrboom">-->
+                                   <!--<div style="font-size: 12px;">故天将大任与是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，信佛乱其所为，所以动心忍性，曾益其所不能...</div>-->
+                                   <!--<span class="fa fa-trash" onclick="zmChoiceFile.deleteTitle(this)"></span>-->
+                                   <!--<span class="fa fa-pencil"></span>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                       <!--</li>-->
+                        <!--&lt;!&ndash;新闻列表****&ndash;&gt;-->
+                        <!--&lt;!&ndash;***新闻列表&ndash;&gt;-->
+                        <!--<li class="zm-newsList">-->
+                            <!--<div class="zm-newaListLeft">-->
+                                <!--<span class="zm-newsCheak2 fa"></span>-->
+                                <!--<img class="zm-newsimg" src="imgs/carousel05.png" alt="">-->
+                            <!--</div>-->
+                            <!--<div class="zm-newaListRight">-->
+                                <!--<div class="newsLrtop">-->
+
+                                    <!--<h4>新闻标题</h4>-->
+                                    <!--<span>品论（36）</span>-->
+                                    <!--<span>|</span>-->
+                                    <!--<span>收藏</span>-->
+                                    <!--<span>|</span>-->
+                                    <!--<span>转发（15）</span>-->
+                                    <!--<span>|</span>-->
+                                    <!--<span>点赞（58）</span>-->
+                                    <!--<span>2017-03-01 10:18</span>-->
+                                <!--</div>-->
+                                <!--<div class="newsLrboom">-->
+                                    <!--<div style="font-size: 12px;">故天将大任与是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，信佛乱其所为，所以动心忍性，曾益其所不能...</div>-->
+                                    <!--<span class="fa fa-trash" onclick="zmChoiceFile.deleteTitle(this)"></span>-->
+                                    <!--<span class="fa fa-pencil"></span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--&lt;!&ndash;新闻列表****&ndash;&gt;-->
+                        <!--&lt;!&ndash;***新闻列表&ndash;&gt;-->
+                        <!--<li class="zm-newsList">-->
+                            <!--<div class="zm-newaListLeft">-->
+                                <!--<span class="zm-newsCheak2 fa"></span>-->
+                                <!--<img class="zm-newsimg" src="imgs/carousel05.png" alt="">-->
+                            <!--</div>-->
+                            <!--<div class="zm-newaListRight">-->
+                                <!--<div class="newsLrtop">-->
+
+                                    <!--<h4>新闻标题</h4>-->
+                                    <!--<span>品论（36）</span>-->
+                                    <!--<span>|</span>-->
+                                    <!--<span>收藏</span>-->
+                                    <!--<span>|</span>-->
+                                    <!--<span>转发（15）</span>-->
+                                    <!--<span>|</span>-->
+                                    <!--<span>点赞（58）</span>-->
+                                    <!--<span>2017-03-01 10:18</span>-->
+                                <!--</div>-->
+                                <!--<div class="newsLrboom">-->
+                                    <!--<div style="font-size: 12px;">故天将大任与是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，信佛乱其所为，所以动心忍性，曾益其所不能...</div>-->
+                                    <!--<span class="fa fa-trash" onclick="zmChoiceFile.deleteTitle(this)"></span>-->
+                                    <!--<span class="fa fa-pencil"></span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--&lt;!&ndash;新闻列表****&ndash;&gt;-->
+                        <!--&lt;!&ndash;***新闻列表&ndash;&gt;-->
+                        <!--<li class="zm-newsList">-->
+                            <!--<div class="zm-newaListLeft">-->
+                                <!--<span class="zm-newsCheak2 fa"></span>-->
+                                <!--<img class="zm-newsimg" src="imgs/carousel05.png" alt="">-->
+                            <!--</div>-->
+                            <!--<div class="zm-newaListRight">-->
+                                <!--<div class="newsLrtop">-->
+
+                                    <!--<h4>新闻标题</h4>-->
+                                    <!--<span>品论（36）</span>-->
+                                    <!--<span>|</span>-->
+                                    <!--<span>收藏</span>-->
+                                    <!--<span>|</span>-->
+                                    <!--<span>转发（15）</span>-->
+                                    <!--<span>|</span>-->
+                                    <!--<span>点赞（58）</span>-->
+                                    <!--<span>2017-03-01 10:18</span>-->
+                                <!--</div>-->
+                                <!--<div class="newsLrboom">-->
+                                    <!--<div style="font-size: 12px;">故天将大任与是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，信佛乱其所为，所以动心忍性，曾益其所不能...</div>-->
+                                    <!--<span class="fa fa-trash" onclick="zmChoiceFile.deleteTitle(this)"></span>-->
+                                    <!--<span class="fa fa-pencil"></span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--&lt;!&ndash;新闻列表****&ndash;&gt;-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <!--<div class="zm-radioRb">-->
+                    <!--<div class="zm-radioRbbtn radioRbbtn1">-->
+                        <!--选择并添加-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;复制到专辑&ndash;&gt;-->
+        <!--</div>-->
+
+<!--&lt;!&ndash;22&ndash;&gt;-->
+        <!--&lt;!&ndash;选择博客&ndash;&gt;-->
+        <!--<div class="zm-radioMiddle1 radioWrap0">-->
+            <!--<div class="zm-radioAlbum">-->
+                <!--<div class="zm-bloggerCheak">-->
+                    <!--<span class="zm-bloggerCheak1 fa"></span> <span>全选</span>-->
+                <!--</div>-->
+                <!--<div class="zm-bloggerRtl">-->
+                    <!--<span class="fa fa-search"></span>-->
+                    <!--<input class="zm-bloggerSearch" type="text" placeholder="搜索">-->
+                <!--</div>-->
+                <!--<div class="zm-bloggerTop2">-->
+                    <!--&lt;!&ndash;<div class="zm-radioRtbtn1">移动到分类</div>&ndash;&gt;-->
+                    <!--<div class="zm-radioRtbtn2" onclick="zmChoiceFile.deleteallradio(this)" delete-all="blogger1">批量删除</div>-->
+                    <!--<div class="zm-radioRtbtn3">添加新闻</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div style="width: 1110px;height: 1px;background-color: #cccccc;margin-left: 20px;"></div>-->
+            <!--<div class="zm-radioAlbumMid">-->
+                <!--<ul class="zm-bloggerSpli">-->
+                    <!--&lt;!&ndash;***博客列表&ndash;&gt;-->
+                    <!--<li class="zm-bloggerList">-->
+                        <!--<div class="zm-bloggerListLeft">-->
+                            <!--<span class="zm-bloggerCheak2 fa"></span>-->
+                            <!--<img class="zm-newsimg" src="imgs/carousel05.png" alt="">-->
+                        <!--</div>-->
+                        <!--<div class="zm-bloggerListRight">-->
+                            <!--<div class="bloggerLrtop">-->
+                                <!--<h4>新闻标题</h4>-->
+                                <!--<span>品论（36）</span>-->
+                                <!--<span>|</span>-->
+                                <!--<span>收藏</span>-->
+                                <!--<span>|</span>-->
+                                <!--<span>转发（15）</span>-->
+                                <!--<span>|</span>-->
+                                <!--<span>点赞（58）</span>-->
+                                <!--<span>2017-03-01 10:18</span>-->
+                            <!--</div>-->
+                            <!--<div class="bloggerLrboom">-->
+                                <!--<div style="font-size: 12px;">怒发冲冠，凭栏处，潇潇雨歇。抬望眼，仰天长啸，壮怀激烈。三十名功名尘与土，八千里路云和月。莫等闲，白了少年头，空悲切！靖康耻-->
+                                    <!--犹未雪；臣子恨，何时灭...</div>-->
+                                <!--<span class="fa fa-trash" onclick="zmChoiceFile.deleteTitle(this)"></span>-->
+                                <!--<span class="fa fa-pencil"></span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--&lt;!&ndash;博客列表****&ndash;&gt;-->
+                <!--</ul>-->
+            <!--</div>-->
+            <!--<div class="zm-radioAlbumBot">-->
+                <!--<div class="zm-radioRbbtn">-->
+                    <!--选择并添加-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;****选择专辑*****&ndash;&gt;-->
+    <!--</div>-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;上传新音频&ndash;&gt;-->
+<!--&lt;!&ndash;****上传新音频***&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--</div>-->
+<div class=" zm-radioWrap">
+    <div class="zm-radioTop">
+        <ul class="zm-radioTopList">
+            <li>选择视频</li>
+        </ul>
+    </div>
+
+    <div class="zm-radioMiddleAll">
+        <div class="zm-radioMiddle1">
+
+            <div class="zm-video">
+                <div class="zm-videoTop1">
+                    <span class="fa fa-search"></span>
+                    <input class="zm-videoSearch" type="text" placeholder="搜索">
+                </div>
+                <div class="zm-radioAlbumTop2">
+                    <div class="zm-radioRtbtn1" onclick="zmChoiceFile.deleteallradio(this)" delete-all="video1">批量删除</div>
+                    <div class="zm-radioRtbtn2">添加专辑</div>
+                </div>
+
+            </div>
+            <div class="zm-radioAlbumMid">
+
+                <ul class="zm-radioAlbumSpli">
+                    <!--***视频列表-->
+                    <!--<li class="zm-videoList">-->
+                        <!--<img class="zm-videoListimg" src="imgs/carousel01.png" alt="">-->
+                        <!--<div class="zm-videoList1 listOpcity">-->
+                            <!--<input class="zm-radioList1-1" value="" type="text" onchange="zmFun.inputOnchange(this)" onblur="zmFun.inputOnblur(this)">-->
+                            <!--<div class="zm-radioList1-3">-->
+                                <!--<span class="zm-radioList1-2">视频名称</span>-->
+                            <!--</div>-->
+
+                        <!--</div>-->
+                        <!--<input class="zm-videoList2" type="checkbox" name="text">-->
+                        <!--<div class="fb zm-videoalter">-->
+                            <!--<div class="zm-radioalter1">修改视频名称</div>-->
+                            <!--<div class="zm-radioalter2"></div>-->
+                        <!--</div>-->
+                        <!--<div class="fb zm-videodele">-->
+                            <!--<div class="zm-radiodele1" onclick="deleteTitle(this)">删除视频</div>-->
+                            <!--<div class="zm-radiodele2"></div>-->
+                        <!--</div>-->
+                        <!--<div class="fb zm-videodown">-->
+                            <!--<div class="zm-radiodown1">下载到本地</div>-->
+                            <!--<div class="zm-radiodown2"></div>-->
+                        <!--</div>-->
+                        <!--<div class="zm-videoList3 listOpcity">-->
+                            <!--<span class="fa fa-pencil pencil"></span>-->
+                            <!--<span class="fa fa-trash trash" onclick="zmChoiceFile.deleteTitle(this)"></span>-->
+                            <!--<span class="fa fa-download download"></span>-->
+                        <!--</div>-->
+                        <!--<div class="zm-videoTime">10:50</div>-->
+                    <!--</li>-->
+                    <!--****视频列表-->
+                </ul>
+
+            </div>
+            <div class="zm-radioAlbumBot">
+                <div class="zm-radioRbbtn">
+                    选择并添加
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

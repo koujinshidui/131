@@ -1,0 +1,67 @@
+<div class="zm-choiceFile-wrap">
+    <div class="zm-choiceFile-top">
+        <div class="zm-choiceFile-topTextTitle">您可以通过拖拽文件到窗体里的方式，添加上传图片文件！</div>
+        <ul class="zm-choiceFile-toptext">
+            <li class="zm-choiceFile-topR">
+                <span class="fa fa-search zm-choiceFile-search-ico"></span>
+                <input class="zm-choiceFile-search" type="text" placeholder="请输入图片标题" data-type="picture">
+                <span class="zm-choiceFile-searchBtn" onclick="zmChoiceRadio.searchFileListBtn(this)" data-searchType="picture">搜索</span>
+            </li>
+
+        </ul>
+    </div>
+    <div class="zm-choiceRadio-top">
+        <div class="zm-choiceRadio-topL">合计<span class="zm-choiceFile-allListNumber"></span>个图片，已选择<span class="zm-choiceFile-allListCheckNumber" style="color: orange;font-size: 18px;">0</span>个图片！</div>
+        <div class="zm-choiceRadio-topM">
+            <div class="zm-choiceFile-btn1 zm-choiceFilebtn-allCheck">全选</div>
+            <div class="zm-choiceFile-btn1 zm-choiceFilebtn-backCheck">反选</div>
+            <div class="zm-choiceFile-btn1 zm-choiceFilebtn-noCheck">全不选</div>
+            <div class="zm-choiceFile-btn1 zm-choicePictureBtn-refresh">刷新</div>
+        </div>
+        <div class="zm-choiceRadio-topR">
+            <div class="zm-choiceFile-btn2 zm-choicePicture-upPicWtn" style="background-color: #49b1a6;color: #FFFFFF;">上传图片<input id="zm-choicePicture-upPicBtn" class="zm-choicePart-upFileBtn" type="file"></div>
+            <div class="zm-choiceFile-btn2" onclick="zmChoiceRadio.choiceAddclassify(this)" data-choiceAdd="picture">移动到分类</div>
+            <div class="zm-choiceFile-btn2 zm-choicePictureHistory">批量还原</div>
+            <div class="zm-choiceFile-btn2 " onclick="zmChoiceRadio.batchDeleteFileTitle(this)" data-deleteType="picture">批量删除</div>
+        </div>
+    </div>
+    <div class="zm-choiceRadio-middle">
+
+        <div class="zm-choicePicture-middleL">
+            <div class="zm-choicePicture-middleLTop zm-choiceFiles-box">
+
+            </div>
+            <div class="zm-choicePicture-bottom">
+                <span class="zm-choiceFile-btn4  choicePicture-addBigclassify">添加图片大类</span>
+            </div>
+        </div>
+
+        <div class="zm-choiceRadio-middleR">
+            <ul id="zm-choicePicture-spli" class="zm-choiceRadio-spli">
+                <!--*****列表-->
+                <!--<li class="zm-choiceR-lists zm-choiceFile-check">-->
+                    <!--<img class="zm-choiceR-listsimg" src="imgs/carousel01.png" alt="">-->
+                    <!--<input class="zm-choiceRlist1" value="" type="text" >-->
+                    <!--<span class="zm-choiceRlist2">音频名称</span>-->
+                    <!--<span class="zm-choiceRadio-cheak fa"></span>-->
+                    <!--<div class="zm-choiceRlist3">-->
+                        <!--<span class="fa fa-search" onclick="zmChoiceRadio.choicePictureChangerBig(this)"></span>-->
+                        <!--<span class="fa fa-pencil zm-chRlist-pencil"></span>-->
+                        <!--<span class="fa fa-trash zm-chRlist-trash" onclick="zmChoiceRadio.deleteFileTitle(this)" delete-title="radio1"></span>-->
+                        <!--<span class="fa fa-download zm-chRlist-download"></span>-->
+                        <!--<span class="fa fa-history zm-chRlist-history"></span>-->
+                    <!--</div>-->
+                    <!--<div class="zm-choiceR-listWrap">-->
+                        <!--<div style="width: 126px;height: 126px;opacity: .5;background-color:#9ad5d3"></div>-->
+                    <!--</div>-->
+                <!--</li>-->
+                <!--列表*********-->
+            </ul>
+        </div>
+    </div>
+    <div class="zm-choiceFile-bottom">
+        <div class="zm-choiceFile-btn3 zm-choiceFile-choiceAddPicture">
+            选择并添加
+        </div>
+    </div>
+</div>

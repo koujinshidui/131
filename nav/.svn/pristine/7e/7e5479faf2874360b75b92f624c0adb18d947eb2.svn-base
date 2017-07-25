@@ -1,0 +1,1523 @@
+/**
+ * Created by Administrator on 2017/1/6.
+ */
+var zmEditor={
+    //全局数组
+    arr:{
+        actionList:[],//修改动作
+        changedComponentsList:[],//修改的控件列表
+        widgetList:[],//组件列表
+        templateList:[],//模板列表
+        pageList:[],
+        componentTypes:{}//组件type名称
+    },
+    //全局字符串
+    str:{
+        component:{
+            /*组件容器html（在拖动元素添加至页面的时候用到）*/
+            box1:'<div class="zm-component-box1 zm-component-editor zm-component-movable">'
+            +'<div class="zm-component-box2">'
+                +'<div class="zm-component-main-temp">'
+                    +'<div class="zm-component-edit">'
+                        +'<button class="zm-component-edit-open zm-tooltip" onclick="zmEditor.component.style(this)" data-zm-title="样式"><i class="fa fa-pencil"></i> </button>'
+                        +'<button class="zm-component-edit-open zm-tooltip" onclick="zmEditor.component.setting(this)" data-zm-title="设置"><i class="fa fa-gear"></i> </button>'
+                        +'<button class=" zm-tooltip" onclick="zmEditor.component.options.delete(this)" data-zm-title="删除"><i class="fa fa-trash-o"></i> </button>'
+                    +'</div>'
+                    +'<div class="zm-component-location">'
+                        +'<span>x:</span><span class="zm-component-location-x"></span> '
+                        +'<span> , y:</span><span class="zm-component-location-y"></span>'
+                        +'<span> , w:</span><span class="zm-component-location-w"></span>'
+                        +'<span> , h:</span><span class="zm-component-location-h"></span>'
+                    +'</div>'
+                    +'<div class="zm-component-resize">'
+                        +'<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>'
+                    +'</div>'
+                +'</div>'
+                +'<div class="zm-component-main zm-component-main-text">'
+                    +'</div>'
+            +'</div></div>',
+            rotate:'<div class="zm-component-rotate"><span class="fa  fa-rotate-left"></span></div>',
+            resize: '<div class="zm-component-resize">'
+            +'<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>'
+            +'</div>',
+            rotateVal:'<span> , r:</span><span class="zm-component-location-r"></span>',
+            //组件操作标签（在界面初始化的时候用到，给每个组件append）
+            box2:'<div class="zm-component-edit">'
+                    +'<button class="zm-component-edit-open zm-tooltip" onclick="zmEditor.component.style(this)" data-zm-title="样式"><i class="fa fa-pencil"></i> </button>'
+                    +'<button class="zm-component-edit-open zm-tooltip" onclick="zmEditor.component.setting(this)" data-zm-title="设置"><i class="fa fa-gear"></i> </button>'
+                    +'<button class=" zm-tooltip" onclick="zmEditor.component.options.delete(this)" data-zm-title="删除"><i class="fa fa-trash-o"></i> </button>'
+                +'</div>'
+            +'<div class="zm-component-location">'
+            +'<span>x:</span><span class="zm-component-location-x"></span> '
+            +'<span> , y:</span><span class="zm-component-location-y"></span>'
+            +'<span> , w:</span><span class="zm-component-location-w"></span>'
+            +'<span> , h:</span><span class="zm-component-location-h"></span>'
+            +'</div>'
+            +'<div class="zm-component-resize">'
+            +'<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>'
+            +'</div>',
+            edit: '<div class="zm-component-main-temp">'
+            +'<div class="zm-component-edit">'
+            +'<button class="zm-component-edit-open zm-tooltip" onclick="zmEditor.component.style(this)" data-zm-title="样式"><i class="fa fa-pencil"></i> </button>'
+            +'<button class="zm-component-edit-open zm-tooltip" onclick="zmEditor.component.setting(this)" data-zm-title="设置"><i class="fa fa-gear"></i> </button>'
+            +'<button class=" zm-tooltip" onclick="zmEditor.component.options.delete(this)" data-zm-title="删除"><i class="fa fa-trash-o"></i> </button>'
+            +'</div>'
+            +'<div class="zm-component-location">'
+            +'<span>x:</span><span class="zm-component-location-x"></span> '
+            +'<span> , y:</span><span class="zm-component-location-y"></span>'
+            +'<span> , w:</span><span class="zm-component-location-w"></span>'
+            +'<span> , h:</span><span class="zm-component-location-h"></span>'
+            +'</div>'
+            +'<div class="zm-component-resize">'
+            +'<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>'
+            +'</div>'
+            +'</div>'
+        },
+        row:{
+            line:'<div class="zm-row-line"></div>',
+            resize:'<div class="zm-row-resize"><span class="fa fa-arrows-v"></span></div>',
+            type:'',
+            html:'<div class="zm-row" style="width:1200px;" data-zm-pageid="">'
+            +'<div class="zm-row-type"><span>header(public)</span></div>'
+            +'<div class="zm-row-resize"><span class="fa fa-arrows-v"></span></div>'
+            +'</div>'
+        }
+    },
+    //全局扩展属性方法
+    globalMethod:{//ye写  2016/3/27
+      lowerStr:function (str){ //作用,把驼峰命名方式的css属性名改为以短横杠命名方式的属性名.
+      var a=/[A-Z]/g,b;
+       if(a.test(str)){
+        b=lowerStrSon(str);
+        if(a.test(b)){
+            lowerStr(b);
+        }else{
+            return b;
+        }
+      }
+       function lowerStrSon(str){
+        return str.replace(/[A-Z]/g,function(martch,offset,str){
+            return "-"+martch.toLowerCase();
+        });
+       }
+       },
+        getCurrentStyle:function (obj,attr){//ye  2017/2/23
+            if(obj&&obj.currentStyle){
+                return obj.currentStyle[attr];
+            }else {
+                return getComputedStyle(obj,null)[attr];
+            }
+        },
+        array:function(n){//ye  2017/5/4
+          return Array.prototype.slice.call(this,n||0);
+        },
+        parseInt:function(str){
+            return Number(str.replace(/[a-zA-Z]+/gi,""));
+        },
+        initialize_color_html_callback : function (string,string1){//ye 2017/2/23.
+            var b="",e;
+            e=$('<div class="zm-edit-text-color">'
+                +'<div><span class="zm-edit-text-title" style="width:70px;vertical-align: middle;text-align: center;"></span>'//<br>这层div原先是label标签，给替换了。出错容易点
+                +'<div class="zm-edit-slider" id="zm-edit-text-opacity" style="display: inline-block;padding: 0px;">'
+                +'<span class="zm-edit-slider-parent" style="width : 100px;" ><span class="zm-edit-slider-child"></span><span class="zm-edit-slider-child-hover" style="width: 59px;"></span> </span>'
+                + '<input type="text" class="zm-edit-slider-val" maxlength="3" value="100" style="background-color: #ececec">'
+                +'<i style="margin-left: 8px;">%</i>'
+                + '</div>'
+                +'<div class="zm-colorPicker" data-zm-color-type="'+string1+'" style="top: 15px;right: 0px">'
+                +'<span class="zm-colorPicker-switch" ></span></div></div>'
+                +'</div>');
+            string.length==8?e.find(".zm-edit-text-title").css("width",69+"px"):e.find(".zm-edit-text-title").css("width",70+"px");
+            if(string.length>6){
+                for(var m=0;m<string.length;m++){
+                    if(m==4) {
+                        b=b+"<br/>"+string[m]
+                    }else{
+                        b=b+string[m]
+                    }
+                }
+                string=b;
+            }
+            e.find(".zm-edit-text-title").html(string)
+            e.find("input").hover(function(){
+            $(this).css("background-color","#dbefed");
+            },function(){
+            $(this).css("background-color","#ececec");
+            });
+            return  e;
+        },
+        initialize_radius_html_callback:function (){//ye 2016/2/23
+           return $('<div style="margin-top: 22px;">'
+               +'<span class="zm-edit-text-title">四周弧度(°)</span>'
+               +'<div class="zm-edit-border-radius-box" style=" margin: 35px 0 45px 0;">'
+               +'<input class="zm-edit-radius-val" data-zm-radius="tl" maxlength="2">'
+               +'<input class="zm-edit-radius-val" data-zm-radius="tr" maxlength="2">'
+               +'<input class="zm-edit-radius-val" data-zm-radius="br" maxlength="2">'
+               +'<input class="zm-edit-radius-val" data-zm-radius="bl" maxlength="2">'
+               +'<div class="zm-edit-border-radius "style="position: relative">'
+               +'<div></div>'
+               +'<div></div>'
+               +'<div></div>'
+               +'<div></div>'
+               +'</div>'
+               +'</div>'
+               +'</div>');
+                } ,
+        initialize_slider_html_callback:function (string) {//ye 2016/2/23
+            var b = "", e;
+            if (string.length > 6) {
+                for (var m = 0; m < string.length; m++) {
+                    if (m == 4) {
+                        b = b + "<br>" + string[m]
+                    } else {
+                        b = b + string[m]
+                    }
+                }
+                string = b;
+            }
+            // if(string=="间隔线宽度"){debugger}
+            e = $('<div class="zm-edit-slider ss" id="zm-edit-text-opacity" style="margin-right: 5px;">'
+                + '<span class="zm-edit-text-title" style="width:70px;vertical-align: middle;text-align: center"><i style="font-size: 12px"> (像素) </i><br>' + string + '</span>'//<br>
+                + '<span class="zm-edit-slider-parent" style="width:150px;" ><span class="zm-edit-slider-child" style="width:14px;"></span><span class="zm-edit-slider-child-hover" style="width: 59px;"></span></span>'
+                + '<input type="text" class="zm-edit-slider-val" maxlength="2" style="background-color: #ececec;">'
+                + '</div>');
+            e.find("input").hover(function () {
+                $(this).css("background-color", "#dbefed");
+            }, function () {
+                $(this).css("background-color", "#ececec");
+            });
+            return e
+        },
+        main_child_childall_border_style_callback :function (){//ye 2016/2/23
+        return $('<div style="position:relative;">'
+            +'<span class="zm-edit-text-title" style="margin-top: 20px;">线条类型</span>'
+            +'<div class="zm-edit-border-style" style="width:216px;min-height: 30px;;border:1px solid #b9b9b9;margin-top: 15px;left: 75px;position:absolute;top: 0px;border-radius: 5px;z-index: 1;background-color: #fff;">'
+            +'<i style="border: 7px solid #666666;border-left: 4px solid transparent;border-right: 4px solid transparent;border-bottom: 5px solid transparent;position: absolute;top:11px;right: 15px;z-index:2;"></i>'
+            +'<span style="border:1px solid  #000; width: 168px;height: 0px;display:none;margin-top:13px;"></span>'//实线
+            +'<span style="border:3px double #000; width: 168px;height: 0px;display:none;margin-top:13px;"></span>'//双线
+            +'<span style="border:1px dotted #000; width: 168px;height: 0px;display:none;margin-top:13px;"></span>'//点状
+            +'<span style="border:1px dashed #000; width: 168px;height: 0px;display:block;margin-top:13px;"></span>'//虚线
+            +'</div>'
+            +'<div class="zm-edit-border-styleclone" style="width:216px;min-height: 80px;;border:1px solid #b9b9b9;margin-top: 15px;left: 75px;position:absolute;top: 0px;border-radius: 5px;z-index: 1;background-color: #fff;box-shadow:1px 1px 3px #00c3b0, -1px -1px 3px #00c3b0;display: none">'
+            +'<i style="border: 7px solid #666666;border-left: 4px solid transparent;border-right: 4px solid transparent;border-bottom: 5px solid transparent;position: absolute;top:11px;right: 15px;z-index:2;"></i>'
+            +'<span style="display: block;margin-left: 10px;margin-top:13px;height:14px;width: 168px;padding-top: 4px;" ><i style="border:1px solid  #000; width: 168px;height: 0px;display:block;"></i></span>'//实线
+            +'<span style="display: block;margin-left: 10px;margin-top:13px;height:14px;width: 168px;padding-top: 4px;" ><i style="border:3px double  #000; width: 168px;height: 0px;display:block;"></i></span>'//双线
+            +'<span style="display: block;margin-left: 10px;margin-top:13px;height:14px;width: 168px;padding-top: 4px;" ><i style="border:1px dotted  #000; width: 168px;height: 0px;display:block;"></i></span>'//点状
+            +'<span style="display: block;margin-left: 10px;margin-top:13px;height:14px;width: 168px;padding-top: 4px;" ><i style="border:1px dashed  #000; width: 168px;height: 0px;display:block;"></i></span>'//虚线
+            +'</div>'
+            +'</div>');
+            },
+    },
+    //编辑器标志
+    flag:{
+        isComponentController:false,
+        isShiftKeyDown:false
+    },
+    //初始化编辑器
+    init:function(){
+        //zmEditor.template.getInfoById(103);//根据id获取模板数据
+        //zmEditor.getNavigationPageById();//根据id获取页面数据
+        zmEditor.component.init();//初始化右侧组件列表
+        zmEditor.template.getAllList();//获取模板列表
+        zmEditor.setRuler(1200)
+    },
+    //组件相关方法
+    component:{
+        //初始化组件列表
+        init:function(){
+            $('.zm-components-ul li').each(function(){
+                var _thisType = $(this)
+                zmEditor.arr.componentTypes[_thisType.attr("data-zm-component-type")]=_thisType.text()
+            })
+            $.zmAjax({
+                type: "get",
+                url: zmEditor.url.getSysWidget,
+                dataType: "json",
+                success: function(e){
+                    zmEditor.arr.widgetList=e.data;
+                    console.log(zmEditor.arr.widgetList)
+                    /*点击组件类型，显示组件详情*/
+                    $(".zm-components-ul li").on("click",function(){
+                        zmEditor.component.showDetail(this);
+                    });
+                },
+                error:function(){
+                    $(".zm-components-type>ul").html('<li style="width:100%"> 数据库连接出错咯~</li>');
+                }
+            });
+        },
+        //显示组件列表
+        showDetail:function(e){
+            var _this = $(e);
+            var detailBox = $('.zm-components-detail');
+            var detailContent=$(".zm-components-detail-content");
+            var detailTitle=$(".zm-components-detail-title");
+            var curLi = 'zm-components-type-curLi';
+            var attrTypeStr='data-zm-component-type';
+            if(detailBox.data('isSort')){zmManage.componentListIsSort();return;}
+            var index = _this.index();
+            var detail = detailContent.children("div.zm-components-detail-term").eq(index);
+            detail.attr('data-zm-isShow',true).siblings().attr('data-zm-isShow',false);
+            //判断是否点击过了
+            if(!_this.data("hasLoading")||_this.data("hasLoading")==undefined){
+                var type = _this.attr(attrTypeStr);
+                detail.attr(attrTypeStr,type);
+                var list =zmEditor.arr.widgetList[type];
+                var allHtml ="";
+                //var anchorHtml ='';
+                if(list!=undefined){
+                    var len=list.length;
+                    for(var i=0;i<len;i++){
+                        var list2 = list[i];
+                        var len2 =list2.list.length;
+                        var ulHtml ="";
+                        for(var j= 0;j<len2;j++){
+                            var list3 = list2.list[j];
+                            ulHtml+='<li data-zm-fId="'+list3.fId+'" data-zm-fName="'+list3.fName+'">'+list3.fContext+'</li>';
+                        }
+                        // allHtml+='<fieldset id="'+type+'anchor'+i+'" class="zm-component-fieldset " data-zm-fId="'+list2.fComponentType+'"><legend>'+list2.fComponentTypeName+'</legend><ul>'+ulHtml+'</ul></fieldset>'
+                        allHtml+='<fieldset class="zm-component-fieldset " data-zm-fId="'+list2.fComponentType+'"><legend>'+list2.fComponentTypeName+'</legend><ul>'+ulHtml+'</ul></fieldset>'
+                        //anchorHtml+='<span data-zm-anchor="'+type+'anchor'+i+'"></span>'
+                    }
+                    //detail.after('<div class="zm-components-detail-term-anchorBox"><div class="zm-components-detail-term-anchor">'+anchorHtml+'</div></div>');
+                }
+                else{
+                    allHtml='<div style="height: 100px;line-height: 100px;margin: 0 auto;font-size: 20px;text-align: center;">亲~该分类暂时没有组件！</div>'
+                }
+                _this.data("hasLoading",true);
+                if(detail.hasClass('mCustomScrollbar')){
+                    detail.find('.mCSB_container').html(allHtml).mCustomScrollbar({theme:"minimal"});
+                }
+                else{
+                    detail.html(allHtml).mCustomScrollbar({theme:"minimal"});
+                }
+            }
+            _this.addClass(curLi).siblings().removeClass(curLi);
+            detail.show().siblings('.zm-components-detail-term').hide();
+            // var thisAnchorEle = detail.next();
+            // thisAnchorEle.show().siblings('.zm-components-detail-term-anchorBox').hide();
+            // thisAnchorEle.find('span:eq(0)').addClass('zm-components-detail-term-anchorCur').siblings().removeClass('zm-components-detail-term-anchorCur');
+            detailBox.show();
+            detailTitle.text(_this.text())//标题
+        },
+        //拖拽组件加载之前
+        willMount:function(_this,type,main,component,box,boxId){
+            switch (type){
+                case "text":
+                    //main.css({"width":"400px"});
+                    break;
+                case "btn":
+                    main.css({"textAlign":"center"});
+                    break;
+                case "nav":
+                    component.children("ul").html("");
+                    break;
+                case "container":
+                case "banner":
+                case "tab":
+                    box.addClass('zm-container');
+                    break;
+                case "shape":
+                    break;
+                case "carousel":
+                    break;
+                case "product":
+                    break;
+                case "function":
+                    break;
+                case "audio":
+                    break;
+                case "video":
+                   // main.css({"width":"500px","height":"auto"});
+                    //main.css({"width":"600px","height":"400px"});
+                    break;
+                default:
+                    main.css({"minWidth":"80px", "minHeight":"30px"});
+                    break;
+            }
+        },
+        //拖拽组件已经加载
+        didMount:function(_this,type,main,component,box,boxId){
+            switch (type){
+                case "text":
+                    //是否只允许改变组件宽度
+                    zmEditor.component.onlyResizeWidth(box);
+                    break;
+                case "container":
+                    main.css({'width':parseInt(main.css('width'))*3,'height':parseInt(main.css('height'))*3})
+                    break;
+                case "nav":
+                    zmEditor.globalMethod.nav.main_style(box,type);//ye添加。
+                    break;
+                case "banner":
+                    box.find(".zm-component-main").css("width","1200px");
+                    break;
+                case "carousel":
+                    var slideStyle = _this.find(".zm-component-carousel-box").attr("slide-type");
+                    //获取图片轮播方式by oldZhang 2017-3-11 16:55:01
+                    var thisImgSrc = _this.find(".zm-component-carousel-box img").attr("src");
+                    //获取当前图片的路径
+                    zmEditor.component.carousel.getImgsInfo(main,slideStyle,thisImgSrc);
+                    break;
+                case "product":
+                    if(main.hasClass("zm-product-goods")){
+                        main.css({"width":"600px","height":"300px"});
+                    }
+                    if(main.hasClass("list_product")){
+                        main.empty();
+                        $.post(zmEditor.url.hotProduct,function(result){
+                            // setLocal({key: "hotProduct",value: result.data});
+                            setLocal(main.find(".zm-edit-components-list-wrap"),{key: "hotProduct",value: goodsList()});
+                        });
+                        var html = listComponent({col: 5,row: 2,key: "hotProduct",type: "product"});
+                        for(var i in html){
+                            main.append(html[i]);
+                        }
+                        main.css({"width":"950px","height":"580px"});
+                    }
+                    break;
+                case "audio":
+                    if(main.hasClass("play_panel")){
+                        zmEditor.component.onlyResizeWidth(box);
+                    }
+                    if(main.hasClass("list_album")){
+                        main.empty();
+                        $.post(zmEditor.url.hotAlbum,function(result){
+                            // setLocal({key: "hotAlbum",val: result.data});
+                            setLocal(main.find(".zm-edit-components-list-wrap"),{key: "hotAlbum",value: albumList()});
+                        });
+                        var html = listComponent({col: 5,row: 2,key: "hotAlbum",type: "album"});
+                        for(var i in html){
+                            main.append(html[i]);
+                        }
+                        main.css({"width": "950px","height": "580px"});
+                    }
+                    break;
+                case "video":
+                    // main.css({"width":"500px","height":"auto"});
+                    //main.css({"width":"600px","height":"400px"});
+                    //var nowIconBtn= main.find(".zm-videoBlackcover svg")? main.find(".zm-videoBlackcover svg"):main.find(".zm-video-btn")
+                    //main.find(".zm-videoBlackcover .zm-video-btn").addClass("zm-video-btn1")
+                    main.find(".zm-videoBlackcover .zm-videobtn-text").length>0? main.find(".zm-videoBlackcover .zm-videobtn-text").addClass("zm-video-btn2"):main.find(".zm-videoBlackcover .zm-video-btn").addClass("zm-video-btn1")
+                    break;
+                case "map":
+                    main.find('.zm-component-map-content').empty();
+                    zmEditor.component.map.bMapInit(boxId);
+                    break;
+                case "img":
+                    zmEditor.component.isRotate(box);
+                    zmEditor.component.img.picResize(main);
+                    break;
+                case "shape":
+                    zmEditor.component.isRotate(box);
+                    var isLine = main.find('.zm-component-shape-line');
+                    var rootBox = isLine.closest('.zm-component-box1');
+                    var pathD = isLine.find('path').attr('d');
+                    if(isLine.length>0){
+                        main.css({'padding':'12px 10px'})
+                    }
+                    isLine.length>0?pathD.indexOf('L')>0?zmEditor.component.onlyResizeHeight(rootBox):
+                        zmEditor.component.onlyResizeWidth(rootBox):zmEditor.component.shape.shapeOriScale(main);
+                    break;
+                case "news":
+                    main.css('width','300px').find('.zm-component-news-content').css('width','100%');
+                    zmEditor.component.news.newsAllData();
+                    zmEditor.component.news.setNewsStyle(main);
+                    break;
+                case "blog":
+                    main.css('width','300px').find('.zm-component-news-content').css('width','100%');
+                    zmEditor.component.blog.newsAllData();
+                    zmEditor.component.blog.setNewsStyle(main);
+                    break;
+                case "function":
+                    var functionType =  main.find('.zm-component-function-content').attr('data-functionType');
+                    switch (functionType){
+                        case "search":
+                            zmEditor.component.function.searchMethod.searchBarGetReady(main);
+                            break;
+                        case "shopping":
+                            zmEditor.component.function.shoppingMethod.shoppingCartGetReady(main);
+                            break;
+                        case "file":
+                            zmEditor.component.function.fileMethod.fileGetReady(main);
+                            break;
+                        case "share":
+                            zmEditor.component.function.shareMethod.shareGetReady(main);
+                            break;
+                        case "enter":
+                            zmEditor.component.function.enterMethod.enterGetReady(main);
+                            break;
+                        case "option":
+                            zmEditor.component.function.optionMethod.optionGetReady(main);
+                            break;
+                        default:
+                            zmEditor.component.function.registrationMethod.sundryGetReady(main,functionType);
+                            break
+                    }
+                    break;
+                default:
+                    break;
+            }
+        },
+        //当前编辑的组件
+        nowEdit:function(){
+            return $(".zm-component-nowEdit").find(".zm-component-main").eq(0);
+        },
+        //当前组件的box1
+        nowBox1:function(e){
+            if(e){
+                return e.closest('.zm-component-box1');
+            }
+            else{
+                return $('.zm-component-nowEdit');
+            }
+        },
+        //页面组件list
+        box1List:function(){
+            return $('.zm-component-box1');
+        },
+        //获取组件的data-zm-component-type
+        attrType:function(e){
+            return e.attr('data-zm-component-type');
+        },
+        //是否可旋转
+        isRotate:function(box){
+            box.find('.zm-component-resize').remove();
+            box.find('.zm-component-box2 .zm-component-main').append(zmEditor.str.component.resize)
+            box.children('.zm-component-box2').find('.zm-component-main').append(zmEditor.str.component.rotate);
+            box.children('.zm-component-box2').find('.zm-component-location').append(zmEditor.str.component.rotateVal);
+            var r = box.find('.zm-component-box2').find('.zm-component-main').attr('data-zm-rotate');
+            if(r){
+                box.find(".zm-component-location-r").eq(0).html(parseInt(r)+'°');
+            }
+            else{
+                box.find(".zm-component-location-r").eq(0).html(0+'°');
+            }
+        },
+        //只允许组件改变宽度
+        onlyResizeWidth:function(e){
+            e.find(".zm-component-resize>span").each(function(){
+                if($(this).index()!=3&&$(this).index()!=7){
+                    $(this).hide();
+                }
+            })
+        },
+        //只允许组件改变宽度
+        onlyResizeHeight:function(e){
+            e.find(".zm-component-resize>span").each(function(){
+                if($(this).index()!=1&&$(this).index()!=5){
+                    $(this).hide();
+                }
+            })
+        },
+        //获取并设置组件坐标区域x,y,w
+        setLocation:function(e,x,y,w,h){
+            if(x){
+                e.find(".zm-component-location-x").eq(0).html(parseInt(x));
+            }
+            if(y){
+                e.find(".zm-component-location-y").eq(0).html(parseInt(y));
+            }
+            if(w){
+                e.find(".zm-component-location-w").eq(0).html(parseInt(w));
+            }
+            if(h){
+                e.find(".zm-component-location-h").eq(0).html(parseInt(h));
+            }
+        },
+        //显示组件操作区域
+        showOption:function(box1,downX,downY){
+            var box2=box1.children('.zm-component-box2');
+            var boxLeft = box1.offset().left;
+            var boxTop = box1.offset().top;
+            var editOption = box2.find('.zm-component-edit:eq(0)');
+            if(boxTop<120||boxLeft<150) editOption.css({left:downX-boxLeft,top:downY-boxTop-60});
+            else editOption.removeAttr('style');
+            $(".zm-component-nowEdit").find('.zm-component-resize,.zm-component-edit,.zm-component-location,.zm-component-rotate,.zm-component-carousel-picTip').hide();
+            $(".zm-component-nowEdit").removeClass("zm-component-nowEdit");
+            box1.addClass("zm-component-nowEdit");
+            box2.children('.zm-component-main-temp').find('.zm-component-location,.zm-component-edit,.zm-component-carousel-picTip').show();
+            box2.children('.zm-component-main-temp').find('.zm-component-resize,.zm-component-rotate').show();
+            box2.children('.zm-component-main-temp').find('.zm-component-edit').addClass('zmAnimate zmBounceIn');
+        },
+        //设置而非拖动
+        isSetting:function(e){
+            if($(e.target).closest('.zm-component-main-temp').length>0){return true;}
+            else{return false;}
+        },
+        //拖拽辅助线
+        dragHelpLine:function(box,boxWidth,boxLeft,boxTop,rowWidth,rowLeft,rowTop,pyl){
+            var xLineVal,yLineVal,boxLeftVal,boxTopVal,xLineShow,yLineShow;
+            if(boxLeft>-pyl&&boxLeft<pyl){
+                yLineVal=rowLeft;
+                boxLeftVal=0;
+                yLineShow='block';
+            }
+            else if(boxLeft>rowWidth-boxWidth-pyl&&boxLeft<rowWidth-boxWidth+pyl){
+                yLineVal=rowWidth+rowLeft;
+                boxLeftVal=rowWidth-boxWidth;
+                yLineShow='block';
+            }
+            else if(boxLeft>rowWidth/2-boxWidth/2-pyl&&boxLeft<rowWidth/2-boxWidth/2+pyl){
+                yLineVal=rowLeft+rowWidth/2;
+                boxLeftVal=rowWidth/2-boxWidth/2;
+                yLineShow='block';
+            }
+            else{
+                var findBoxY=false;
+                zmEditor.component.box1List().not(box).each(function(){
+                    var thisBoxLeft=$(this).offset().left;
+                    if(thisBoxLeft-pyl<boxLeft+rowLeft&&thisBoxLeft+pyl>boxLeft+rowLeft){
+                        findBoxY=true;
+                        yLineVal=thisBoxLeft;
+                        boxLeftVal=thisBoxLeft-rowLeft;
+                        yLineShow='block';
+                        return;
+                    }
+                })
+                if(!findBoxY){
+                    yLineVal=0;
+                    boxLeftVal=boxLeft;
+                    yLineShow='none';
+                }
+            }
+            //begin:组件之间辅助线
+            var findBoxX=false;
+            zmEditor.component.box1List().not(box).each(function(){
+                var thisBoxTop=$(this).offset().top;
+                if(thisBoxTop-pyl<boxTop+rowTop&&thisBoxTop+pyl>boxTop+rowTop){
+                    findBoxX=true;
+                    xLineVal=thisBoxTop;
+                    boxTopVal=thisBoxTop-rowTop;
+                    xLineShow='block';
+                    return;
+                }
+            })
+            if(!findBoxX){
+                xLineVal=0;
+                boxTopVal=boxTop;
+                xLineShow='none';
+            }
+            //end
+            $('#zm-xHelpLine').css({display:xLineShow,top:xLineVal});
+            $('#zm-yHelpLine').css({display:yLineShow,left:yLineVal})
+            return {left:boxLeftVal,top:boxTopVal};
+        },
+        //将组件放入容器中
+        pushComponentToContainer:function(container,_this,upX,upY){
+            var containerId = container.attr("id");
+            var containerType = container.attr('data-zm-component-type');
+            if(containerType=="tab"){
+                container=container.find('.zm-edit-components-tabs-cont:eq(0)');
+                container.children('div').each(function(){
+                    var tabItem = $(this);
+                    if(tabItem.css('display')=='block'){
+                        container = tabItem;
+                        // zmEditor.component.autoFindContainer(
+                        //     zmEditor.component.findContainerInSameLevel(
+                        //         {nowContainer: container, lastContainer: container}, _this, upX, upY
+                        //     ), _this, upX, upY
+                        // );
+
+                        containerId = containerId+'-'+container.index();
+                        return false;
+                    }
+                })
+            }
+            var cOffset = container.offset();
+            var cLeft = cOffset.left;
+            //var cRight = cOffset.left+container.outerWidth();
+            var cTop = cOffset.top;
+            //var cBottom = cOffset.top+container.outerHeight();
+            var tOffset = _this.offset();
+            var tLeft = tOffset.left;
+            var tTop = tOffset.top;
+            var box;
+
+            var containerMaxIndex = parseInt(container.attr('data-zm-maxIndex'))||0;
+            // var containerMinIndex = parseInt(container.attr('data-zm-minIndex'))||0;
+            container.attr({'data-zm-maxIndex':containerMaxIndex+1});
+            //从组件列表拖入页面
+            if(_this[0].tagName.match(/li/i)){
+                var type = _this.closest(".zm-components-detail-term").attr("data-zm-component-type")||"";
+                var type2 = _this.closest(".zm-component-fieldset ").attr("data-zm-fId")||"";
+                var name = _this.attr('data-zm-fName');
+                var component = _this.children();
+                box = $(zmEditor.str.component.box1);
+                var boxId = zmEditor.createId(box);
+                var fId = _this.attr("data-zm-fId");
+                var main = box.find(".zm-component-main");
+                if(type=='text'||type=='btn'){
+                    main.append(component.prop('outerHTML'))
+                }
+                else{
+                    var style = component.attr("style");
+                    var iClass = component.attr("class");
+                    main.attr("style",style).addClass(iClass).css({'overflow':'visible'}).append(component.html());
+                }
+                //组件装载before
+                zmEditor.component.willMount(_this,type,main,component,box,boxId);
+                //组件装载ing
+                box.attr({"data-zm-component-type":type,"data-zm-component-type2":type2,"data-zm-fId":fId,"data-zm-fName":name,
+                    "data-zm-containerId":containerId, "data-zm-index":containerMaxIndex+1})
+                    .css({"position": "absolute", "left": tLeft - cLeft, "top": tTop - cTop,"z-index":containerMaxIndex+1})
+                    .appendTo(container);
+                //组件装载after
+                zmEditor.component.didMount(_this,type,main,component,box,boxId);
+                zmEditor.component.showOption(box,tLeft,tTop);
+                var r = box.children('.zm-component-box2').find('.zm-component-main').css('transform')
+                //设置组件坐标区显示
+                zmEditor.component.setLocation(box,tLeft-cLeft-1,tTop-cTop,box.outerWidth(),box.outerHeight(),r);
+                zmEditor.action.save('add');
+            }
+            //页面中已有组件拖动
+            else{
+                box=_this;
+                var lastContainerId = box.attr('data-zm-containerId');
+                if(containerId!=lastContainerId){
+                    box.css({"position": "absolute", "left": tLeft - cLeft-1, "top": tTop - cTop,"z-index":containerMaxIndex+1});
+                    box.attr({'data-zm-containerId':containerId,"data-zm-index":containerMaxIndex+1});
+                    container.append(box);
+                }
+                var r = box.children('.zm-component-box2').find('.zm-component-main').css('transform')
+                //设置组件坐标区显示
+                zmEditor.component.setLocation(box,tLeft-cLeft-1,tTop-cTop,box.outerWidth(),box.outerHeight(),r);
+                zmEditor.action.save();
+                //_this.attr("data-zm-pageId",obj.attr("data-zm-pageId"))
+            }
+
+            //保存操作动作
+            //组件发布保存为草稿按钮专用遮罩层
+            //$('.zm-publish-save-mask').show();
+        },
+        //在同一层级中遍历所有满足条件的容器并返回层级最高的容器
+        findContainerInSameLevel:function(e,_this, upX, upY){
+            var containerList =[],outPut={};
+            outPut.lastContainer = e.lastContainer;
+            if(e.nowContainer.children('.zm-container').not(_this).length>0){
+                e.nowContainer.children('.zm-container').not(_this).each(function(){
+                    var obj = $(this);
+                    var offset = obj.offset();
+                    var oLeft = offset.left;
+                    var oRight = offset.left+obj.outerWidth();
+                    var oTop = offset.top;
+                    var oBottom = offset.top+obj.outerHeight();
+                    if(upX>oLeft&&upX<oRight&&upY>oTop&&upY<oBottom){
+                        containerList.push({container:obj,iIndex:obj.css('zIndex')});
+                        console.log(oLeft,upX,oRight,oTop,upY,oBottom)
+                    }
+                    if(containerList.length>0){
+                        var i=0,len = containerList.length,maxIndex =containerList[0];
+                        for(;i<len;i++){
+                            if(containerList[i].iIndex>maxIndex.iIndex){
+                                maxIndex=containerList[i];
+                            }
+                        }
+                        outPut.nowContainer = maxIndex.container;
+                    }
+                })
+            }
+            return outPut;
+        },
+        //按层级递归遍历对应层级中的容器
+        autoFindContainer:function(containers,_this, upX, upY){
+            //满足条件则回调本身
+            if(containers.nowContainer){
+                zmEditor.component.autoFindContainer(
+                    zmEditor.component.findContainerInSameLevel(
+                        {nowContainer:containers.nowContainer,lastContainer:containers.nowContainer},_this, upX, upY
+                    ),_this, upX, upY
+                )
+            }
+            //不满足条件则说明已经找到最适合容器，那么就将组件放入该容器中
+            else{
+                var obj = containers.lastContainer;
+                // if(!obj.hasClass('zm-row')){
+                //     obj=obj.find('.zm-component-main').eq(0)
+                // }
+                zmEditor.component.pushComponentToContainer(obj,_this,upX,upY);
+            }
+        },
+        //样式选择窗
+        style:function(e){
+            var box = zmEditor.dialog.box();
+            var content = box.find(".zm-dialog-content");
+            var tabs;
+            var com_box=zmEditor.component.nowBox1();
+            var com_main = zmEditor.component.nowEdit();
+            var type = com_box.attr("data-zm-component-type")||"";
+            var dialogTitle=zmEditor.arr.componentTypes[type]||'样式';
+            var lastBox = $(".zm-dialog-box").not('.zm-dialog-box-pageSet');
+            var lastLeft=lastBox.css("left");
+            var lastTop=lastBox.css("top");
+            box.css({'left':lastLeft,'top':lastTop}).addClass('zm-component-settingPanel');
+            lastBox.remove();//ay：移除其他设置窗
+            tabs=$('<div class="zm-edit-text"></div>');
+            var list =zmEditor.arr.widgetList[type];
+            var fielHtml="";
+            var iSelected=zmEditor.component.nowEdit();
+            switch (type){
+                case "btn":
+                    break;
+                case "shape":
+                    list = iSelected.hasClass('blockShape')?[list[1],list[2],list[3]]:[list[0]];
+                    break;
+                case "function":
+                    var functionType = iSelected.find('.zm-component-function-content').attr('data-functionType');
+                    switch (functionType){
+                        case 'search':
+                            list = [list[0]];
+                            break;
+                        case 'shopping':
+                            list = [list[1]];
+                            break;
+                        case 'file':
+                            list = [list[3]];
+                            break;
+                        case 'enter':
+                            list = [list[5]];
+                            break;
+                        case 'option':
+                            list = [list[6]];
+                            break;
+                        default:
+                            list = [list[2]];
+                            break;
+                    }
+                    break;
+                case "nav":
+                    box.addClass('data-nav-Independent-nav');
+                    if(/vertical/.test(com_main[0].classList[4])){
+                        list=[list[1]]
+                    }else{
+                        list=[list[0]]
+                    }
+                    break;
+                case "banner":
+                    break;
+                default:
+                    break;
+            }
+            var fId = com_box.attr('data-zm-fid');
+            var curFlag = '<span class="zm-component-settingPanel-curLiFlag fa fa-check"></span>';
+            if(list!=undefined){
+                var len=list.length;
+                for(var i=0;i<len;i++){
+                    var list2 = list[i];
+                    var len2 =list2.list.length;
+                    var ulHtml ="";
+                    for(var j= 0;j<len2;j++){
+                        var list3 = list2.list[j];
+                        if(list3.fId==fId){
+                            ulHtml+='<li data-zm-fId="'+list3.fId+'">'+curFlag+list3.fContext+'</li>';
+                        }
+                        else{
+                            ulHtml+='<li data-zm-fId="'+list3.fId+'">'+list3.fContext+'</li>';
+                        }
+
+                    }
+                    fielHtml+='<fieldset class="zm-component-fieldset" data-zm-fId="'+list2.fComponentType+'"><legend>'+list2.fComponentTypeName+'</legend><ul>'+ulHtml+'</ul></fieldset>'
+                };
+            }
+            else{
+                fielHtml='<div style="height:100px;margin:0 auto;">亲~该分类暂时没有组件！</div>'
+            }
+            tabs.html(fielHtml);
+            //ay:点击风格样式切换组件风格
+            tabs.find("fieldset li").on("click",function(){
+                var _this = $(this);
+                var iSelected = zmEditor.component.nowEdit();
+                var this_style=$(this).find("div").attr("style");
+                var id = _this.attr('data-zm-fid');
+                zmEditor.component.nowBox1().attr('data-zm-fid',id);
+                tabs.find('.zm-component-settingPanel-curLiFlag').remove();
+                _this.append(curFlag);
+                switch(type){
+                    case "aaa":
+                        break;
+                    case "nav":
+                        // debugger;
+                        if($(this).closest("ul").parent()[0].tagName.toLowerCase()=="div"){
+                            var a,b,nav_name;
+                        a=$(this).closest(".zm-nav")[0].classList[2];//获取样式标志
+                        // b=$(this).closest(".zm-component-box1").children(".zm-component-box2").children(".zm-component-main");
+                        b=zmEditor.component.nowEdit();
+                  console.log(b);
+                            nav_name=zmEditor.globalMethod.nav.global_compotents_IndependentName(b);
+                            zmEditor.globalMethod.nav.initNavList.nav_ele_style_assignment(zmEditor.globalMethod.nav.OneType.li, a, "sStyle", "initStyle","li",nav_name,["width","height","lineHeight"]);
+                            zmEditor.globalMethod.nav.initNavList.nav_ele_style_assignment(zmEditor.globalMethod.nav.OneType.li, a, "hHover", "initHover","li",nav_name,["width","height","lineHeight"]);
+                            zmEditor.globalMethod.nav.initNavList.nav_ele_style_assignment_initclickhover(zmEditor.globalMethod.nav.OneType.li, a, "clickhover", "initclickhover","li",nav_name);
+                            zmEditor.globalMethod.nav.initNavList.nav_ele_style_assignment(zmEditor.globalMethod.nav.OneType.span, a, "sStyle", "initStyle","span",nav_name,["width","height"]);
+                            zmEditor.globalMethod.nav.initNavList.dropdownBg(zmEditor.globalMethod.nav.TwoType.ul.sStyle, "backgroundColor","dropdownBg",nav_name,a); //下拉列表的颜色
+                            // console.log(zmEditor.globalMethod.nav.data.arrLike[nav_name])
+                            // console.log(b);
+                              var c,d,e,f;
+                              c=b[0].classList[3],d=b[0].classList[4]; //移除类名
+                              b.removeClass(c).removeClass(d);
+                              e=$(this).closest(".zm-nav")[0].classList[1];
+                              b.addClass(e).addClass(a);
+                            // console.log(nav_name);
+                              f=nav_name.replace(/-([A-z]+|_)*(\d+)/i,function(match,p1,p2,offset,string){
+                                  // console.log(match)
+                                  // console.log(p1)
+                                  // console.log(p2)
+                                 //本身以及子节点替换类名nav类型   //three:替换dom元素属性
+                                  // 替换mainCLss
+                                  b.removeAttr("data-"+p1);
+                                  b.attr("data-"+a,a+p2+"");
+                                  // 替换mainCLss
+                                  // 替换styleCLss
+                                  $(".style_nav_data-"+p1+p2).removeClass("style_nav_data-"+p1+p2).addClass("style_nav_data-"+a+p2);
+                                  // 替换styleCLss
+                                  // b 值未找到。
+                                 //  b.find("li").each(function(index,ele){
+                                 //  var li ,refreshLi;
+                                 //  li=$(this)[0].classList[0];
+                                 //  $(this).removeClass(li);
+                                 //  refreshLi=li.replace(/-([A-z]+|_)*/i,function(ma,p,t){
+                                 //    console.log(ma)
+                                 //    console.log(p)
+                                 //    console.log(t)
+                                 //      return "-"+a;
+                                 //  })
+                                 // $(this).addClass(refreshLi);
+                                 //  })
+                                  //本身以及子节点替换类名nav类型
+                                  return "-"+a+p2+"";
+                              });
+                            console.log(zmEditor.globalMethod.nav.data.arrLike)
+                            zmEditor.globalMethod.nav.data.arrLike[nav_name]   // one: 让对象下属性名变更;
+                            zmEditor.globalMethod.nav.data.arrLike[f]=zmEditor.globalMethod.nav.data.arrLike[nav_name];
+                              if(f==nav_name)return;else delete zmEditor.globalMethod.nav.data.arrLike[nav_name];//two:删除原有属性
+
+                                //three:替换dom元素属性
+                            console.log(zmEditor.globalMethod.nav.data.arrLike)
+                            console.log(zmEditor.globalMethod.nav.data.arrLike[f]);
+                            console.log(b);
+                            // zmEditor.globalMethod.nav.initialize_html_callback($(zmEditor.globalMethod.nav.data.pageSet.html),b,zmEditor.globalMethod.nav.mouseenterOrleaveHover);
+                            zmEditor.globalMethod.nav.initialize_html_callback($(zmEditor.globalMethod.nav.data.pageSet.html),b,zmEditor.globalMethod.nav.hover_or_click_show(zmEditor.globalMethod.nav.data.arrLike[f].hover_or_click_show_string));//从新渲染nav
+                        }
+                        break;
+                    case "product":
+                        var nowEle = _this.children();
+                        if(nowEle.is(".zm-product-goods")){
+                            if(nowEle.is(".zm-edit-components-product-row")){
+                                iSelected.removeClass("zm-edit-components-product-col").addClass("zm-edit-components-product-row");
+                            }
+                            if(nowEle.is(".zm-edit-components-product-col")){
+                                iSelected.removeClass("zm-edit-components-product-row").addClass("zm-edit-components-product-col");
+                            }
+                        }
+                        if(nowEle.is(".zm-product-goodsList")){
+                            console.log(nowEle);
+                        }
+
+                        break;
+                    case "tab":
+
+                        break;
+                    case "carousel":
+                        var carouselBox = '.zm-component-carousel-box';
+                        var slideStyle = _this.find(carouselBox).attr("slide-type");
+                        zmEditor.component.carousel.carouselGoing(iSelected,slideStyle);
+                        var slideArgs = iSelected.find(carouselBox).attr('data-slide-args');
+                        iSelected.find(carouselBox).attr({'data-slide-args':
+                        slideArgs.split('effect=')[0] + 'effect=' + slideStyle + '&hoverStop' +
+                        slideArgs.split('&hoverStop')[1],'slide-type':slideStyle});
+                        if(iSelected.find(carouselBox).hasClass('maxWidth1200')){
+                            iSelected.width('1200px')
+                        }
+                        if(_this.find('.zm-component-carousel-pageCutBtn').length>0){
+                            iSelected.find('.zm-component-carousel-controlBtn').show()
+                        }
+                        if(_this.find('.zm-component-carousel-point').length>0){
+                            iSelected.find('.zm-component-carousel-pointGroup').show()
+                        }
+                        break;
+                    case "img":
+                        zmEditor.component.img.setImgStyle(iSelected,_this);
+                        break;
+                    case "shape":
+                        zmEditor.component.shape.setShapeStyle(iSelected,_this);
+                        break;
+                    case "video":
+                        zmEditor.component.video.setVideoStyle(iSelected,_this);
+                        console.log(222222222)
+                        break;
+                    case "news":
+                    case "blog":
+                        zmEditor.component.news.setNewsBlogStyle(iSelected,_this);
+                        break;
+                    case "function":
+                        var functionType = iSelected.find('.zm-component-function-content').attr('data-functionType');
+                        switch (functionType){
+                            case 'search':
+                                zmEditor.component.function.searchMethod.setSearchBarStyle(_this);
+                                break;
+                            case 'shopping':
+                                zmEditor.component.function.shoppingMethod.setShoppingCartStyle(_this);
+                                break;
+                            case 'file':
+                                zmEditor.component.function.fileMethod.setFileStyle(_this);
+                                break;
+                            case 'enter':
+                                zmEditor.component.function.enterMethod.setEnterStyle(_this);
+                                break;
+                            case 'option':
+                                zmEditor.component.function.optionMethod.setOptionStyle(_this);
+                                break;
+                            default:
+                                break
+                        }
+                        break;
+                    default:
+                        com_box.find(".zm-component-main:eq(0)").css({'width':'auto','height':'auto'})
+                        com_box.find(".zm-component-main:eq(0)").children().attr("style",this_style);
+                        break;
+                }
+            });
+            content.append('<button class="zm-edit-go2"  onclick="zmEditor.component.setting(this)">设置<span class="fa fa-angle-double-right"></span></button>')
+            content.append(tabs);
+            $('body').append(box);
+            box.find(".zm-dialog-title").text(dialogTitle+'样式');
+            zmEditor.dialog.setBtnInfo(box,zmEditor.component.dialogBtnInfo[type].style);//设置弹窗中关闭跟问号按钮内容
+            box.find('.zm-dialog-close').on('click',function(){
+                $(this).zmDialog('remove')
+            })
+            box.zmDialog();
+        },
+        //组件设置窗
+        setting:function(e){
+            var box = zmEditor.dialog.box();
+            var content = box.find(".zm-dialog-content");
+            var tabs;
+            var com_box=zmEditor.component.nowBox1();
+            var main = com_box.find('.zm-component-main');
+            var type = com_box.attr("data-zm-component-type")||"";
+            var lastBox = $(".zm-dialog-box").not('.zm-dialog-box-pageSet');
+            var lastLeft=lastBox.css("left");
+            var lastTop=lastBox.css("top");
+            box.css({'left':lastLeft,'top':lastTop}).addClass('zm-component-settingPanel');
+            lastBox.remove();//ay：移除其他设置窗
+            tabs=zmEditor.component[type].setting(box);
+            var dialogTitle=zmEditor.arr.componentTypes[type]||'弹窗';
+            content.append('<button class="zm-edit-go"  onclick="zmEditor.component.style(this)"><span class="fa fa-angle-double-left"></span>样式</button>');
+            if(main.hasClass('zm-component-function-share-main')){//分享推广组件去掉设置样式功能2017年6月8日
+                content.find('.zm-edit-go').removeAttr('onclick')
+                    .css({'color':'transparent','background':'transparent','cursor':'default'})
+            }
+            content.append(tabs);//设置窗口主体内容
+            $('body').append(box);//给组件加载设置窗口
+            box.find(".zm-dialog-title").text(dialogTitle+'设置');//设置弹窗title
+            zmEditor.dialog.setBtnInfo(box,zmEditor.component.dialogBtnInfo[type].setting);//设置弹窗中关闭跟问号按钮内容
+            box.find('.zm-dialog-close').on('click',function(){
+                //this.zmDialog('remove')
+                $(this).zmDialog('remove')
+
+            });
+            // if(windowH-250>635){
+            //     box.find('.zm-dialog-content').css({height:'635px'})
+            // }else{
+            //     box.find('.zm-dialog-content').css({height:windowH-250})
+            // }
+            box.zmDialog();
+        }
+    },
+    //模板
+    template:{
+        //模板选择
+        choice:function(){
+            var template = $(".zm-template");
+            var allTemplates = $(".zm-template-all");
+            allTemplates.animate({"top":0},300);
+            $(".zm-template-list").show();
+        },
+        //获取所有模板
+        getAllList:function(){
+            var template = $(".zm-template");
+            var allTemplates = $(".zm-template-all");
+            $('.zm-template-o-close').click(function(){
+                allTemplates.animate({"top":"-100%"},300);
+            })
+            //返回模板列表页
+            allTemplates.on("click",".zm-template-o-back",function(){
+                $(".zm-template-list").fadeIn();
+                $(".zm-template-view").fadeOut();
+            });
+            $.ajax({
+                type: "get",
+                url: zmEditor.url.getAllTemplates,
+                dataType: "json",
+                success: function(e){
+                    var list1 = e.data;
+                    var type1Html = "";
+                    var tList=[];
+                    list1.forEach(function(type1){
+                        var list2 = type1.list;
+                        var type2Html = "";
+                        list2.forEach(function(type2){
+                            type2Html+='<a class="zm-template-type-t" data-zm-fId="'+type2.fTypeId2+'">'+type2.fTypeName2+'</a>';
+                            tList.push({"id":type2.fTypeId2,"list":type2.list});
+                        })
+                        type2Html='<div>'+type2Html+'</div>';
+                        type1Html+='<div><p>'+type1.fTypeName1+'</p>'+type2Html+'</div>';
+                    });
+                    zmEditor.arr.templateList=tList;
+                    allTemplates.find(".zm-template-all-menu").html(type1Html);
+                    //点击模板小类显示模板列表
+                    allTemplates.find(".zm-template-type-t").on("click",function(){
+                        zmEditor.template.getListByType2($(this).attr("data-zm-fId"),tList);
+                        $(this).closest('.zm-template-all-menu').stop().fadeOut(300);
+                    });
+                    allTemplates.find(".zm-template-all-menu-li").hover(function(){
+                        $(this).find('.zm-template-all-menu').stop().fadeIn(300);
+                    },function(){
+                        $(this).find('.zm-template-all-menu').stop().fadeOut(300);
+                    });
+                    //模板查看
+                    allTemplates.on("click",".zm-template-o-view",function(){
+                        allTemplates.find('.zm-template-o-use2').attr('data-zm-fId',$(this).attr("data-zm-fId"));
+                        zmEditor.template.view($(this).attr("data-zm-fId"));
+                    });
+                    //模板使用
+                    allTemplates.on("click",".zm-template-o-use",function(){
+                        zmEditor.template.use($(this).attr("data-zm-fId"));
+                    });
+                    //模板使用2
+                    allTemplates.on("click",".zm-template-o-use2",function(){
+                        zmEditor.template.use($(this).attr("data-zm-fId"));
+                    });
+                }
+            });
+        },
+        //点击模板小类获取模板列表
+        getListByType2:function(id,data){
+            var windowH = $(window).height();
+            var len = data.length;
+            for(var i=0;i<len;i++){
+                if(id==data[i].id){
+                    var list = data[i].list;
+                    var html ="";
+                    list.forEach(function(e){
+                        html+='<div class="zm-template-item"><img src="'+e.fImage+'"/>'+e.fName
+                            +'<div class="zm-template-item-hover">'
+                            +'<div><a class="zm-template-o-view" data-zm-fId="'+e.fId+'"><span class="fa fa-search"></span> 查看</a>'
+                            +'<a  class="zm-template-o-use" data-zm-fId="'+e.fId+'"><span class="fa fa-check"></span> 使用</a></div>'
+                            +'</div></div>'
+                    });
+                    break;
+                }
+            }
+            $(".zm-template-all-body-right").html(html);
+            $(".zm-template-all-body-right").css({"height":windowH-120})
+        },
+        //通过id获取模板信息
+        getInfoById:function(id,cb){
+            $.ajax({
+                type: "post",
+                url: zmEditor.url.getTemplateInfoById,
+                data : {"fTempletId":id},
+                dataType: "json",
+                success: function(e){
+                    var list = e.data;
+                    //console.log(e.data)
+                    if(cb){
+                        cb(list);
+                    }
+                },
+                error:function(){
+                    console.error("error:getTemplateInfoById !!!")
+                }
+            });
+        },
+        //初始化html
+        initHtml:function(list){
+            var template = $(".zm-template");
+            var pages = list.pages;
+            var tempPage = "";
+            var hHtml="",fHtml="",bHtml="";
+            template.find(".zm-row").remove();
+            var defaultPage = true;
+            pages.forEach(function(page) {
+                if(page.fHtml==undefined||page.fHtml==""){
+                    tempPage = $(zmEditor.str.row.html);
+                }
+                else{
+                    tempPage = $(page.fHtml);
+                }
+                tempPage.attr("data-zm-pageId", page.fId);
+                if (page.fPageType == 1) {
+                    template.find(".zm-head .zm-row-line").before(tempPage);
+                }
+                else if (page.fPageType == 3) {
+                    template.find(".zm-foot .zm-row-line").before(tempPage);
+                }
+                else {
+                    template.find(".zm-body .zm-row-line").before(tempPage);
+                    if (defaultPage) {
+                        defaultPage = false;
+                    }
+                    else {
+                        tempPage.hide();
+                    }
+                }
+            })
+        },
+        //查看模板
+        view:function(id){
+            $(".zm-template-list").hide();
+            $(".zm-template-view").stop().fadeIn();
+            //获取模板信息
+            zmEditor.template.getInfoById(id,callback);
+            function callback(list) {
+                $(".zm-template-all-header-title").html("<span >---正在预览的模板编号为：" + id + "</span>")
+                var windowH = $(window).height();
+                var headerH = $('.zm-template-all-header').height();
+                var pages = list.pages;
+                var hHtml = "", fHtml = "", bHtml = "";
+                console.log(pages)
+                pages.forEach(function (page) {
+                    if (page.fHtml) {
+                        if (page.fPageType == 1) {
+                            hHtml = page.fHtml;
+                        }
+                        else if (page.fPageType == 3) {
+                            fHtml = page.fHtml;
+                        }
+                        else {
+                            bHtml += page.fHtml;
+                        }
+                    }
+                });
+                $(".zm-template-view-body").css('height', windowH - headerH).html(hHtml + bHtml + fHtml);
+            }
+        },
+        //使用模板
+        use:function(id){
+            $(".zm-template-view").hide();
+            $(".zm-template-list").stop().fadeIn();
+            var template = $(".zm-template");
+            var allTemplates = $(".zm-template-all");
+            template.attr("data-zm-templateId",id)
+            allTemplates.animate({"top":"-100%"},300);
+            //zmEditor.controller.template.choseDialog("hide")
+            //获取模板信息
+            zmEditor.template.getInfoById(id,callBack);
+            function callBack(list){
+                //初始化模板代码
+                zmEditor.template.initHtml(list);
+                template.find(".zm-row").css({"border-left":"1px dotted deepskyblue","border-right":"1px dotted deepskyblue"});
+                template.find(".zm-row").append(zmEditor.str.row.resize)
+                template.find(".zm-row-full").append(zmEditor.str.row.line);
+                //template.find(".zm-row-line,.zm-row-resize,.zm-row-type").remove();
+                template.find(".zm-component-box1").each(function(){
+                    var _this = $(this);
+                    var main = _this.find(".zm-component-main");
+                    _this.addClass("zm-component-editor zm-component-movable");
+                    _this.children().append(zmEditor.str.component.edit);
+                    _this.children().append(zmEditor.str.component.resize);
+                    //main.attr("contenteditable",true)
+                    //thisBox.prop("outerHTML",thisElement.prop("outerHTML"))
+                })
+            }
+        },
+        //模板预览
+        preview:function(){
+            var allHtml = $(".zm-all").prop("outerHTML")
+            console.log(zmEditor.arr.changedComponentsList);
+            localStorage.setItem("zmPreviewHtml", allHtml);
+            localStorage.setItem("zmPreviewStyle", $(document).find('head').html());
+            localStorage.setItem("zmPreviewScript", $('#zmPreviewScript').html());
+            // localStorage.setItem("previewObject", {html:allHtml,styleList:$(document).find('head').html(),scriptList:$('body').nextAll()});
+            window.open('website-preview.html','_blank')
+        }
+    },
+    getNavigationPageList:function(){
+        $.ajax({
+            type: "get",
+            url: zmEditor.url.getNavigationPageList,
+            dataType: "json",
+            success: function(e){
+                var list = e.data;
+                zmEditor.arr.pageList=list;
+                var html = "";
+                list.forEach(function(e){
+                    html+='<li data-zm-pageId="'+e.fId+'">'
+                        +'<span>'+e.fName+'</span>'
+                        +'<div>'
+                        +'<ul>'
+                        +'<li><span>标题</span><input value="'+e.fName+'"></li>'
+                        +'<li><span>页面地址</span><input value="'+e.fName+'"></li>'
+                        +'<li><span>设为主页</span><input value="'+e.fName+'"></li>'
+                        +'<li><span>选择模板</span><input value="'+e.fName+'"></li>'
+                        +'<li><span>SEO标题</span><input value="'+e.fName+'"></li>'
+                        +'<li><span>SEO关键字</span><input value="'+e.fName+'"></li>'
+                        +'<li class="zm-page-set-pageDescribe"><span>页面描述</span><textarea ></textarea></li>'
+                        +'</ul>'
+                        +'<div class="zm-page-set-savePage"><button>保 存</button></div>'
+                        +'</div>'
+                        +'</li>'
+                })
+                var ul = $(".zm-header .zm-page-set ul");
+                var addPage = '<li class="zm-page-set-addPage"><button>+添加页面</button></li>'
+                ul.html(html+addPage)
+                var defaultPageId = ul.children("li").eq(0).attr("data-zm-pageId");//默认pageid为首页
+                $(".zm-all").attr("data-zm-pageId",defaultPageId)
+            }
+        });
+    },
+    getNavigationPageById:function(id){
+        $(".zm-all").find(".zm-component-box2").each(function(){
+            var _this = $(this);
+            _this.append(zmEditor.str.component.box2);
+            _this.parent().addClass("zm-component-editor zm-component-movable")
+        })
+        zmEditor.setRuler(1200);//动态生成刻度尺默认1200px
+    },
+    setRuler:function(width){
+        var w=$(document).width();
+        var h = $(window).height();
+        var headerH = $(".zm-header").height();
+        $(".zm-all").css("height",h-headerH);
+        $(".zm-row").css({"width":width});
+        var rowLeft =100;
+        if($(".zm-row:eq(0)").length>0){
+            rowLeft=$(".zm-row:eq(0)").offset().left
+        }
+        var startI = -(w-width)/2;
+        $(".zm-editor-ruler-x-switch-box").css({"left":rowLeft+width});
+        $(".zm-editor-ruler-x-width").html(width+"px");
+        var rulerHtml="";
+        var rulerStart=startI%5;
+        var i=parseInt(startI/5);
+        var len = (w-rowLeft)/5;
+        for(;i<=len;i++){
+            if(i<0){
+                if(i%10==0){
+                    rulerHtml+="<span class='zm-editor-ruler-x-span2'><span>"+i*5+"</span></span>"
+                }else{
+                    rulerHtml+="<span class='zm-editor-ruler-x-span'></span>"
+                }
+            }else{
+                if(i==0){
+                    rulerHtml+="<span class='zm-editor-ruler-x-firstSpan2'><span>0</span></span>"
+                }
+                else if(i==width/5){
+                    if(i%10==0){
+                        rulerHtml+="<span class='zm-editor-ruler-x-endSpan2'><span>"+i*5+"</span></span>"
+                    }else{
+                        rulerHtml+="<span class='zm-editor-ruler-x-endSpan2'></span>"
+                    }
+                }
+                else{
+                    if(i%10==0){
+                        rulerHtml+="<span class='zm-editor-ruler-x-span2'><span>"+i*5+"</span></span>"
+                    }else{
+                        rulerHtml+="<span class='zm-editor-ruler-x-span'></span>"
+                    }
+                }
+            }
+        }
+        $(".zm-editor-ruler-x").html(rulerHtml);
+        $(".zm-editor-ruler-x").css("left",Math.abs(rulerStart)-8);
+        //$(".zm-editor-ruler-x").css({"width":width+1,"marginLeft":(w-width)/2})
+
+    },
+    /*
+    生成唯一id，前四位十六进制随机数，后四位十进制随机数，中间是毫秒时间戳
+    理论上不会重复，真重复了，那你就可以去买彩票了
+    */
+    createId:function(e){
+        var _this = $(e);
+        var id = (Math.random()*10000000).toString(16).substr(0,4)+'-'+(new Date()).getTime()+'-'+Math.random().toString().substr(2,5);
+        _this.attr("id",id+"-b");
+        _this.find(".zm-component-main").attr("id",id+"-m");
+        return id+'-b';
+        // var pId = _this.parent().attr("data-zm-id");
+        // _this.attr("data-zm-pid", pId);
+    },
+    //发布
+    publish:function(){
+        var all = $($(".zm-all").prop("outerHTML"));
+        var pageId = all.attr("data-zm-pageId")!=""?all.attr("data-zm-pageId"):"";
+        var width = parseInt($(".zm-editor-ruler-x-width").html())
+        var list = zmEditor.arr.changedComponentsList;
+        var componentsList =[];
+        var cssList =[];
+        var jsList =[];
+        var rowList =[];
+        list.forEach(function(e){
+            var _this = all.find("[data-zm-id='"+e+"']");
+            var rowId = _this.attr("data-zm-rowid");
+            _this.removeClass("zm-component-editor zm-component-movable");
+            _this.find(".zm-component-resize,.zm-component-edit").remove();
+            var main = _this.find(".zm-component-main");
+            main.attr("contenteditable",false);
+            var html = _this.prop("outerHTML");
+            componentsList.push({"id":e,"pId":"","rowId":rowId,"type":"text","params":"","html":html});
+        })
+        $("link[isuse='true']").each(function(){
+            var _this = $(this);
+            var src = _this.attr("href");
+            var rel = _this.attr("rel");
+            var srcId = _this.attr("srcid");
+            var isUse = _this.attr("isuse");
+            cssList.push({"src":src,"srcId":srcId,"isUse":isUse})
+        })
+        $("script[isuse='true']").each(function(){
+            var _this = $(this);
+            var src = _this.attr("src");
+            var srcId = _this.attr("srcid");
+            var isUse = _this.attr("isuse");
+            jsList.push({"src":src,"srcId":srcId,"isUse":isUse})
+        });
+        all.find(".zm-row").each(function(){
+            var _this = $(this);
+            var id = _this.attr("data-zm-id");
+            var clas= _this.attr("class");
+            var style = _this.attr("style");
+            rowList.push({"id":id,"clas":clas,"style":style})
+        });
+        var json={"componentsList":componentsList,"cssList":cssList,"jsList":jsList,"webWidth":width,"rowList":rowList,"pageId":pageId};
+        $.ajax({
+            type: "post",
+            url: zmEditor.url.publish,
+            data:{"json": JSON.stringify(json)},
+            dataType: "json",
+            success: function(e){
+                $.ajax({
+                    type: "get",
+                    url: zmEditor.url.getNavigationPageById,
+                    dataType: "json",
+                    success: function(e){
+                        var data= e.data.fJsonText;
+                        localStorage.setItem("publishHtml", data);
+                        window.open('test.html','_blank');
+                    },
+                    error:function(){
+                        console.error("2出错了！！")
+                    }
+                });
+            },
+            error:function(){
+                console.error("1出错了！！")
+            }
+        });
+    },
+    //获取所有模板
+    getAllTemplates:function(){
+        var allTemplates = $(".zm-template-all");
+        var height = allTemplates.outerHeight();
+        allTemplates.animate({"top":0},500);
+        //关闭模板列表页
+        allTemplates.on("click",".zm-template-o-close",function(){
+            allTemplates.animate({"top":"-100%"},500)
+        })
+        //返回模板列表页
+        allTemplates.on("click",".zm-template-o-back",function(){
+            $(".zm-template-list").fadeIn();
+            $(".zm-template-view").fadeOut();
+        })
+        $.ajax({
+            type: "get",
+            url: zmEditor.url.getAllTemplates,
+            dataType: "json",
+            success: function(e){
+                var list1 = e.data;
+                var type1Html = "";
+                var tList=[];
+                list1.forEach(function(type1){
+                    var list2 = type1.list;
+                    var type2Html = "";
+                    list2.forEach(function(type2){
+                        type2Html+='<a class="zm-template-type-t" data-zm-id="'+type2.fTypeId2+'">'+type2.fTypeName2+'</a>';
+                        tList.push({"id":type2.fTypeId2,"list":type2.list});
+                    })
+                    type2Html='<div>'+type2Html+'</div>';
+                    type1Html+='<div><p>'+type1.fTypeName1+'</p>'+type2Html+'</div>';
+                });
+                allTemplates.find(".zm-template-all-menu").html(type1Html);
+                //点击模板类目显示模板列表
+                allTemplates.find(".zm-template-type-t").on("click",function(){
+                    for(var i=0;i<tList.length;i++){
+                        if(tList[i].id==$(this).attr("data-zm-id")){
+                            var list = tList[i].list;
+                            var html ="";
+                            list.forEach(function(e){
+                                html+='<div class="zm-template-item"><img src="'+e.fImage+'"/>'+e.fName
+                                    +'<div class="zm-template-item-hover">'
+                                    +'<div><a class="zm-template-o-view" data-zm-fId="'+e.fId+'"><span class="fa fa-search"></span> 查看</a><a><span class="fa fa-check"></span> 使用</a></div>'
+                                    +'</div></div>'
+                            })
+                        }
+                    }
+                    $(".zm-template-all-body-right").html(html);
+                    $(".zm-template-all-body-right").css({"height":height-120})//滚动条
+                });
+                //模板查看
+                allTemplates.on("click",".zm-template-o-view",function(){
+                    zmEditor.getPageByTemplateId($(this))
+                });
+            }
+        });
+    },
+    //根据模板id获取模板下页面集合
+    getPageByTemplateId:function(e){
+        var templateId = e.attr("data-zm-fId");
+        $(".zm-template-list").fadeOut();
+        $(".zm-template-view").fadeIn();
+        //$(".zm-template-view-body").html("<div style='font-size: 30px;font-weight: bold;text-align: center;margin-top:50px'>正在预览的模板编号为："+templateId+"</div>")
+        $.ajax({
+            type: "post",
+            url: zmEditor.url.getPageByTemplateId,
+            data : {"fTempletId":templateId},
+            dataType: "json",
+            success: function(e){
+                // debugger;
+                // console.log(e.data);
+                //$(".zm-template-view-body").html("<div style='font-size: 30px;font-weight: bold;text-align: center;margin-top:50px'>正在预览的模板编号为："+templateId+"</div>")
+                var list = e.data;
+                var hHtml,fHtml,bHtml;
+                list.forEach(function(page){
+                    if(page.fPageType==1){
+                        hHtml=page.fHtml;
+                    }
+                    else if(page.fPageType==3){
+                        fHtml = page.fHtml;
+                    }
+                    else{
+                        bHtml+=page.fHtml;
+                    }
+                });
+                $(".zm-template-view-body").css('height',windowH).html(hHtml+bHtml+fHtml);
+                console.log(windowH)
+                console.log("success:getPageByTemplateId !!!")
+            },
+            error:function(){
+                console.error("error:getPageByTemplateId !!!")
+            }
+        });
+    },
+    // //获取模板一级分类
+    // getTemplateType1:function(){
+    //     $.ajax({
+    //         type: "get",
+    //         url: zmEditor.url.getTemplateType,
+    //         dataType: "json",
+    //         success: function(e){
+    //             console.log("getTemplateType1 success!!!");
+    //         }
+    //     });
+    // },
+    // //获取模板二级分类
+    // getTemplateType2:function(){
+    //     $.ajax({
+    //         type: "get",
+    //         data:{"fTempletId":"5"},
+    //         url: zmEditor.url.getTemplateType,
+    //         dataType: "json",
+    //         success: function(e){
+    //             console.log("getTemplateType2 success!!!");
+    //         }
+    //     });
+    // }
+};

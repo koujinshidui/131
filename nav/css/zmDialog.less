@@ -1,0 +1,125 @@
+@import "base.less";
+
+body{ font-family: "Microsoft YaHei"}
+.clear{ clear:both}
+.zm-btn{ }
+.zm-dialog-bg{ position:fixed;left:0;top:0;cursor:default; background:gray; filter:alpha(opacity=10);-moz-opacity:0.1; -khtml-opacity:0.1; opacity: 0.1; z-index:1; height:100%;width:100%;}
+.zm-dialog-box{position:fixed;z-index: 1000; display: none; left:50%; top:50%; border-radius: 10px; box-shadow: 0 0 8px #ccc;color:#333;width:350px;height:685px;}
+.zm-dialog-box *{ box-sizing: border-box;}
+.zm-dialog{ position:relative;font-size: 14px;font-family: "Microsoft YaHei";z-index: 2;background:#fff;border-radius: 10px; overflow:hidden;}
+.zm-dialog-movable{cursor: move; }
+.zm-movable-header{cursor:move;}
+.zm-dialog-header{ font-weight:bold;padding:0 20px;text-align:center; height:50px;line-height: 50px; background:@baseColor;color:#fff;border-radius: 10px 10px 0 0;user-select: none;}
+.zm-dialog-title{ float:left;font-size:16px;letter-spacing: 0.05em;}
+//.zm-dialog-help{ float:right;cursor:pointer;color:@baseColor;font-size:18px;border-radius: 50%;width: 22px; height:22px;line-height: 22px;margin:14px 8px 0 0;background-color:@baseColorLight1}
+//.zm-dialog-help:hover{ background-color:#fff;}
+//.zm-dialog-close{ float:right;cursor:pointer;color:@baseColor;font-size:20px;border-radius: 50%;width: 22px; height:22px;line-height: 20px;margin-top:14px;background-color:@baseColorLight1}
+//.zm-dialog-close:hover{ background-color:#fff;}
+.zm-dialog-header-btn{cursor:pointer;margin: 12px 0 0 8px;float:right;color:@baseColor;outline: 0;background: @baseColorLight1; text-align: center;width:26px;height:26px;line-height:26px;border-radius: 50%;}
+.zm-dialog-header-btn:hover{ background: @baseColorWhite}
+
+.zm-dialog-content{ overflow: visible;min-height: 100px;cursor:default}
+.zm-dialog-footer{ height:60px;overflow:hidden;width: 100%;color:#fff; text-align: right;padding:13px 20px 0 20px;}
+.zm-dialog-footer>span{ height:32px; line-height:32px; display:inline-block;border-radius:50px; cursor:pointer;margin-left:30px;width:100px;text-align: center}
+.zm-dialog-btnOK{ background:@baseColor;}
+.zm-dialog-btnOK:hover{background:@baseColorDeep1}
+.zm-dialog-btnCancel{ background:#ccc;}
+.zm-dialog-btnCancel:hover{background:#bbb}
+
+.zm-dialog-msgBox{font-size:16px;margin:40px 60px 0 40px;}
+.zm-dialog-msgImg{float: left;margin-right:30px;}
+.zm-dialog-msg{text-align: left}
+
+.zm-dialog-bg-son{ position:fixed;left:0;top:0; background:gray; filter:alpha(opacity=30);-moz-opacity:0.3; -khtml-opacity:0.3; opacity: 0.3; z-index:299; height:100%;width:100%;}
+.zm-dialog-box-son{position:fixed;z-index: 300; display: none; left:50%; top:50%;background:#fff; border-radius: 10px; overflow: hidden;box-shadow: 0 0 8px #ccc}
+
+.zm-dialog-content-confirmMsg{height:100px;line-height: 100px;font-size: 16px;color:#aaa;text-align: center;}
+
+
+
+@keyframes zm-dialog-animate-010
+{
+  0%   {left:50%;top:50%;}
+  20%   {left:52%;top:50%;}
+  40%   {left:48%;top:50%;}
+  60%   {left:52%;top:50%;}
+  80%   {left:48%;top:50%;}
+  100% {left:50%;top:50%;}
+}
+.zm-dialog-animate-010{display:block; animation:zm-dialog-animate-010 0.3s}
+
+@keyframes zm-dialog-animate-001
+{
+  0%   {left:50%;top:0%;}
+  50%   {left:50%;top:30%;}
+  100% {left:50%;top:50%;}
+}
+.zm-dialog-animate-001{display:block; animation:zm-dialog-animate-001 linear 0.5s}
+
+@keyframes zm-dialog-animate-002
+{
+  0%   {left:50%;top:0%;}
+  50%   {left:50%;top:55%;}
+  70%   {left:50%;top:45%;}
+  90%   {left:50%;top:52%;}
+  95%   {left:50%;top:49%;}
+  100% {left:50%;top:50%;}
+}
+.zm-dialog-animate-002{display:block; animation:zm-dialog-animate-002 0.5s}
+
+@keyframes zm-dialog-animate-003
+{
+  0%   {left:0%;top:0%;}
+  100% {left:50%;top:50%;}
+}
+.zm-dialog-animate-003{display:block; animation:zm-dialog-animate-003 0.5s}
+
+@keyframes zm-dialog-animate-004
+{
+  0%   {left:0%;top:0%;}
+  75% {left:55%;top:55%}
+  100% {left:50%;top:50%;}
+}
+.zm-dialog-animate-004{display:block; animation:zm-dialog-animate-004 0.5s}
+
+@keyframes zm-dialog-animate-005
+{
+  0%   {left:0%;top:0%;transform:rotate(0deg)}
+  100% {left:50%;top:50%;transform:rotate(360deg)}
+}
+.zm-dialog-animate-005{display:block; animation:zm-dialog-animate-005 0.5s}
+
+@keyframes music-rotate{
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+
+
+/*popover样式*/
+/*.zm-popover-box{position:absolute;border:1px solid #eee;font-size:12px;left:100%;top:50%;z-index: 12; display: none;margin-left:14px; background:#fff; border-radius: 10px; box-shadow: 0 0 8px #ccc}*/
+.zm-popover-box{position:fixed;border:1px solid #eee;font-size:12px;right:20px;top:430px;z-index: 12; display: none;margin-left:14px; background:#fff; border-radius: 10px; box-shadow: 0 0 8px #ccc}
+.zm-popover-box *{ box-sizing: border-box;}
+.zm-popover{ position:relative;font-size: 14px;font-family: "Microsoft YaHei";overflow: hidden}
+.zm-popover-position-span{position:absolute;left:-14px;margin-top:-10px;top:50%;height:0;width:0;border-top:10px solid transparent;border-right:15px solid #fff;border-bottom:10px solid transparent;}
+.zm-popover-position-spanBox{position:absolute;left:-15px;margin-top:-10px;top:50%;height:0;width:0;border-top:10px solid transparent;border-right:15px solid #ddd;border-bottom:10px solid transparent;}
+/*.zm-popover-position-span{position:absolute;left:-9px;margin-top:-10px;top:50%;content: " ";*/
+/*position: absolute;*/
+/*right: 15px;*/
+/*width: 15px;*/
+/*height: 15px;*/
+/*border: #eee solid 1px;*/
+/*border-left: 0;*/
+/*border-bottom: 0;*/
+/*-webkit-transform: rotate(-135deg);*/
+/*-ms-transform: rotate(-135deg);*/
+/*transform: rotate(-135deg);z-index: 11; }*/
+.zm-popover-header{ padding:0 10px;text-align:center; height:30px; line-height:30px;border-bottom:1px solid #eee;background:#fff;border-radius: 10px 10px 0 0;}
+.zm-popover-title{ float:left;font-weight: bold}
+.zm-popover-close{ float:right;cursor:pointer;font-size:16px;color:#ccc;border-radius: 50%;width: 28px; height:28px;line-height: 28px}
+.zm-popover-close:hover{ font-size:20px;}
+.zm-popover-content{ padding:5px 0 0 0; overflow-y: scroll;margin-right:-17px;}
+.zm-popover-content input{border-radius: 5px;border: 1px solid #ccc;padding:1px 5px;}
+.zm-popover-footer{ position:absolute;height:30px;line-height:30px;overflow:hidden;left:0;bottom:0;width: 100%;border-top:#eee 1px solid;text-align: center;border-radius:0 0 8px 8px;}
+.zm-popover-footer>span{ padding:0 18px;height:30px; line-height:30px; display:inline-block; cursor:pointer;;width:50%;font-weight: bold}
+.zm-popover-footer>span:hover{background:#3899ec;color:#fff;}
+.zm-popover-btnCancel{ border-left:1px solid #eee}

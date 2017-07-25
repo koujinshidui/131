@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/zm-dialog.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+</body>
+<script src="js/plugins/jquery-1.11.3.min.js"></script>
+<script>
+    $(function(){
+        var json={}
+        if (localStorage.getItem("publishHtml") != "") {
+            json = JSON.parse(localStorage.getItem("publishHtml"))
+        }
+        console.log(json)
+        var oHead = $("head").eq(0);
+        var cssList = json.cssList;
+        for(var i=0;i<cssList.length;i++){
+            var css = cssList[i]
+            oHead.append('<link rel="stylesheet" href="'+css.src+'" isuse="'+css.isUse+'" srcid="'+css.srcId+'"></link>');
+        }
+        var jsList = json.jsList;
+        console.log(jsList)
+        for(var j=0;j<jsList.length;j++){
+            var js = jsList[j];
+            var script = $('<script>');
+            script.attr({"src":js.src,"isuse":js.isUse,"srcid":js.srcId})
+            oHead.append(script);
+        }
+        var componentsList = json.componentsList;
+        console.log(componentsList)
+        var allHtml="";
+        for(var k=0;k<componentsList.length;k++){
+            var componentHtml = componentsList[k].html;
+            allHtml+=componentHtml;
+        }
+        var style = json.boxStyle;
+        allHtml="<div class='zm-all' style='"+style+" border-color:transparent' >"+allHtml+"</div>";
+        $("body").append(allHtml)
+    })
+</script>
+</html>

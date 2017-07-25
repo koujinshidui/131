@@ -1,0 +1,119 @@
+<div class="zm-addAblum-wrap">
+
+    <div class="zm-addAblum-partOne">
+        <div class="zm-addAblum-partOneList zm-addAlbum-content">
+            <div>
+                <span style="color:#ff0000">*</span>专辑名称：
+            </div>
+            <div>
+                <input class="zm-addAlbum-fame zm-addAlbum-writing" value="" type="text">
+                <div class="zm-addAblum-title" style="color:#ff0000">※ 请填写少于50个字符或25个汉字！</div>
+            </div>
+        </div>
+        <div class="zm-addAblum-partOneList zm-addAlbum-content">
+            <div>
+                专辑别名：
+            </div>
+            <div>
+                <input class="zm-addAlbum-falias" value="" type="text">
+                <div class="zm-addAblum-title" style="color:#ff0000">※ 请填写少于50个字符或25个汉字！</div>
+            </div>
+        </div>
+        <div class="zm-addAblum-partOneList zm-addAlbum-content">
+            <div>
+                发行时间：
+            </div>
+            <div class="demo1" style="height: 300px">
+                <input class="zm-addAlbum-releaseData" id="zm-addAlbum-releaseData" type="text">
+            </div>
+        </div>
+        <div class="zm-addAblum-partOneList zm-addAlbum-content">
+            <div>
+                <span style="color:#ff0000">*</span>专辑类型：
+            </div>
+            <div>
+                <select class="zm-addAlbum-albumType" name="" >
+                    <option value="==请选择==">==请选择==</option>
+                </select>
+                <div class="zm-addAblum-title" style="color:#ff0000">※ 必填</div>
+            </div>
+        </div>
+        <div class="zm-addAblum-partOneList zm-addAlbum-content">
+            <div>
+                <span style="color:#ff0000">*</span>专辑语言：
+            </div>
+            <div>
+                <select class="zm-addAlbum-albumLanguage" name="" >
+                    <option value="==请选择==">==请选择==</option>
+                </select>
+                <div class="zm-addAblum-title" style="color:#ff0000">※ 必填</div>
+            </div>
+        </div>
+        <div class="zm-addAblum-partOneList zm-addAlbum-content">
+            <div>
+                <span style="color:#ff0000">*</span>唱片公司：
+            </div>
+            <div>
+                <input class="zm-addAlbum-singCompany zm-addAlbum-writing" value="" type="text">
+                <div class="zm-addAblum-title" style="color:#ff0000">※ 请填写少于50个字符或25个汉字！</div>
+            </div>
+        </div>
+    </div>
+    <div class="zm-addAblum-partTwo zm-addAlbum-content">
+        <div class="zm-addAblum-partTwoLf">
+            <span style="color:#ff0000">*</span>专辑封面：
+        </div>
+        <div class="zm-addAblum-partTwoRi">
+            <div>
+                <div class="zm-addAblum-partTwoimg">
+                    <img id="addblumRimg-Pic" src="imgs/456.png" alt="">
+                </div>
+                <div class="zm-addAblum-partTwobtn">上传图片</div>
+                <input class="zm-addAblum-file" value="" type="file">
+            </div>
+
+        </div>
+    </div>
+    <div class="zm-addAblum-partThree zm-addAlbum-content">
+        <div class="zm-addAblum-partTwoLf">
+            <span style="color:#ff0000">*</span>专辑简介：
+        </div>
+        <div class="zm-addAblum-partThreeRi">
+            <textarea class="zm-addAblum-introduce zm-addAlbum-writing"></textarea>
+            <div class="zm-addAblum-introduceTitle">500个字符或250个汉字</div>
+
+        </div>
+    </div>
+    <div class="zm-addAblum-partFour zm-addAlbum-content">
+        <div class="zm-addAblum-partTwoLf">
+            评论设置：
+        </div>
+        <div class="zm-addAblum-partFourRi">
+            <div><label style="border: 1px solid #aeaeae" data-type="allow"></label><span>允许所有人评论</span></div>
+            <!--<div><label style="border: 1px solid #aeaeae" data-type="ANONYMOUS_FORBID"></label><span>不允许匿名评论</span></div>-->
+            <div><label style="border: 1px solid #aeaeae" data-type="unallow"></label><span>不允许评论</span></div>
+        </div>
+    </div>
+    <!--<div class="zm-addAblum-partFive">-->
+        <!--<div class="zm-addAblum-partFiveLf">-->
+            <!--播放收费：-->
+        <!--</div>-->
+        <!--<div class="zm-addAblum-partFiveRi">-->
+            <!--<div><span>目前合计播放收费金额：</span><input value="5" type="text" readonly></div>-->
+            <!--<div><span><span style="color: #ff0000">*</span>整部专辑给予优惠：</span><input value="4" type="text" ></div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="zm-addAblum-partFive zm-addAlbum-content">
+        <div class="zm-addAblum-partFiveLf">
+            下载收费：
+        </div>
+        <div class="zm-addAblum-partFiveRi">
+            <div><span>目前合计播放收费金额：</span><input value="5" type="text" readonly></div>
+            <div><span><span style="color: #ff0000">*</span>整部专辑给予优惠：</span><input class="zm-addAlbum-discount zm-addAlbum-writing" value="" type="text" ></div>
+        </div>
+    </div>
+    <div class="zm-addAblum-partSix">
+        <span class="zm-addAblumBtnfalse">取消</span>
+        <span class="zm-addAblumBtntrue">确认</span>
+    </div>
+</div>

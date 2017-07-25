@@ -1,0 +1,881 @@
+@import "base";
+.radiusInput{.choiceColor}
+.radiuslabel{.choiceColor}
+.radiusInput:hover{box-shadow: 1px 1px 6px @baseColor, -1px -1px 6px @baseColor; }
+.radiusDivborder>div{ border-color: @baseColor !important;}
+.radiusindipendent{
+  background: @baseColorLight1!important;  }
+.radiusall{
+  background: @baseColor!important;
+}
+
+//公共类样式
+.beee{
+  border: solid 1px #eee;
+}
+.inputnone{border: none;background:none;outline:none;}
+#zm-edit-text-navsamount {
+  width: 100%;
+  border-bottom:1px solid #eee;
+  height: 90px;
+  padding: 10px 25px;
+  p {
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+  }
+  span {
+    display: inline-block;
+    margin-right: 10px;
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    background-color: #00bfff;
+    cursor: pointer;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  span:nth-child(3) {
+    width: 50px;
+    background-color: #fff;
+    font-size: 14px;
+  }
+  span:nth-child(3):hover {
+    background-color: #00bfff;
+    width: 50px;
+  }
+  span:nth-child(2n) {
+  }
+}
+
+.clearfix::after{
+  content:'';
+  display: block;
+  line-height: 0;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.zm-edit-classOne{
+  width: 100%;
+  height: 50px;
+  span{
+    width: 50px;
+    background-color: #fff;
+    font-size: 14px;
+  }
+}
+
+.zm-edit-class{
+  position: relative;	cursor: pointer;padding: 19px 5px;
+  input{.inputnone;.beee;}
+  input.classOne1input{
+    position: absolute;
+    top: 0;
+    left:30px;
+  }
+  div[class*="zm-edit-class"]{margin-bottom: 20px}
+  div[class*="zm-edit-classOne"]{width: 100%;max-width: 100%;position: relative;
+    a{text-decoration: none;color: #000;position: absolute;}
+    a.classDel{top: 5px;left: 220px;}
+    a.classAdd{top: 5px;left: 260px;}
+    a.classLink{top: 5px;left: 330px;}
+    span[class$="span"]{display: inline-block;height: 20px;width: 20px;text-align: center; margin-top: 7px;transition: all 0.5s linear 0.1s;}
+    span[class^=classOne]:after,span[class^=classTwo]:after{
+      content: '';
+      display: block;
+      border-top: 10px solid #e5e5e5;
+      border-left: 10px solid #fff;
+      border-right: 10px solid #fff;
+      margin-top: 5px;
+    }
+    span[class^=classOne]:hover,span[class^=classTwo]:hover{
+      transform: rotateZ(180deg);
+    }
+    span[class^=classOne]:after:hover{
+      transform: rotateZ(90deg);
+    }
+    div[class*="zm-edit-classTwo"]{
+      span[class^="classTwo"]{ }
+      position: relative;display: none;width: 100px;margin-left: 50px; margin: 30px 0 0 20px;width: 100%; max-width: 100%;
+      div[class*="zm-edit-classThree"]{display: none;width:100px;margin: 25px 0 0 20px;position: relative!important;width: 100%; max-width: 100%;
+        span{background-color: #fff;}
+      }
+    }
+  }
+}
+// .zm-classConfirm{ width: 88px;height: 20px;line-height: 20px;background-color: #e5e5e5;cursor: pointer;margin:0px 0 0 0px;text-align: center;border: 1px solid #e5e5e5;}
+// .zm-classConfirm-confirm{width: 500px;height: 100px;display: none;z-index: 100;border: 1px solid #e5e5e5;text-align:center;background-color:pink;span{
+// 	margin-top: 20px;text-align: center;display: inline-block;width: 60px;height: 20px;margin-right: 20px;background-color: #e5e5e5;}}
+.zm-edit-classOneli{
+  &:hover .zm-edit-classTwo-ul-li{
+    background-color: pink;
+    display: block !important;
+  }
+  .zm-edit-classTwo-ul{
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    .zm-edit-classTwo-ul-li{
+      display: none !important;
+      background-color: yellow;
+      width: 100px;
+      height: 50px;
+    }
+  }
+}
+//横幅样式
+.zm-edit-text-bannerController{
+  div.zm-edit-text-bannerController-Onediv{
+    padding: 5px 0;
+    height: 40px;
+    position: relative;
+  }
+  div.zm-edit-text-bannerController-Onediv:nth-child(2) input{
+    margin-left: 55px;
+  }
+  input { margin-left: 58px; width: 150px;}
+  p{display: inline-block;position:absolute; top:10px ;right: 20px;
+  }
+  padding: 20px 10px 10px 16px;margin-bottom: 10px;
+  // height: 140px;
+  span{ display: inline-block};
+  span:nth-of-type(2){ margin-right: 120px;}
+  // .beee;
+  // &~.zm-edit-text-color{padding: 10px 20px;}
+}
+.zm-dialog-content-pageSet-childulTwo,.zm-dialog-content-pageSet-childOneul{
+  margin-top: 10px;
+  li{
+    border-radius: 5px;
+    position: relative;
+    margin: 10px 20px;
+    width: 300px;
+    padding: 0 10px;
+    .fa-th{
+      margin-left: 10px;
+    }
+    .zm-nav-oneLi-div{
+      .zm-page-setting-right-icon{
+        margin-top: 1px;
+      }
+    }
+  }
+}
+
+.zm-page-setting-menu-child{
+  position: fixed;
+  z-index: 999;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 0 8px #ccc;
+}
+.zm-page-setting-menu-child p {
+  height: 30px;
+  line-height: 30px;
+  cursor: pointer;
+  color: #000;
+}
+.zm-page-setting-menu-child p a {
+  margin-left: 5px;
+}
+.zm-dialog-content-pageSet-childOneul{
+  border-radius: 5px;
+  border: 1px solid #00bfff;
+  height: 60px;
+  line-height: 36px;
+  position: relative;
+  margin: 10px 20px;
+  li{
+    display: none;
+  }
+  li:nth-child(1){
+    display: block;
+  }
+}
+//横幅样式
+
+
+//导航样式
+
+.mCSB_container fieldset ul li div[class*="zm_nav_general_cross"]{//默认横向导航的高度
+  height: 30px;
+}
+.zm_nav_general_cross_one{
+  font-size: 12px;
+  &>ul{
+    height: 100%;
+    &>li{
+    }
+    &>ul{
+      display: none;
+      li{
+        ul{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.zm_nav_general_cross_one,.zm_nav_general_cross_two,.zm_nav_general_cross_three{
+  &>ul{
+    height: 100%;
+    &>li{float: left;}
+    span{float: left;}
+  }
+}
+
+.zm_nav_general_cross_one_one_n{
+  color: #fff;
+  &>ul{
+    span{
+      float: left;
+      width: 1px;
+      height: 100%;
+      display: block;
+    }
+    li{padding: 6px;
+      background-color: #2b6ca3;
+      float: left;
+    }
+    li:nth-of-type(1){
+      background-color: #045184;
+    }
+    li:hover{
+      background-color: #045184;
+    }
+  }
+}
+.zm_nav_general_cross_one_two_n{
+  // color: #fff;
+  // border:1px solid #00f6ff;
+  &>ul{
+    li{
+      padding: 6px;
+      // border-left: 0px solid #fff;
+      background-color: #1fbab8;
+      color:#fff;
+    }
+    li:nth-of-type(1){
+      // border-left: 1px solid #00f6ff;
+      background-color: #009c9a;
+    }
+    // li:nth-last-of-type(1){
+    //  // border-right: 1px solid #00f6ff;
+    // }
+    span{
+      float: left;
+      width: 1px;
+      height: 100%;
+      // background-color: #00f6ff;
+      display: block;
+    }
+    li:hover{
+      background-color: #009c9a;
+      color: #fff;
+    }
+  }
+}
+.zm_nav_general_cross_one_three_n{
+  color: #fff;
+  border-radius: 10px 0 10px 0;
+  &>ul{
+    span{
+      float: left;
+      width: 1px;
+      height: 100%;
+      background-color: #fff;
+      display: block;
+    }
+    li{
+      padding: 6px;
+      background-color:#edf1f5;
+      color: #000;
+    }
+    li:nth-of-type(1){
+      border-radius: 10px 0 0 0;
+      background-color: #a57d6d;
+    }
+    li:hover{
+      background-color: #a57d6d;
+    }
+    li:last-of-type {
+      border-radius: 0 0 10px 0;
+    }
+
+  }
+}
+.zm_nav_general_cross_one_four_n{
+  color: #f575a5;
+  // border:1px solid #ed1566;
+  border-radius: 10px 10px 10px 10px;
+  &>ul{
+    span{
+      float: left;
+      // width: 1px;
+      height: 100%;
+      display: block;
+      background-color: #ed1566;
+    }
+    li{
+      padding: 6px;
+      background-color: #9e0433;
+      color: #fff;
+    }
+    li:nth-of-type(1){
+      color: #fff;
+      background-color: #7f042d;
+      border-radius: 5px 0 0 5px;
+    }
+    li:nth-last-of-type(1){
+      border-radius: 0 5px 5px 0;
+    }
+    li:hover{
+      background-color: #7f042d;
+      color: #fff;
+    }
+  }
+}
+
+.zm_nav_general_cross_one_five_n{
+  color: #fff;
+  &>ul{
+    span{
+      float: left;
+      width: 2px;
+      height: 100%;
+      background-color: #fff;
+      display: block;
+    }
+
+    li
+    {padding: 6px;
+      background-color: #ffffff;
+      color:#1fbab8;
+      // border-right-width: 5px;
+    }
+    li:nth-of-type(1){
+      background-color: #1fbab8;
+      color: #fff;
+    }
+    li:hover{
+      background-color: #1fbab8;
+      color: #fff;
+    }
+  }
+}
+
+
+.zm_nav_general_cross_two_one_n{
+  font-size: 12px;
+  &>ul{
+    color: #1ad435;height: 100%;
+    span{
+      float: left;
+      width: 1px;
+      height: 100%;
+      display: block;
+    }
+    li{padding: 6px;
+      float: left;
+      border-top:1px solid #1ad435;
+      border-bottom:1px solid #1ad435;
+      box-sizing: border-box;
+    }
+
+    li:nth-child(1){
+      background-color: #1ad435;
+      color: #fff;
+    }
+    li:hover{
+      background-color: #1ad435;
+      color: #fff;
+    }
+  }
+}
+
+.zm_nav_general_cross_two_two_n{
+  font-size: 12px;
+  color: #d41a53;
+  &>ul{  height: 100%;
+    span{
+      float: left;
+      width: 1px;
+      height: 100%;
+      display: block;
+    }
+    li{padding: 6px;
+      float: left;
+      border-top:1px solid #d41a53;
+      border-bottom:1px solid #fff;
+      box-sizing: border-box;
+    }
+    // li:nth-child(1){
+    //  border-top:2px solid #d41a53;
+    // }
+
+    li:hover{
+      color: #000;
+      border-top:2px solid #d41a53;
+    }
+
+
+  }
+}
+
+
+.zm_nav_general_cross_three_one_n{
+  font-size: 12px;
+  &>ul{
+    color: #dd959b;height: 100%;
+    span{
+      float: left;
+      width: 5px;
+      height: 100%;
+      display: block;
+    }
+    li{
+      padding: 5px;
+      float: left;
+      background-color: #f5f5f5;
+      border-radius: 20px;
+    }
+    li:nth-of-type(1){
+      background-color: #c0214b;
+      color: #fff;
+    }
+    li:hover{
+      background-color: #c0214b;
+      color: #fff;
+    }
+  }
+}
+.zm_nav_general_cross_three_two_n{
+  font-size: 12px;
+  &>ul{height: 100%;
+    span{
+      float: left;
+      width: 5px;
+      height: 100%;
+      display: block;
+    }
+    li{padding: 5px;
+      float: left;
+      color: #fff;
+      background-color: #ea3e7e;
+      color: #fff;
+    }
+    li:hover{
+      background-color: #e27293;
+      color: #fff;
+    }
+  }
+
+}
+.zm_nav_general_cross_three_three_n{
+  font-size: 12px;
+  &>ul{height: 100%;
+    span{
+      float: left;
+      width: 5px;
+      height: 100%;
+      display: block;
+    }
+    color: #fff;
+    li{padding: 5px;
+      float: left;
+      background-color: #187035;
+      border-radius: 15px;
+
+    }
+    li:hover{
+      background-color: #114c22;
+      color: #fff;
+    }
+  }
+}
+.zm_nav_general_cross_three_four_n{
+  font-size: 12px;
+  &>ul{height: 100%;
+    span{
+      float: left;
+      width: 5px;
+      height: 100%;
+      display: block;
+    }
+    color: #fff;
+    li{padding: 5px;
+      float: left;
+      background-color: #d41c62;
+      border-radius: 10px 10px 0px 0px;
+
+    }
+    li:hover{
+      background-color: #be004f;
+      color: #fff;
+    }
+  }
+
+}
+
+
+.zm_nav_general_cross_three_five_n{
+  font-size: 12px;
+  color: #fff;
+  &>ul{
+    height: 100%;
+    span{
+      float: left;
+      width: 2px;
+      height: 100%;
+      background-color: #fff;
+      display: block;
+    }
+    li{padding: 6px;
+      float: left;
+      background-color: #002f5d;
+    }
+    li:hover{
+      background-color: #001a33;
+    }
+  }
+}
+
+.zm_nav_general_cross_four_one_n{
+  font-size: 12px;
+  color: #fff;
+  &>ul{
+    height: 100%;
+    li{padding: 6px;
+      position: relative;
+      background-color: #00535f;
+      span{
+        position: absolute;
+        bottom: -50%;
+        left: 32%;
+        // margin-left:
+        // width: 50%;
+        // height: 20%;
+        border-top: 10px solid #00535f;
+        border-left: 10px solid #fff;
+        border-right: 10px solid #fff;
+        border-bottom: 10px solid #fff;
+        // background-color: #00535f;
+      }
+    }
+    li:hover{
+      background-color: #003f44;
+    }
+  }
+}
+
+.zm_nav_general_vertical_one_one_n{
+  font-size: 12px;
+  border-top: 1px solid #2b6ca3;
+  border-bottom: 1px solid #2b6ca3;
+  &>ul{
+    li{padding: 6px;
+      float: none;
+      padding-left: 5px;
+      width: 210px;
+      color: #2b6ca3;
+    }
+    span{
+      display: block;
+      background-color: #2b6ca3;
+      width: 100%;
+      height:1px;
+    }
+    li:hover{
+      background-color: #2b6ca3;
+      color: #fff;
+    }
+    li:nth-child(1){
+      background-color: #2b6ca3;
+      color: #fff;
+    }
+  }
+}
+
+
+.zm_nav_general_vertical_two_one_n{
+  font-size: 12px;
+  &>ul{
+    li{padding: 6px;
+      float: none;
+      padding-left: 5px;
+      width: 210px;
+      color: #fff;
+      background-color: #009591;
+      border-radius: 10px;
+    }
+    span{
+      display: block;
+      background-color: #fff;
+      width: 100%;
+      height:2px;
+    }
+    li:hover{
+      background-color: #006c6d;
+    }
+    li:nth-child(1){
+      background-color: #006c6d;
+    }
+  }
+}
+
+
+
+.zm_nav_general_vertical_three_one_n{
+  font-size: 12px;
+  border-top-right-radius: 10px;
+  border: 1px solid #79c959;
+  &>ul{
+    li{padding: 6px;
+      float: none;
+      padding-left: 5px;
+      width: 210px;
+      color: #79c959;
+      background-color: #fff;
+    }
+    span{
+      width: 210px;
+      height: 1px;
+      display: block;
+      background-color: #79c959;
+    }
+    li:hover{
+      background-color: #79c959;
+      color: #fff;
+    }
+    li:nth-child(1){
+      color: #fff;
+      background-color: #79c959;
+      border-top-right-radius: 10px;
+    }
+  }
+}
+
+.zm_nav_general_vertical_one_one,.zm_nav_general_vertical_three_one,.zm_nav_general_vertical_two_one{
+  &>ul{
+    span{
+      display: block;
+    }
+  }
+}
+
+.zm-edit-text-nav_hover_or_click_zhengai{
+  display: inline-block;
+  width: 60px;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 24px;
+  background-color: rgba(238,238,238,1);
+  text-align: left;
+  position: absolute;
+  top: 19px;
+  right: 37px;
+  display: none;
+}
+.zm-component-main>ul>li>ul>li{
+  float: none;
+}
+.zm-component-main>ul>li>ul>li>ul>li{
+  float: none;
+}
+//导航样式
+//页面设置样式
+//
+.zm-page-setting-ul input{
+  outline:none;
+}
+.zm-page-setting-li:hover{
+  cursor: move;
+}
+.zm-page-setting-ul input{
+  box-shadow: 1px 1px 1px rgb(74,177,167),-1px -1px 1px rgb(74,177,167)
+}
+.zm-page-setting-ul li>div:hover{
+  background-color: #c2ece8;
+}
+.zm-page-setting-ul li>div>b{
+  position: absolute;
+  width: 45px;
+  height: 20px;
+  line-height: 20px;
+  background-color:#4ab1a7;
+  right: 5px;
+  top: 7px;
+  display: none;
+  cursor: pointer;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 12px;
+}
+.zm-page-setting-ul li>div>b:hover{
+  background-color: #adfbf4;
+}
+
+.zm-nav-oneLi-div{
+  width: 255px;height: 35px;border: 1px solid #cde;border-radius: 7px;
+  position: relative;
+  .fa-th{
+    margin: 10px 0 0 15px;
+    cursor: pointer;
+  }
+  .zm-page-setting-a{
+    margin-left: 15px
+  }
+}
+.zm-nav-oneLi-input{
+  position:absolute;height: 25px!important; top: 11px;left: 20px;
+  display: none;
+  width: 190px;
+}
+
+.zm-dialog-content-pageSet-childulTwo{
+.zm-nav-yuliu_line-div{
+  width: 255px;
+  height: 33px;
+  position: absolute;
+}
+  .zm-page-setting-li-Twodiv{    position: relative;
+    &>li>input{  top: 5px;  }
+    & .zm-nav-yuliu_line{//二级第一个li的线条
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 45px;
+      bottom: 45%;
+      left: 16px;
+      border: 1px solid #cde;
+      border-top: 0;
+      border-right: 0;
+      padding: 4px 0 0;
+    }
+    &>li>.zm-dialog-content-pageSet-childulThree{
+      .zm-page-setting-li-Threediv{ position: relative;
+        &>li>input{  top: 5px;  }
+        .zm-nav-yuliu_line{//三级li第一个的线条
+          height: 45px;
+          bottom: 36%;
+          left: 17px;
+
+        }
+      }
+
+      .zm-page-setting-li-Threediv:nth-of-type(1){ position: relative;
+        .zm-nav-yuliu_line{//三级li第一个的线条
+          height: 32px ;
+          bottom: 36% ;
+          left: 17px ;
+        }
+      }
+    }
+
+
+  }
+
+
+  .zm-page-setting-li-Twodiv:nth-of-type(1) { position: relative;
+
+    .zm-nav-yuliu_line { //二级第一个li的线条
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 29px;
+      bottom: 45%;
+      left: 16px;
+      border: 1px solid #cde;
+      border-top: 0;
+      border-right: 0;
+      padding: 4px 0 0;
+    }
+    .zm-dialog-content-pageSet-childulThree {
+
+      .zm-page-setting-li-Threediv > .zm-nav-yuliu_line {  position: relative;//三级li第一个的线条
+        height: 45px;
+        bottom: 36%;
+        left: 175px;
+
+      }
+
+      .zm-page-setting-li-Threediv:nth-of-type(1) { position: relative;
+        .zm-nav-yuliu_line { //三级li第一个的线条
+          height: 32px;
+          bottom: 36%;
+          left: 17px;
+        }
+      }
+
+    }
+  }
+
+}
+.zm-dialog-content-pageSet-childulTwo>li{
+  position: relative;
+}
+//页面设置样式
+//单个
+//
+div[data-zm_nav_general_cross_one_four="zm_nav_general_cross_one_four1490605328635"]
+{width:804px;border-color:#ed1566;       //border-width:"";
+  border-style:solid;border:1px solid #ed1566;
+  line-height:50px;box-sizing:content-box;
+  border-radius:10px 10px 10px 10px;font-size:20px;
+}
+
+// 5.15日 弹窗变小改变添加样式 
+//div[data-zm-component-type="nav"] .zm-edit-text>fieldset{ width: 360px;} // 对应nav样式切换设置的宽度
+
+//.data-nav-Independent-nav .zm-edit-text>fieldset{ width: 360px;} // 对应nav样式切换设置的宽度
+
+.zm-content .zm-components div[data-zm-component-type="nav"] .mCSB_container>fieldset:nth-child(1){//
+  width: 375px;
+}
+// 5.15日改变
+//  页面设置弹窗color: #000;
+
+.zm-dialog-content-nav-pageSet-a{
+  div{
+    height: 35px;
+    label{
+      float: right;
+      margin-right: 50px;
+    }
+  }
+  div:nth-child(7){ span{margin-bottom: 3px;} div{label{ float: none; margin-left: 3px;}}}
+  div:nth-child(8){ margin-top: 150px;}
+  div:nth-child(9){ margin-top: -10px;}
+  div:nth-child(10){ margin-top: 17px;}
+  div:nth-child(11){ margin-top: 27px;}
+  div:nth-child(12){ margin-top: 20px;}
+
+  .zm-page-setting-btns{
+    height: 40px;
+    margin-top: 2px;
+  }
+}
+.zm-page-setting-pageSet-btns{
+  width: 300px;
+}
+.zm-page-setting-pageSet-textarea {
+  height: 40px;
+}
+
+//  页面设置弹窗css
+//  消除data-zm-component-type="nav"下P元素默认字体样式
+
+// div[data-zm-component-type="nav"]{
+//  p{ font-family: ;}
+// }
+//  消除data-zm-component-type="nav"下P元素默认字体样式

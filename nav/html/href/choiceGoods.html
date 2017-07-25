@@ -1,0 +1,179 @@
+<div class="zm-choiceFile-wrap">
+    <div class="zm-choiceFile-top">
+        <ul class="zm-choiceFile-toptext">
+            <li class="zm-choiceFile-topR">
+                <span class="fa fa-search zm-choiceFile-search-ico"></span>
+                <input class="zm-choiceFile-search" type="text" placeholder="请输入商品标题" data-type="goods">
+                <span class="zm-choiceFile-searchBtn">搜索</span>
+            </li>
+
+        </ul>
+    </div>
+    <div class="zm-choiceRadio-top">
+        <div class="zm-choiceRadio-topL">合计<span class="zm-choiceFile-allListNumber"></span>个商品，已选择<span class="zm-choiceFile-allListCheckNumber" style="color: orange;font-size: 18px;">0</span>个商品！</div>
+        <div class="zm-choiceRadio-topM">
+            <div class="zm-choiceFile-btn1 zm-choiceNewsBtn-allCheck">全选</div>
+            <div class="zm-choiceFile-btn1 zm-choiceNewsBtn-backCheck">反选</div>
+            <div class="zm-choiceFile-btn1 zm-choiceNewsBtn-noCheck">全不选</div>
+            <div class="zm-choiceFile-btn1">刷新</div>
+        </div>
+        <div class="zm-choiceRadio-topR">
+            <div class="zm-choiceFile-btn2 zm-choicePicture-upPicWtn" style="background-color: #49b1a6;color: #FFFFFF;">添加商品</div>
+            <div class="zm-choiceFile-btn2 " onclick="zmChoiceRadio.batchDeleteFileTitle(this)" data-deleteType="goods">批量删除</div>
+            <div class="zm-choiceFile-btn2" onclick="zmChoiceRadio.choiceAddclassify(this)" data-choiceAdd="goods">移动到分类</div>
+        </div>
+    </div>
+    <div class="zm-choiceRadio-middle">
+
+        <div class="zm-choiceGoods-middleL">
+            <div class="zm-choiceGoods-middleLTop">
+                <!--类目列表star-->
+                <!--<div class="choiceFile-box11">-->
+                    <!--<div class="zm-choiceFile-categoryStyle">-->
+                        <!--<span class="zm-choiceFile-children-toggle" onclick="zmChoiceRadio.childrenToggle(this)">+</span>-->
+                        <!--<span class="zm-choicePicture-categoryStyle"></span>-->
+                        <!--<input class="zm-choiceFile-classifyInput" type="text" value="全部商品" readonly="">-->
+                        <!--<span class="fa fa-exclamation zm-choiceFile-sameNameTitle"></span>-->
+                        <!--<div class="zm-choiceFile-tipSet">-->
+                            <!--<div class="zm-choiceFile-tipSet-con" style="display: none;">-->
+                                <!--<i class="tipSet-con-dot"></i>-->
+                                <!--<div class="tipSet-con-list tipSet-con-list-add newAdd-Or-delete"><i class="add"></i> 添加子类目</div>-->
+                                <!--<div class="tipSet-con-list tipSet-con-list-rename"><i class="rename"></i>重命名</div>-->
+                                <!--<div class="tipSet-con-list" onclick="zmChoiceRadio.deleteClassifyTitle(this)"><i class="delete"></i>删除</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="choiceFile-box12">-->
+                        <!--<div class="zm-choiceFile-categoryStyle">-->
+                            <!--<span class="zm-choiceFile-children-toggle" onclick="zmChoiceRadio.childrenToggle(this)">+</span>-->
+                            <!--<span class="zm-choicePicture-categoryStyle"></span>-->
+                            <!--<input class="zm-choiceFile-classifyInput" type="text" value="全部商品" readonly="">-->
+                            <!--<span class="fa fa-exclamation zm-choiceFile-sameNameTitle"></span>-->
+                            <!--<div class="zm-choiceFile-tipSet">-->
+                                <!--<div class="zm-choiceFile-tipSet-con" style="display: none;">-->
+                                    <!--<i class="tipSet-con-dot"></i>-->
+                                    <!--<div class="tipSet-con-list tipSet-con-list-add newAdd-Or-delete"><i class="add"></i> 添加子类目</div>-->
+                                    <!--<div class="tipSet-con-list tipSet-con-list-rename"><i class="rename"></i>重命名</div>-->
+                                    <!--<div class="tipSet-con-list" onclick="zmChoiceRadio.deleteClassifyTitle(this)"><i class="delete"></i>删除</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="choiceFile-box13">-->
+                            <!--<div class="zm-choiceFile-categoryStyle">-->
+                                <!--<input class="zm-choiceFile-classifyInput" type="text" value="全部商品" readonly="">-->
+                                <!--<span class="fa fa-exclamation zm-choiceFile-sameNameTitle"></span>-->
+                                <!--<div class="zm-choiceFile-tipSet">-->
+                                    <!--<div class="zm-choiceFile-tipSet-con" style="display: none;">-->
+                                        <!--<i class="tipSet-con-dot"></i>-->
+                                        <!--<div class="tipSet-con-list tipSet-con-list-rename"><i class="rename"></i>重命名</div>-->
+                                        <!--<div class="tipSet-con-list" onclick="zmChoiceRadio.deleteClassifyTitle(this)"><i class="delete"></i>删除</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="zm-choiceFile-categoryStyle">-->
+                                <!--<input class="zm-choiceFile-classifyInput" type="text" value="全部商品" readonly="">-->
+                                <!--<span class="fa fa-exclamation zm-choiceFile-sameNameTitle"></span>-->
+                                <!--<div class="zm-choiceFile-tipSet">-->
+                                    <!--<div class="zm-choiceFile-tipSet-con" style="display: none;">-->
+                                        <!--<i class="tipSet-con-dot"></i>-->
+                                        <!--<div class="tipSet-con-list tipSet-con-list-rename"><i class="rename"></i>重命名</div>-->
+                                        <!--<div class="tipSet-con-list" onclick="zmChoiceRadio.deleteClassifyTitle(this)"><i class="delete"></i>删除</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="choiceFile-box12">-->
+                        <!--<div class="zm-choiceFile-categoryStyle">-->
+                            <!--<span class="zm-choiceFile-children-toggle" onclick="zmChoiceRadio.childrenToggle(this)">+</span>-->
+                            <!--<span class="zm-choicePicture-categoryStyle"></span>-->
+                            <!--<input class="zm-choiceFile-classifyInput" type="text" value="全部商品" readonly="">-->
+                            <!--<span class="fa fa-exclamation zm-choiceFile-sameNameTitle"></span>-->
+                            <!--<div class="zm-choiceFile-tipSet">-->
+                                <!--<div class="zm-choiceFile-tipSet-con" style="display: none;">-->
+                                    <!--<i class="tipSet-con-dot"></i>-->
+                                    <!--<div class="tipSet-con-list tipSet-con-list-add newAdd-Or-delete"><i class="add"></i> 添加子类目</div>-->
+                                    <!--<div class="tipSet-con-list tipSet-con-list-rename"><i class="rename"></i>重命名</div>-->
+                                    <!--<div class="tipSet-con-list" onclick="zmChoiceRadio.deleteClassifyTitle(this)"><i class="delete"></i>删除</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="choiceFile-box13">-->
+                            <!--<div class="zm-choiceFile-categoryStyle">-->
+                                <!--<input class="zm-choiceFile-classifyInput" type="text" value="全部商品" readonly="">-->
+                                <!--<span class="fa fa-exclamation zm-choiceFile-sameNameTitle"></span>-->
+                                <!--<div class="zm-choiceFile-tipSet">-->
+                                    <!--<div class="zm-choiceFile-tipSet-con" style="display: none;">-->
+                                        <!--<i class="tipSet-con-dot"></i>-->
+                                        <!--<div class="tipSet-con-list tipSet-con-list-rename"><i class="rename"></i>重命名</div>-->
+                                        <!--<div class="tipSet-con-list" onclick="zmChoiceRadio.deleteClassifyTitle(this)"><i class="delete"></i>删除</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="zm-choiceFile-categoryStyle">-->
+                                <!--<input class="zm-choiceFile-classifyInput" type="text" value="全部商品" readonly="">-->
+                                <!--<span class="fa fa-exclamation zm-choiceFile-sameNameTitle"></span>-->
+                                <!--<div class="zm-choiceFile-tipSet">-->
+                                    <!--<div class="zm-choiceFile-tipSet-con" style="display: none;">-->
+                                        <!--<i class="tipSet-con-dot"></i>-->
+                                        <!--<div class="tipSet-con-list tipSet-con-list-rename"><i class="rename"></i>重命名</div>-->
+                                        <!--<div class="tipSet-con-list" onclick="zmChoiceRadio.deleteClassifyTitle(this)"><i class="delete"></i>删除</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--类目列表end-->
+            </div>
+            <div class="zm-choiceGoods-bottom">
+                <span class="zm-choiceFile-btn4  choicePicture-addBigclassify">添加商品大类</span>
+            </div>
+        </div>
+
+        <div class="zm-choiceGoods-middleR">
+            <!--*****************-->
+            <div class="zm-choiceGoods-middleRightTop">
+                <ul class="zm-choiceGoods-middleRightTopList">
+                    <li class="zm-choiceGoodsRlti1">图片</li>
+                    <li class="zm-choiceGoodsRlti2">
+                        商品状态
+                        <!--<span class="choiceGoodsTopbtn"></span>-->
+                        <!--<span class="choiceGoodsBottbtn"></span>-->
+                    </li>
+                    <li class="zm-choiceGoodsRlti3">SKU</li>
+                    <li class="zm-choiceGoodsRlti4">产品ID</li>
+                    <li class="zm-choiceGoodsRlti5">
+                        商品描叙
+                        <!--<span class="choiceGoodsTopbtn1"></span>-->
+                        <!--<span class="choiceGoodsBottbtn1"></span>-->
+                    </li>
+                </ul>
+            </div>
+            <div class="zm-choiceGoodsRm">
+                <ul class="zm-choiceGoodsSpli">
+                    <!--***服务列表-->
+                    <!--<li class="zm-choiceGoodsList zm-choiceFile-check">-->
+                        <!--<div class="zm-choiceNewsListLeft">-->
+                            <!--<span class="zm-ChoiceNews-cheak fa"></span>-->
+                            <!--<img class="zm-choiceNewsImg" src="imgs/carousel05.png" alt="">-->
+                        <!--</div>-->
+                        <!--<div class="zm-choiceGoodsListRight">-->
+                            <!--<span style="width:100px">在线</span>-->
+                            <!--<span style="width:80px">A002</span>-->
+                            <!--<span style="width:110px">1354654564</span>-->
+                            <!--<span style="width:426px">正品IBM笔记本电脑男士公文包黑色金色拉链进口适用居家出差美观精品</span>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--服务列表****-->
+                </ul>
+            </div>
+            <!--*******************-->
+        </div>
+    </div>
+    <div class="zm-choiceFile-bottom">
+        <div class="zm-choiceFile-btn3">
+            选择并添加
+        </div>
+    </div>
+</div>

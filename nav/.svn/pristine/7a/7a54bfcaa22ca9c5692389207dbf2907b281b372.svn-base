@@ -1,0 +1,726 @@
+/*searchBar start*/
+@import "base.less";
+
+.zm-component-function-search-main{
+  height: 36px;
+  width: 300px;
+}
+.zm-component-main.zm-component-function-search-main,
+.zm-component-main.zm-component-function-shopping-main,
+.zm-component-main.zm-component-function-text-main
+{
+  margin: 1px;
+}
+.zm-component-function-search-main .zm-component-function-content{
+  height: 100%;
+}
+.zm-component-function-searchBar input{
+  margin: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+}
+.zm-component-function-searchBar {
+  border: 1px solid @baseColor;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+.zm-component-function-searchBtn {
+  height: 100%;
+  float: left;
+  width: 36px;
+  display: table;
+  text-align: center;
+  font-size: 16px;
+  color: @baseColorWhite;
+  cursor: pointer;
+  background:@baseColor url("../imgs/index/shiny1button_bg.png") 50% 50% repeat-x;
+}
+.zm-component-function-searchBtn div{
+  display: table-cell;
+  vertical-align: middle;
+}
+.searchBarStyle1 .zm-component-function-searchBar{
+  width:264px;
+}
+.searchBarStyle2 .zm-component-function-searchBar{
+  width:228px;
+}
+.searchBarStyle2 .zm-component-function-searchBtn{
+  width:72px;
+}
+.searchBarStyle3 .zm-component-function-searchBar{
+  width:259px;
+}
+.searchBarStyle3 .zm-component-function-searchBtn{
+  width: 36px;
+  margin-left: 5px;
+}
+.zm-component-function-searchSuggest{
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  box-shadow: 1px 1px 3px #ededed;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+.zm-component-function-searchSuggest li {
+  width: 100%;
+  height: 30px;
+  cursor: pointer;
+  line-height: 30px;
+  padding: 0 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.zm-component-function-searchSuggest li:hover{
+  background-color: #f0f0f0;
+}
+.searchBarTempCont {
+  position: absolute;
+  display: block;
+  font-size: 16px;
+  top: 0;
+  left: 0;
+  cursor: text;
+  color: #ccc;
+  width: 100%;
+  height: 100%;
+  padding:0 10px;
+  line-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.searchBarTempCont:after {
+  display: inline-block;
+  width: 0;
+  height: 105%;
+  vertical-align: middle;
+  content: "";
+}
+.zm-edit-function-searchBtnStyleList li{
+  float: left;
+}
+.zm-edit-function-choicePoint{
+  display: block;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin: 10px auto;
+  background-color: @baseColorWhite;
+  border-radius: 50%;
+  border: 1px solid @baseColorGray2;
+  cursor: pointer;
+}
+.zm-edit-function-choicePoint.choose:before{
+  position: absolute;
+  content: '';
+  display: inline-block;
+  border-radius: 50%;
+  background-color: @baseColor;
+  width: 8px;
+  height: 8px;
+  left: 3px;
+  top: 3px;
+}
+.zm-edit-function-btnStyle{
+  height: 36px;
+  background-color: @baseColor;
+  text-align: center;
+  font-size: 20px;
+  /*padding: 4px;*/
+  color: @baseColorWhite;
+  line-height: 36px;
+}
+.searchBtnFont{
+  font-size: 14px;
+}
+.zm-edit-function-searchResultTarget span {
+  float: left;
+  margin-right: 10px;
+}
+.zm-edit-function-searchResultTarget .zm-edit-function-choicePoint{
+  margin-top: 22px;
+}
+/*************************************searchBar end********************************************/
+
+/*************************************shoppingCart start***************************************/
+.zm-edit-shopping-cutStyle{
+  position: relative;
+  width: 100%;
+  height: 66px;
+  overflow: hidden;
+  margin-top: 10px;
+  background-color: @baseColorLight1;
+}
+.zm-edit-shopping-cutStyleList{
+  padding-top: 6px;
+  margin-left: 30px;
+  overflow: hidden;
+  height: 60px;
+}
+.zm-edit-function-shopping-slider li{
+  width: 55px;
+  height:55px;
+  float: left;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.zm-edit-function-shopping-slider li.itsChecked{
+  background-color: #A5D9D3;
+}
+.zm-edit-function-shopping-slider li:hover{
+  background-color: #e5e5e5;
+}
+.zm-edit-function-shopping-slider svg{
+  width: 70%;
+  height: 100%;
+  fill: #666666;
+  margin-left: 7px;
+}
+.zm-edit-shopping-cutBtn{
+  position: absolute;
+  cursor: pointer;
+  color: @baseColor;
+  height: 100%;
+  width: 30px;
+  line-height: 63px;
+  background-color: #e5e5e5;
+  text-align: center;
+  top: 0;
+}
+.zm-edit-shopping-cutBtn:hover{
+  background-color: @baseColor;
+  color: @baseColorWhite;
+}
+.zm-edit-shopping-cartNumStyle span{
+  float: left;
+  margin:12px 10px;
+  font-size: 12px;
+}
+.zm-edit-shopping-cartNumStyle .shoppingNum{
+  border-radius: 50%;
+  width: 16px;
+  height:16px;
+  margin: 12px 0;
+  padding: 0 5px;
+}
+.zm-edit-shopping-cartLayout li{
+  float: left;
+  width: 95px;
+  height: 80px;
+  margin-top: 10px;
+}
+.zm-edit-shopping-cartLayout svg{fill:#666666;}
+.zm-edit-shopping-cartLayout li .zm-component-function-content{
+  height: 45px;
+}
+.zm-edit-shopping-cartLayout li .zm-component-function-shopping-cartBtn{
+  width: 32px;height: 32px;bottom: 0;
+}
+.zm-edit-shopping-cartLayout li .zm-component-function-shopping-cartWord{
+  bottom: 0;
+  right: 18px;
+}
+.zm-edit-shopping-cartLayout li .zm-component-function-shopping-num{
+  width: 16px;
+  padding: 1px;
+}
+.zm-edit-function-hrefSet span{
+  float: left;
+  margin-right: 10px;
+}
+
+
+.zm-component-function-shopping-main{
+  width:80px;
+}
+.zm-component-function-shopping-main .zm-component-function-content{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  /*overflow: hidden;*/
+}
+.zm-component-function-shopping-main .zm-component-function-content div{
+  position: absolute;
+}
+.zm-component-function-shopping-cartBtn svg{
+  width: 100%;
+  height:100%;
+}
+.zm-edit-text .zm-component-function-shopping-num{
+  padding: 0;
+}
+.zm-component-function-shopping-num{
+  position: absolute;
+  text-align: center;
+  font-size: 12px;
+  width: 16px;
+  border-radius: 50%;
+  height: 16px;
+  padding: 1px;
+  line-height: 15px;
+}
+.zm-component-function-shopping-cartWord{
+  font-size: 14px;
+  position: absolute;
+}
+.redBgWhiteCol{
+  background-color: #ff0000;
+  color: @baseColorWhite;
+}
+.noBgBlueCol{
+  color: #3899ec;
+}
+.zm-component-function-shopping-cartBtn{bottom: 0; left: 0;}
+.greatCart svg{fill: #696969;}
+.greatCart .zm-component-function-shopping-cartWord{ bottom: 5%;left: 32px;}
+.greatCart .zm-component-function-shopping-cartBtn{height:32px;width:32px;}
+.greatCart .cartTop{bottom: 28px;left: 10px;}
+.greatCart .cartTopRight{bottom: 16px;left: 72px;}
+.greatCart .cartRight{bottom: 5%;left: 72px;}
+
+.middleCart svg{fill: #3899ec;}
+.middleCart .zm-component-function-shopping-cartWord{ bottom: 5%;left: 25px;}
+.middleCart .zm-component-function-shopping-cartBtn{ height:28px;width:28px;}
+.middleCart .cartTop{bottom: 24px;left: 8px;}
+.middleCart .cartTopRight{bottom: 12px;left: 64px;}
+.middleCart .cartRight{bottom: 5%;left: 64px;}
+
+.littleCart svg{fill: #ff0000;}
+.littleCart .zm-component-function-shopping-cartWord{ bottom: 5%;left: 20px;}
+.littleCart .zm-component-function-shopping-cartBtn{height:20px;width:20px;}
+.littleCart .cartTop{bottom: 18px;left: 4px;}
+.littleCart .cartTopRight{bottom: 10px;left: 60px;}
+.littleCart .cartRight{bottom: 5%;left: 60px;}
+
+.zm-component-function-text-main{
+  line-height:30px;
+  height:30px;
+  width:80px;
+  text-align:center;
+}
+li .zm-component-file-fileName{
+  display: none;
+}
+li .zm-component-function-file-main img{
+  width: 100%;
+  height:100%;
+}
+.zm-component-function-file-main {
+  width: 42px;
+  text-align: center;
+  overflow: hidden;
+  .zm-component-function-content {
+    width: 100%;
+    height: 100%;
+    .zm-component-file-imgBox{
+      width: 100%;
+    }
+    img{
+      min-width: 20px;
+      max-width: 44px;
+    }
+    .zm-component-file-fileName{
+      width: 100%;
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+      font-size: 14px;
+      padding: 5px 0;
+    }
+  }
+}
+
+.zm-edit-file-fName{
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 10px;
+}
+.zm-edit-file-changeFileBtn{
+  margin: 5px auto;
+  width: 32%;
+  line-height: 24px;
+  font-size: 14px;
+  height: 24px;
+  text-align: center;
+  background-color: @baseColor;
+  border-radius: 15px;
+  color: @baseColorWhite;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(74,177,167,.5);
+}
+.zm-edit-file-changeFileBtn:hover{
+  box-shadow: 0 0 10px @baseColor;
+}
+.zm-edit-file-namingFile {
+  margin: 10px 0 0 0;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.zm-edit-file-fileNameShadow{
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 38px;
+  width: 100%;
+  height: 32px;
+  background-color: rgba(255,255,255,.8);
+}
+
+/*分享推广*/
+fieldset li .zm-component-function-share-main{width: 30px;height:30px;display: block}
+.zm-component-function-share-main{
+  display: table;
+  .zm-component-function-content{
+    width: 30px;
+    height:30px;
+    float:left;
+    margin-right:10px;
+    svg{
+      width:100%;
+      height:100%;
+      fill:#999;
+    }
+  }
+  .zm-component-function-content.circleShare svg{fill: @baseColor}
+  .zm-component-function-content.circleHalfShare svg{fill:#3694e5}
+  .zm-component-share-shareTitle{
+    font-size: 14px;
+    display: table-cell;
+    vertical-align: middle
+  }
+}
+.zm-component-share-iconBox{
+  position: absolute;
+  width: 276px;
+  left: 0;
+  bottom: -38px;
+  border: 1px solid @baseColor;
+  border-radius: 3px;
+}
+.zm-edit-share-reserveAngle{
+  position: absolute;
+  left: 10px;
+  top: -4px;
+  width: 7px;
+  height: 7px;
+  background-color: @baseColorWhite;
+  border-left: 1px solid @baseColor;
+  border-top: 1px solid @baseColor;
+  transform: rotate(45deg);
+}
+.zm-component-share-iconList{
+  li{
+    float: left;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    margin-left: 4px;
+    cursor: pointer;
+  }
+  .weinxinIco svg{fill:#51C332}
+  .sinaIco svg{fill:#DA251C}
+  .tencentIco svg{fill:#5AA6FA}
+  .renrenIco svg{ fill:#217BC4}
+  .kaixinIco svg{ fill:#FDD100}
+  .baiduIco svg{fill:#2932E1}
+  .qqzoneIco svg{ fill:#FAC91B}
+  .doubanIco svg{ fill:#06BB12}
+}
+.zm-edit-share-cutStyle{
+  width: 100%;
+  height: 60px;
+  margin-top: 10px;
+  background-color: @baseColorLight1;
+  overflow: hidden;
+  border-radius: 3px;
+  position: relative;
+}
+.zm-edit-share-cutStyle .fa{
+  position: absolute;
+  top:0;
+  cursor: pointer;
+  height: 60px;
+  background-color: #e4e4e4;
+  color: @baseColor;
+  line-height: 58px;
+  padding: 0 2px;
+  width: 20px;
+}
+.zm-edit-share-cutStyle .fa:hover{
+  background-color: @baseColor;
+  color: @baseColorWhite;
+}
+.zm-edit-share-shareIcon{
+  float: left;
+  font-size: 15px;
+  width: 45px;
+  height:45px;
+  padding: .5em;
+  margin: 8px;
+  cursor: pointer;
+  border-radius:3px;
+}
+.zm-edit-share-shareIcon.checked{
+  background-color: #a4d8d3;
+}
+.zm-edit-share-shareIcon:hover{
+  background-color: #e4e4e4;
+}
+.zm-edit-share-shareIco svg{
+  fill: @baseColor;
+}
+.zm-edit-share-optionList li{
+  float: left;
+  width: 50%;
+  margin-top: 10px;
+  font-size: 12px;
+}
+.zm-edit-share-optionList .fa-check.cancelCheck{
+  color: transparent;
+}
+.zm-edit-share-optionList .fa-check {
+  border: 1px solid @baseColorGray3;
+  border-radius: 3px;
+  color: @baseColor;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.zm-component-function-enter-main{width: 300px;}
+.zm-component-enter-formTitle {
+  margin-top: 5px;
+  margin-bottom: 16px;
+}
+.zm-component-enter-options{
+  position: relative;
+  width: 100%;
+  font-size: 12px;
+  margin-bottom: 10px;
+  .zm-component-enter-input {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    line-height: 100%;
+    padding: 0 10px;
+    outline: none;border: none;
+    //position: absolute;
+    //left: 0;top: 0;
+    background: transparent;
+  }
+  i{
+    color: #a5a5a5;
+    display: table-cell;
+    vertical-align: middle;
+    text-indent: 10px;
+  }
+}
+.zm-component-enter-inputBox.textAreaBox{
+  height: 104px;
+  vertical-align: top;
+  .zm-component-enter-input{
+    resize: none;
+    padding: 5px 10px;
+  }
+  i{
+    vertical-align: top;
+    padding-top: 5px;
+  }
+}
+.zm-component-enter-inputBox ,.zm-component-enter-selectBox{
+  position: relative;
+  display: table;
+  width: 100%;
+  border: 1px solid @baseColorGray3;
+  height: 26px;
+  border-radius: 2px;
+  outline: none;
+}
+.zm-component-enter-selectBox:focus .zm-component-enter-select{
+  display: block;
+}
+.zm-component-enter-inputBox:focus i,.zm-component-enter-selectBox:focus i{
+  display: none;
+}
+.zm-component-enter-selectBox {
+  min-height: 20px;
+  .fa-sort-desc{
+    display: table-cell;
+    vertical-align: middle;
+    text-indent: -4px;
+  }
+  .zm-component-enter-select{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    left: 0;
+    top: 26px;
+    list-style: none;
+    border: 1px solid @baseColorGray3;
+    display: none;
+    z-index: 1;
+    border-radius: 3px;
+    box-shadow: 0 0 3px @baseColorGray3;
+    li {
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      text-indent: 10px;
+      cursor: pointer;
+      background-color: @baseColorWhite;
+    }
+    li+li{
+      border-top:1px dashed @baseColorGray3;
+    }
+    li:hover{
+      background-color: @baseColor;
+    }
+  }
+}
+
+.zm-component-enter-submit {
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid @baseColorGray3;
+  background: #f9f9f9;
+  //background:-webkit-gradient(linear, 0 0, 0 bottom, from(#f7f8f8), to(#f9f9f9));
+  //background:-moz-linear-gradient(top, #f7f8f8, #f9f9f9);
+  margin-top: 10px;
+  height: 30px;
+  cursor: pointer;
+}
+.zm-component-enter-form.infoInside{
+  .zm-component-enter-options span{
+    display: none;
+  }
+  .zm-component-enter-options i{
+    display: table-cell;
+    width: 100%;
+  }
+}
+
+.zm-component-enter-form.infoOutside{
+  .zm-component-enter-options span{
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  .zm-component-enter-options i{
+    display: none;
+  }
+}
+.zm-component-edit-enterLayout .zm-edit-function-choicePoint{
+  display: inline-block;
+  margin: -2px 10px;
+}
+.zm-edit-enter-addTemp{
+  color: @baseColor;
+  cursor: pointer;
+}
+.zm-edit-enter-tempBox:focus{
+  box-shadow: 0 0 3px @baseColor;
+  border-color:@baseColor;
+  .zm-edit-enter-tempList{
+    display: block;
+  }
+}
+.zm-edit-enter-tempBox {
+  position: relative;
+  height: 30px;
+  width: 100%;
+  border: 1px solid @baseColorGray3;
+  border-radius: 3px;
+  margin: 5px 0;
+  outline: none;
+  line-height: 30px;
+  text-indent: 10px;
+  display: table;
+  cursor: pointer;
+  .fa-sort-desc{
+    display: table-cell;
+    transform: translate(15px,-2px);
+  }
+  .zm-edit-enter-tempList {
+    display: none;
+    position: absolute;
+    height: 300px;
+    width: 100%;
+    border: 1px solid @baseColorGray3;
+    left: 0;
+    top: 32px;
+    background-color: #fff;
+    z-index: 3;
+    border-radius: 3px;
+    box-shadow: 0 0 3px @baseColorGray3;
+  }
+}
+
+fieldset li .zm-component-function-option-main  .zm-component-option-options .zm-component-option-optionBox input{
+  top:0;
+}
+
+.zm-component-function-option-main{
+  width:300px;
+  .zm-component-option-formTitle{
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+  .zm-component-option-options{
+    font-size: 12px;
+    .zm-component-option-optionTitle{
+      width: 100%;
+      margin-top: 5px;
+    }
+    &>div{
+      float: left;
+      margin-bottom: 10px;
+    }
+    .zm-component-option-optionBox{
+      position: relative;
+      padding-left: 10px;
+      input{
+        position: absolute;
+        top:3px;
+      }
+      span{
+        padding: 0 5px 0 16px;
+      }
+    }
+  }
+  .zm-component-option-submitBox{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    .zm-component-option-submitBtn{
+        width: 200px;
+        height: 30px;
+        line-height: 20px;
+        border-radius: 3px;
+        background-color: #f9f9f9;
+        cursor: pointer;
+        border: 1px solid #ccc;
+    }
+  }
+}
+.zm-component-option-form.optionWidth1 .zm-component-option-optionBox{width: 100%;}
+.zm-component-option-form.optionWidth2 .zm-component-option-optionBox{width: 50%;}
+.zm-component-option-form.optionWidth3 .zm-component-option-optionBox{width: 33%;}
+.zm-component-option-form.optionWidth4 .zm-component-option-optionBox{width: 25%;}
+
+
+

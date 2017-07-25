@@ -1,0 +1,64 @@
+/*组件发布*/
+.zm-component-publish{background:#f1faf9}
+.zm-component-publish-content{}
+.zm-component-publish-content-main{background:#fff;margin:20px 20px 0;border-radius: 3px;padding:20px 20px 30px 20px ;}
+.zm-component-publish-content li{margin-bottom:10px;float:left;}
+.zm-component-publish-content li span{margin-right:10px;}
+.zm-component-publish-content li input{width:260px;}
+.zm-component-publish-content li select{width:260px;}
+.zm-component-publish-view{width:460px;height:195px;border:1px solid #ccc;border-radius: 3px;float:left;margin-left:86px;overflow: auto}
+.zm-component-publish-content li span.zm-component-publish-flag{color:red;font-size: 12px;margin:0;}
+.zm-component-publish-content li span.zm-component-publish-tag{color:red;font-size: 12px;margin-left:15px;}
+.zm-dialog-msgBox{text-align: left}
+/*组件列表*/
+.zm-component-publish{background:#f1faf9}
+.zm-myComponents-table{background:#fff;border-radius: 3px;padding:20px 20px 30px 20px ;width:100%;}
+.zm-myComponents-table{border:1px solid #eee;text-align: center}
+.zm-myComponents-table th{height:35px;background: #f1faf9}
+.zm-myComponents-table td{border: 1px solid #eee;border-collapse: collapse;padding:10px;}
+.zm-myComponents-table td>img{width:200px;height:100px;}
+.zm-myComponents-table-option1,.zm-myComponents-table-option2{white-space:nowrap;}
+.zm-myComponents-table-option1 a{background:#4ab1a7;color:#fff;cursor:pointer;padding:3px 10px;margin:5px;border-radius: 20px;}
+.zm-myComponents-table-option1 a:nth-child(1){background:#4AB1A7;}
+.zm-myComponents-table-option1 a:nth-child(1):hover{background:#439e9e;}
+.zm-myComponents-table-option1 a:nth-child(2){background:#d9534f;}
+.zm-myComponents-table-option1 a:nth-child(2):hover{background:#c9302c;}
+.zm-myComponents-table-option2 a{background:#e6e6e6;color:#fff;cursor:not-allowed;padding:3px 10px;margin:5px;border-radius: 20px;}
+.zm-myComponents-table-title{position:absolute;left:0;top:50px;width:100%;height:35px;line-height:35px;background: #f1faf9;z-index: 2}
+.zm-myComponents-table-title li{float:left;padding:0 10px;font-weight:bold;text-align: center}
+.zm-myComponents-table-status1{color:#5bc0de;font-weight: bold}
+.zm-myComponents-table-status2{color:#f0ad4e;font-weight: bold}
+.zm-myComponents-table-num{display:inline-block;width:30px;line-height:30px;height:30px;border-radius: 50%;background:#4AB1A7;color:#fff;}
+.zm-myComponents-table-item-html{display: none;}
+/*模板发布*/
+.zm-template-publish{background:#f1faf9}
+.zm-template-publish-content{}
+.zm-template-publish-content-main{background:#fff;margin:20px 20px 0;border-radius: 3px;padding:20px 20px 30px 20px ;}
+.zm-template-publish-content li{margin-bottom:10px;float:left;}
+.zm-template-publish-content li span{margin-right:10px;}
+.zm-template-publish-content li input{width:260px;}
+.zm-template-publish-content li select{width:260px;}
+.zm-template-publish-view{width:460px;height:195px;border:1px solid #ccc;border-radius: 3px;float:left;margin-left:86px;}
+.zm-template-publish-content li span.zm-template-publish-flag{color:red;font-size: 12px;margin:0;}
+.zm-template-publish-content li span.zm-template-publish-tag{color:red;font-size: 12px;margin-left:15px;}
+.zm-dialog-msgBox{text-align: left}
+/*模板列表*/
+.zm-component-publish{background:#f1faf9}
+.zm-myComponents-table{background:#fff;border-radius: 3px;padding:20px 20px 30px 20px ;width:100%;}
+.zm-myComponents-table{border:1px solid #eee;text-align: center}
+.zm-myComponents-table th{height:35px;background: #f1faf9}
+.zm-myComponents-table td{border: 1px solid #eee;border-collapse: collapse;padding:10px;}
+.zm-myComponents-table td>img{width:200px;height:100px;}
+.zm-myComponents-table-option1,.zm-myComponents-table-option2{white-space:nowrap;}
+.zm-myComponents-table-option1 a{background:#4ab1a7;color:#fff;cursor:pointer;padding:3px 10px;margin:5px;border-radius: 20px;}
+.zm-myComponents-table-option1 a:nth-child(1){background:#4AB1A7;}
+.zm-myComponents-table-option1 a:nth-child(1):hover{background:#439e9e;}
+.zm-myComponents-table-option1 a:nth-child(2){background:#d9534f;}
+.zm-myComponents-table-option1 a:nth-child(2):hover{background:#c9302c;}
+.zm-myComponents-table-option2 a{background:#e6e6e6;color:#fff;cursor:not-allowed;padding:3px 10px;margin:5px;border-radius: 20px;}
+.zm-myComponents-table-title{position:absolute;left:0;top:50px;width:100%;height:35px;line-height:35px;background: #f1faf9;z-index: 2}
+.zm-myComponents-table-title li{float:left;padding:0 10px;font-weight:bold;text-align: center}
+.zm-myComponents-table-status1{color:#5bc0de;font-weight: bold}
+.zm-myComponents-table-status2{color:#f0ad4e;font-weight: bold}
+.zm-myComponents-table-num{display:inline-block;width:30px;line-height:30px;height:30px;border-radius: 50%;background:#4AB1A7;color:#fff;}
+.zm-myComponents-table-item-html{display: none;}

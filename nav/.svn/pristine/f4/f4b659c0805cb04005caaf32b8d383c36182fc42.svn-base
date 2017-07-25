@@ -1,0 +1,43 @@
+/**
+ * Created by Administrator on 2017/3/10.
+ */
+zmEditor.component.container={
+    setting:function(box){
+        var iSelected = zmEditor.component.nowEdit();
+        var tabs1=$('<div></div>');
+        var config1 =[
+
+            {type:'slider',element:iSelected,flag:{title:'背景颜色',style:'noTab_color',isColor:true, param:'backgroundColor', size: [0,100]}},
+            {type:'slider',element:iSelected,flag:{title:'边框颜色',style:'noTab_color',isColor:true, param:'borderColor', size: [0,100]}},
+            // {type:'Color',element:iSelected,flag:{title:'背景颜色',style:'normal',param:'backgroundColor'}},
+            // {type: "Color",element: iSelected,flag: {title:"边框颜色",style:"",param:"borderColor"}},
+            // {type:'slider',element:iSelected,flag:{title:'边框宽度',style:'noTab_color',isColor:false, param:'borderWidth', size: [0,100]}},
+            // {type:'borderWidth',element:iSelected,flag:''},
+            {type: "slider",element: iSelected,flag: {title: "<span>（像素）</span><br>边线粗细", style: "noTab_noColor",isColor:false,  param: "borderWidth", size: [0,10]}},
+            {type:'borderStyle',element:iSelected,flag:''},
+            {type:'radius',element:iSelected,flag:''}
+        ];
+        var items1 = zmEditor.component.setItems.config(config1);
+        items1.forEach(function(e){
+            tabs1.append(e);
+        });
+        tabs1.find(".zm-edit-components-string-LC .zm-edit-text-title").css("width","65px");
+        tabs1.find(".zm-edit-components-string-SC .zm-edit-text-title").css("width","65px");
+        tabs1.find(".zm-edit-components-string-SC").css({"padding":"0 25px"});
+        tabs1.find(".zm-edit-components-string-SC .zm-edit-slider-val ").css({"margin-left":"35px"});
+        var tabs2=$('<div></div>');
+        // var config2 =[{type:'boxShadow',element: iSelected,flag: {style: "noTab"}}];
+
+        var config2 =[{type:'boxShadow',element:iSelected,flag:{title:'字间距',style:'normal',param:''}}];
+
+        var items2 = zmEditor.component.setItems.config(config2);
+        items2.forEach(function(e){
+            tabs2.append(e);
+        });
+
+        var tabsList = [{title:"常规",content:tabs1},{title:"阴影",content:tabs2}]; //
+        var tabs = zmEditor.component.setItems.tabs(tabsList);
+        //box.css({"width":"350px","height":"650px"});
+        return tabs;
+    }
+}

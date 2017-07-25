@@ -1,0 +1,273 @@
+<div class=" zm-radioWrap">
+    <div class="zm-radioTop">
+        <ul class="zm-radioTopList">
+            <li>选择服务</li>
+        </ul>
+    </div>
+    <div class="zm-radioMiddleAll">
+        <div class="zm-radioMiddle radioWrap0">
+            <div class="zm-goodsMiddleLeft">
+                <div class="zm-goodsLeftop">
+                    <div class="imgCategory-level-tit">
+                        <span class="left-level-tit-service margin-l20">服务类目</span>
+                    </div>
+                    <div class="level1-box level1-box1">
+                        <div class="level1">
+                            <div class="level-con">
+                                <span class="level1-tipService"></span>
+                                <a href="javascript:void(0);">
+                                    <input type="text" value="我的全部服务" readonly>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="level1-box level1-sort">
+                        <div class="level1">
+                            <div class="level-con">
+                                <span class="level1-tipService"></span>
+                                <a>
+                                    <input type="text" value="未分配类目服务" readonly>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--大类目-->
+                    <div class="level1-box level1-sort">
+                        <div class="level1">
+                            <span class="level1-tipImg zm-addele">-</span>
+                            <div class="level-con">
+                                <span class="level1-tipService"></span>
+                                <a>
+                                    <input type="text" value="服务大类" readonly>
+                                </a>
+                                <div class="level1-tipSet">
+                                    <div class="tipSet-con">
+                                        <i class="tipSet-con-dot"></i>
+                                        <div class="tipSet-con-list tipSet-con-list-add1">
+                                            <i class="add"></i>
+                                            添加子类目
+                                        </div>
+                                        <div class="tipSet-con-list tipSet-con-list-rename">
+                                            <i class="rename"></i>
+                                            重命名
+                                        </div>
+                                        <div class="tipSet-con-list tipSet-con-list-delete1">
+                                            <i class="delete"></i>
+                                            删除
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--中类**********-->
+                        <div class="goodsl2-box">
+                            <div class="goodsl2">
+
+                                <div class="goods-border-l1 fl"></div>
+                                <div class="goods-line"></div>
+
+                                <div class="goods-con goods-con1">
+                                    <span class="zm-middele">-</span>
+                                    <span class="level1-tipService"></span>
+                                    <a>
+                                        <input type="text" value="服务中类" readonly>
+                                    </a>
+                                    <div class="level1-tipSet">
+                                        <div class="tipSet-con">
+                                            <i class="tipSet-con-dot"></i>
+                                            <div class="tipSet-con-list tipSet-con-list-add2">
+                                                <i class="add"></i>
+                                                添加子类目
+                                            </div>
+                                            <div class="tipSet-con-list tipSet-con-list-rename">
+                                                <i class="rename"></i>
+                                                重命名
+                                            </div>
+                                            <div class="tipSet-con-list tipSet-con-list-delete2">
+                                                <i class="delete"></i>
+                                                删除
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--小类目*****-->
+                            <div class="zm-goodsbox13">
+                                <div class="goods-border-l2 fl"></div>
+                                <div class="goods-line2"></div>
+
+                                <div class="goods-con3 level-con1">
+                                    <a>
+                                        <input type="text" value="服务小类" readonly>
+                                    </a>
+                                    <div class="level1-tipSet">
+                                        <div class="tipSet-con">
+                                            <i class="tipSet-con-dot"></i>
+                                            <div class="tipSet-con-list tipSet-con-list-rename">
+                                                <i class="rename"></i>
+                                                重命名
+                                            </div>
+                                            <div class="tipSet-con-list tipSet-con-list-delete3">
+                                                <i class="delete"></i>
+                                                删除
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--*************小类目-->
+                            <!--小类目*****-->
+                            <div class="zm-goodsbox13">
+                                <div class="goods-border-l2 fl"></div>
+                                <div class="goods-line2"></div>
+
+                                <div class="goods-con3 level-con1">
+                                    <a>
+                                        <input type="text" value="服务小类" readonly>
+                                    </a>
+                                    <div class="level1-tipSet">
+                                        <div class="tipSet-con">
+                                            <i class="tipSet-con-dot"></i>
+                                            <div class="tipSet-con-list tipSet-con-list-rename">
+                                                <i class="rename"></i>
+                                                重命名
+                                            </div>
+                                            <div class="tipSet-con-list tipSet-con-list-delete3">
+                                                <i class="delete"></i>
+                                                删除
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--*************小类目-->
+                        </div>
+                        <!--***********中类-->
+
+                        <div class="goodsl2-box">
+                            <div class="goodsl2">
+
+                                <div class="goods-border-l1 fl"></div>
+                                <div class="goods-line"></div>
+
+                                <div class="goods-con goods-con1">
+                                    <span class="zm-middele">-</span>
+                                    <span class="level1-tipService"></span>
+                                    <a>
+                                        <input type="text" value="服务中类" readonly>
+                                    </a>
+                                    <div class="level1-tipSet">
+                                        <div class="tipSet-con">
+                                            <i class="tipSet-con-dot"></i>
+                                            <div class="tipSet-con-list tipSet-con-list-add2">
+                                                <i class="add"></i>
+                                                添加子类目
+                                            </div>
+                                            <div class="tipSet-con-list tipSet-con-list-rename">
+                                                <i class="rename"></i>
+                                                重命名
+                                            </div>
+                                            <div class="tipSet-con-list tipSet-con-list-delete2">
+                                                <i class="delete"></i>
+                                                删除
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--小类目*****-->
+                            <div class="zm-goodsbox13">
+                                <div class="goods-border-l2 fl"></div>
+                                <div class="goods-line2"></div>
+
+                                <div class="goods-con3 level-con1">
+                                    <a>
+                                        <input type="text" value="服务小类" readonly>
+                                    </a>
+                                    <div class="level1-tipSet">
+                                        <div class="tipSet-con">
+                                            <i class="tipSet-con-dot"></i>
+                                            <div class="tipSet-con-list tipSet-con-list-rename">
+                                                <i class="rename"></i>
+                                                重命名
+                                            </div>
+                                            <div class="tipSet-con-list tipSet-con-list-delete3">
+                                                <i class="delete"></i>
+                                                删除
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--*************小类目-->
+                        </div>
+                        <!--***********中类-->
+                    </div>
+                    <!--大类目-->
+                    <div style="width: 260px;height: 120px"></div>
+                </div>
+                <div class="goods-center">
+                    <div class="btn btn-addGoodsSort"> 添加服务类目</div>
+                </div>
+            </div>
+            <div class="zm-goodsMiddleRight">
+                <div class="zm-goodsRt">
+                    <div class="zm-goodsCheak">
+                        <span class="zm-goodsCheak1 fa"></span> <span>全选</span>
+                    </div>
+                    <div class="zm-goodsRtl">
+                        <span class="fa fa-search"></span>
+                        <input class="zm-goodsSearch" type="text" placeholder="搜索">
+                    </div>
+                    <div class="zm-radioRtbtn">
+                        <div class="zm-radioRtbtn1" choiceAdd="service" onclick="zmChoiceFile.choiceAndd(this)">移动到分类</div>
+                        <div class="zm-radioRtbtn2" onclick="zmChoiceFile.deleteallradio(this)" delete-all="service1">批量删除</div>
+                        <div class="zm-radioRtbtn3">添加服务</div>
+                    </div>
+                </div>
+                <div class="zm-goodsRlti">
+                    <ul class="zm-goodsRlti0">
+                        <li class="zm-goodsRlti1">图片</li>
+                        <li class="zm-goodsRlti2">
+                            服务状态
+                            <span class="goodsTopbtn"></span>
+                            <span class="goodsBottbtn"></span>
+                        </li>
+                        <li class="zm-goodsRlti3">SKU</li>
+                        <li class="zm-goodsRlti4">产品ID</li>
+                        <li class="zm-goodsRlti5">
+                            服务描叙
+                            <span class="goodsTopbtn1"></span>
+                            <span class="goodsBottbtn1"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="zm-goodsRm">
+                    <ul class="zm-goodsSpli">
+                        <!--***新闻列表-->
+                        <li class="zm-goodsList">
+                            <div class="zm-goodsListLeft">
+                                <span class="zm-goodsCheak2 fa"></span>
+                                <img class="zm-goodsimg" src="imgs/carousel05.png" alt="">
+                            </div>
+                            <div class="zm-goodsListRight">
+                                <span style="width:110px">暂停服务</span>
+                                <span style="width:80px">A001</span>
+                                <span style="width:120px">1354654564</span>
+                                <span style="width:426px">正品IBM笔记本电脑男士公文包黑色金色拉链进口适用居家出差美观精品</span>
+                            </div>
+                        </li>
+                        <!--新闻列表****-->
+                    </ul>
+                </div>
+                <div class="zm-goodsRb">
+                    <div class="zm-radioRbbtn radioRbbtn1">
+                        选择并添加
+                    </div>
+                </div>
+            </div>
+            <!--复制到专辑-->
+        </div>
+    </div>
+</div>

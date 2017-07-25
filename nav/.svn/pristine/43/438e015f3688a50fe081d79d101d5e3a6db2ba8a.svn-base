@@ -1,0 +1,106 @@
+<!--<div class="zm-radioLoad">-->
+    <!--提交上传的音频******-->
+    <div class="addRadioLoad">
+        <div class="addRadioLoadf">
+            <div class="addRadioLoadf1">
+                <span>上传音频</span>
+                <span>（</span>
+                <span>0</span>
+                <span>/</span>
+                <span>1</span>
+                <span>）</span>
+            </div>
+            <div class="addRadioLoadf2">-</div>
+        </div>
+        <div class="addRadioLoads">
+            <div class="radioProgress1">
+                <div class="radioProgress2"></div>
+            </div>
+
+            <div class="radioProgress3"><span class="exclico">!</span>你可以在上传文件时选择关闭窗口，关闭窗口将不影响文件上传。</div>
+        </div>
+        <div class="addRadioLoadt"></div>
+        <div class="addRadioLoadl">
+            <div class="addRadioLoadbtn2">确定</div>
+            <div class="addRadioLoadbtn3">取消上传</div>
+        </div>
+    </div>
+<!--*********提交上传的音频-->
+    <!--<div class="zm-radioLoad-top">-->
+        <!--<span class="zm-radioLoad-top1">上传视频</span>-->
+        <!--<span class="zm-radioLoad-top2">x</span>-->
+    <!--</div>-->
+    <div class="zm-radioLoad-middle">
+        <div class="zm-radioLoad-middleL">
+            <div class="zm-radioLoad-middleL1">音频编号:</div>
+            <div class="zm-radioLoad-middleL2"><span style="color: #ff5555">*</span>音乐名称1:</div>
+            <div class="zm-radioLoad-middleL3">音乐名称2:</div>
+            <div class="zm-radioLoad-middleL4"><span style="color: #ff5555">*</span>创作人类型:</div>
+            <div class="zm-radioLoad-middleL5">创作人名称:</div>
+            <div class="zm-radioLoad-middleL6"><span style="color: #ff5555">*</span>音乐类型:</div>
+            <div class="zm-radioLoad-middleL7">音频下载金额:</div>
+            <div class="zm-radioLoad-middleL8"><span style="color: #ff5555">*</span>风格:</div>
+            <div class="zm-radioLoad-middleL9">歌词:</div>
+        </div>
+        <div class="zm-radioLoad-middleR">
+            <input class="zm-radioLoadR1 zm-radioyp" type="text">
+            <br />
+            <input class="zm-radioLoadR2 zm-radioyp" type="text">
+            <br />
+            <input class="zm-radioLoadR3 zm-radioyp" type="text">
+            <div class="zm-radioLoadR11">
+                <input type="radio" name="chose"><span>个人</span>
+                <input type="radio" name="chose"><span>组合</span>
+                <input type="radio" name="chose"><span>乐队/乐团</span>
+
+            </div>
+            <select name="" class="zm-radioLoadR4 zm-radioyp">
+                <option value="">什么鬼</option>
+                <option value="">积极</option>
+                <option value="">玩儿</option>
+                <option value="">额外热</option>
+            </select>
+            <span class="zm-radioLdRt">添加新创作人</span>
+            <br />
+            <select name="" class="zm-radioLoadR5 zm-radioyp">
+                <option value="">歌曲</option>
+                <option value="">流行</option>
+                <option value="">摇滚</option>
+                <option value="">爵士</option>
+            </select>
+            <br />
+            <input class="zm-radioLoadR6 zm-radioyp" type="text"><span>人民币</span>
+            <br />
+            <div class="zm-radioLoadR7">
+                <li> <input type="radio" name="chose"><span>曲艺</span></li>
+                <li> <input type="radio" name="chose"><span>摇滚</span></li>
+                <li> <input type="radio" name="chose"><span>民谣</span></li>
+                <li> <input type="radio" name="chose"><span>电子</span></li>
+                <li> <input type="radio" name="chose"><span>节奏布鲁斯</span></li>
+                <li> <input type="radio" name="chose"><span>嘻哈 hiphop</span></li>
+                <li> <input type="radio" name="chose"><span>布鲁斯 Blues</span></li>
+                <li> <input type="radio" name="chose"><span>世界音乐</span></li>
+                <li> <input type="radio" name="chose"><span>舞台/荧屏/娱乐</span></li>
+                <li> <input type="radio" name="chose"><span>雷鬼 Reggae</span></li>
+                <li> <input type="radio" name="chose"><span>唱作人</span></li>
+                <li> <input type="radio" name="chose"><span>爵士</span></li>
+                <li> <input type="radio" name="chose"><span>轻音乐</span></li>
+                <li> <input type="radio" name="chose"><span>动漫</span></li>
+                <li> <input type="radio" name="chose"><span>乡村</span></li>
+                <li> <input type="radio" name="chose"><span>古典</span></li>
+                <li> <input type="radio" name="chose"><span>金属</span></li>
+                <li> <input type="radio" name="chose"><span>拉丁</span></li>
+                <li> <input type="radio" name="chose"><span>儿童</span></li>
+                <li> <input type="radio" name="chose"><span>爵士</span></li>
+                <li> <input type="radio" name="chose"><span>新世纪</span></li>
+                <li> <input type="radio" name="chose"><span>实验音乐</span></li>
+                <li> <input type="radio" name="chose"><span>氛围音乐</span></li>
+            </div>
+            <textarea name="" class="zm-radioLoadR8" cols="30" rows="10"></textarea>
+            <br />
+            <span class="zm-radioLoadR9">提交</span>
+            <span class="zm-radioLoadR10">删除 </span>
+        </div>
+    </div>
+
+<!--</div>-->

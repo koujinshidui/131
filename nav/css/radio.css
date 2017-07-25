@@ -1,0 +1,1319 @@
+.zm-radioAll{
+    position: absolute;
+    margin: 20px auto;
+    position: relative;
+    width:1150px ;
+    height: 570px;
+}
+/*.zm-radioRemove{*/
+    /*display: none;*/
+    /*position: absolute;*/
+    /*width:500px ;*/
+    /*height:250px;*/
+    /*top:150px;*/
+    /*left: 342px;*/
+    /*background-color: #ffffff;*/
+    /*border-top-left-radius: 10px;*/
+    /*border-top-right-radius: 10px;*/
+    /*box-shadow: 0px 0px 1px 1px #cccccc;*/
+    /*z-index: 100;*/
+/*}*/
+/*.zm-radioRemoveTop{*/
+    /*width:500px ;*/
+    /*height:50px;*/
+    /*background-color: #4ab1a7;*/
+    /*border-top-left-radius: 10px;*/
+    /*border-top-right-radius: 10px;*/
+/*}*/
+.radio-point{
+    color: #ffffff;
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.radio-dele{
+    float: right;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #4ab1a7;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+.radio-dele:hover{
+    background-color: #cccccc;
+}
+.zm-radioRemoveBom{
+    width: 500px;
+    height: 200px;
+}
+.pointContent{
+    font-size: 14px;
+    width: 420px;
+    margin-left: 40px;
+    margin-top: 40px;
+    overflow: hidden;
+}
+.pointContent div{
+    float: left;
+}
+.pointContent .fa{
+    width: 80px;
+    height: 80px;
+    border-radius: 60px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 80px;
+    color:#ffffff ;
+    background-color:#ff5555 ;
+}
+.pointText{
+    width: 320px;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 22px;
+}
+.radioRemovebtn{
+    width: 240px;
+    margin-top: 35px;
+    margin-left:250px ;
+    overflow: hidden;
+}
+.radioRemovebtn span{
+    font-size: 14px;
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+.radioRemovebtn1{
+    background-color: #aaaaaa;
+}
+.radioRemovebtn1:hover{
+    background-color: #cccccc;
+}
+.radioRemovebtn2{
+    background-color: #4ab1a7;
+    margin-left: 30px;
+}
+.radioRemovebtn2:hover{
+    background-color: #00c3b0;
+}
+.radioRemovebtn span{
+    width: 100px;
+    height: 30px;
+    float: left;
+}
+.zm-radioWrap{
+    width: 1150px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0px 0px 1px 1px #cccccc;
+}
+.zm-radioTop{
+    width: 1150px;
+    height: 40px;
+    background-color:#daf1ec ;
+}
+.zm-radioTopList li{
+    cursor: pointer;
+    list-style: none;
+    float: left;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color:#daf1ec ;
+}
+.zm-radioTopList li:nth-child(1){
+    background-color:#ffffff ;
+}
+.radioWrap0{
+    position: relative;
+    display: none;
+}
+.zm-radioMiddleAll{
+    position: relative;
+    width: 1150px;
+    height: 530px;
+    overflow: hidden;
+}
+.zm-radioMiddle{
+    display: block;
+    position: relative;
+    width: 1150px;
+    height: 530px;
+    background-color: #ffffff;
+}
+.zm-radioMiddle1{
+    position: relative;
+    width: 1150px;
+    height: 530px;
+    background-color: #ffffff;
+}
+.zm-radioAlbum{
+    width:1150px ;
+    height: 40px;
+}
+.zm-radioMiddleLeft{
+    position: absolute;
+    width: 242px;
+    height: 500px;
+    top:40px;
+    left: 0px;
+    background-color:#f1faf8 ;
+}
+.radioshou{
+    position: relative;
+}
+.zm-radioLlist>li .plus-minus{
+    cursor: pointer;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top:7px;
+    left: -18px;
+    font-size: 12px;
+    background-color: #4bb1a6;
+    color: #ffffff;
+    text-align: center;
+    line-height: 16px;
+}
+.fa-microphone{
+    color:#4bb1a6;
+}
+.zm-radioMiddleRight{
+    position: absolute;
+    width: 908px;
+    height: 540px;
+    top:0px;
+    left: 242px;
+    background: #ffffff;
+    /*border:1px solid green;*/
+}
+.zm-radioLlist{
+    font-size: 14px;
+}
+.zm-radioLlist>li{
+    width: 180px;height: 30px;
+    margin-top: 5px;
+    background-color: #ffffff;
+    border-radius: 5px ;
+    border: 1px solid #daf1ec;
+    margin-left: 10px;
+
+}
+.zm-radioLlist>li:nth-child(1){
+    background-color:#f1faf8 ;
+    border: none;
+}
+.zm-radioLlist>li span{
+    line-height: 30px;
+    margin-left: 10px;
+}
+.zm-radiozhuanji{
+    /*position: relative;*/
+    width: 180px;height: 30px;
+    margin-top: 5px;
+    margin-left: 14px;
+    background-color: #ffffff;
+    border-radius: 5px ;
+    border: 1px solid #daf1ec;
+    line-height: 30px;
+    text-indent: 1em;
+}
+.zm-radiofen{
+    width:207px ;
+    height: 177px;
+    margin-left: 12px;
+}
+.zm-radiofen>li{
+    position: relative;
+    margin-left: 10px;
+    margin-top: 0px;
+    width:200px ;
+    height: 30px;
+}
+.level-border-l1{
+    position: absolute;
+    width: 1px;
+    background: #cbece9;
+    height: 37px;
+    display: block;
+    left: 0;
+    top: -21px;
+}
+.fl{
+    position: absolute;
+    width: 1px;
+    background: #BBDEFA;
+    height: 21px;
+    display: block;
+    left: 0;
+    top: -6px;
+}
+.level-line{
+    position: absolute;
+    width: 14px;
+    float: left;
+    height: 1px;
+    background: #cbece9;
+    margin-right: 2px;
+    top: 15px;
+}
+.zm-radioRt{
+    width: 908px;
+    height: 40px;
+    overflow: hidden;
+}
+.zm-radioRtl{
+    font-size: 14px;
+    position: relative;
+    line-height: 34px;
+    width: 500px;
+    height: 40px;
+    float: left;
+    /*border: 1px solid red ;*/
+}
+.zm-radioAlbumTop1{
+    font-size: 14px;
+    position: relative;
+    line-height: 34px;
+    width: 470px;
+    height: 40px;
+    float: left;
+    margin-left: 427px;
+}
+.zm-radioAlbumTop2{
+    width: 200px;
+    margin-right: 20px;
+    height: 40px;
+    float: right;
+    font-size: 14px;
+    overflow: hidden;
+}
+.zm-radioAlbumTop2 div{
+    cursor: pointer;
+    width: 90px;
+    height: 26px;
+    margin-top: 7px;
+    margin-left: 10px;
+    border-radius: 26px;
+    background-color:#48b0a5 ;
+    color: #ffffff;
+    text-align: center;
+    line-height: 26px;
+    float: left;
+}
+.zm-radioAlbumMid{
+    width: 1150px;
+    height: 440px;
+}
+.zm-radioAlbumBot{
+    position: relative;
+    width: 1150px;
+    height: 50px;
+    height:50px;
+    background-color: #dbefed;
+}
+zm-radioRtl .fa-search{
+    position: absolute;
+    left: 268px;
+    top: 9px;
+    font-size: 18px;
+    font-weight: 100;
+    color: #00AA91;
+}
+#zm-radioSelect{
+    width: 175px;
+    height: 30px;
+    color: #000000;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    outline: none;
+
+}
+#zm-radioSelect1{
+    width: 175px;
+    height: 30px;
+    color: #000000;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    outline: none;
+
+}
+.zm-radioAlbumTop1 .zm-radioSearch,
+.zm-radioRtl .zm-radioSearch{
+    width: 200px;
+    height: 30px;
+    margin-left: 10px;
+    border: 1px solid #a4d8d4;
+    border-radius: 30px;
+    outline: none;
+    text-indent: 2.5em;
+    font-size: 14px;
+    color: black;
+}
+.zm-radioRtbtn{
+    width: 300px;
+    margin-right: 20px;
+    height: 40px;
+    float: right;
+    font-size: 14px;
+    overflow: hidden;
+}
+.zm-radioRtbtn div{
+    cursor: pointer;
+    width: 90px;
+    height: 26px;
+    margin-top: 7px;
+    margin-left: 10px;
+    border-radius: 26px;
+    background-color:#48b0a5 ;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+    line-height: 26px;
+    float: left;
+}
+.zm-radioRtbtn div:hover{
+    background-color:#00c3b0 ;
+}
+.zm-radioRm{
+    width: 908px;
+    height: 440px;
+}
+.zm-radioSpli{
+    width: 908px;
+    height: auto;
+    min-height: 440px;
+    overflow: hidden;
+}
+.zm-radioAlbumSpli{
+    padding: 0 20px;
+    width: 1150px;
+    height: 440px;
+}
+.zm-radioAlbumSpli li{
+    float: left;
+    margin-left: 8px;
+    margin-bottom: 8px;
+}
+.zm-radioList{
+    position: relative;
+    width: 130px;
+    height: 130px;
+
+    background-color: #ededed;
+    float: left;
+    margin-left: 18px;
+    margin-bottom: 18px;
+}
+.listOpcity{
+    opacity: 0;
+}
+.zm-radioListimg{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+}
+.zm-radioList1{
+    position: absolute;
+    top:3px;
+    left: 5px;
+    font-size: 12px;
+    line-height: 16px;
+    height: 16px;
+
+}
+.zm-radioList1-1{
+    opacity: 0;
+    position: absolute;
+    top:0px;
+    left: 0px;
+    /*width: 120px;*/
+    max-width: 120px;
+
+    /*height: 16px;*/
+    max-height: 16px;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    z-index: 2;
+
+}
+.zm-radioList1-3{
+    position: absolute;
+    width: 110px;
+    height: 16px;
+    overflow: hidden;
+}
+.zm-radioList1-2{
+    padding: 0 5px;
+    background-color: #a3a3a3 ;
+    max-width: 120px;
+    max-height: 16px;
+    overflow: hidden;
+}
+.zm-radioList2{
+    background-color: #ffffff;
+    color: #4ab3a5;
+    position: absolute;
+    top: -1px;
+    right: -2px;
+    z-index: 10;
+    opacity: 0;
+}
+.zm-radioList3{
+    position: absolute;
+    width: 130px;
+    height: 24px;
+    background-color:rgba(0,0,0,0.5);
+    bottom: 0px;
+}
+.zm-radioList3 .fa{
+    cursor: pointer;
+    font-weight: 100;
+    color: #ffffff;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.zm-radioList3 .fa:nth-child(1){
+    color: #ffffff;
+    margin-left: 10px;
+}
+.zm-radioList3 .fa:hover{
+    color: #599c95;
+    margin-top: 5px;
+}
+.zm-radioalter{
+    display: none;
+    position: absolute;
+    width: 50px;
+    height: 15px;
+    background: #ffffff;
+    top:84px;
+    left: 3px;
+}
+.zm-radioalter1{
+    font-size: 12px;
+    position: absolute;
+    width: 75px;
+    height: 16px;
+    line-height: 16px;
+    text-indent: 2px;
+    border-radius: 5px;
+    background: #ffffff;
+    top:0px;
+    left:0px;
+}
+.zm-radioalter2{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    top:16px;
+    left: 6px;
+}
+.zm-radiodele{
+    display: none;
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    background: #ffffff;
+    top:84px;
+    left: 27px;
+}
+.zm-radiodele1{
+    font-size: 12px;
+    position: absolute;
+    width: 56px;
+    height: 16px;
+    line-height: 16px;
+    text-indent: 2px;
+    border-radius: 5px;
+    background: #ffffff;
+    top:0px;
+    left:0px;
+}
+.zm-radiodele2{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    top:16px;
+    left: 6px;
+}
+.zm-radiodown{
+    display: none;
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    background: #ffffff;
+    top:84px;
+    left:49px;
+}
+.zm-radiodown1{
+    font-size: 12px;
+    position: absolute;
+    width: 67px;
+    height: 16px;
+    line-height: 16px;
+    text-indent: 2px;
+    border-radius: 5px;
+    background: #ffffff;
+    top:0px;
+    left:0px;
+}
+.zm-radiodown2{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ffffff;
+    top:16px;
+    left: 6px;
+}
+.zm-radioRb{
+    position: relative;
+    width: 908px;
+    height:50px;
+    background-color: #dbefed;
+}
+.zm-radioRbbtn{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    right: 20px;
+    top: 10px;
+    border-radius: 30px;
+    background-color: #49b1a9;
+    cursor: pointer;
+    color: #feffff;
+    text-align: center;
+    line-height: 30px;
+}
+.zm-radioRbbtn:hover{
+    background-color: #00c3b0;
+}
+.zm-radioLoad{
+    display: none;
+    position:fixed;
+    width: 1150px;
+    height: 760px;
+    background-color: #ffffff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0px 0px 1px 1px #cccccc;
+    top: 150px;
+    left:300px;
+    z-index: 1000;
+}
+.zm-radioLoad-top{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    letter-spacing: 0.05em;
+    width: 1150px;
+    height: 50px;
+    background-color: #49b1a9;
+    overflow: hidden;
+}
+.zm-radioLoad-top1{
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #ffffff;
+}
+.zm-radioLoad-top2{
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #c7eae4;
+    text-align: center;
+    line-height: 16px;
+    font-weight: bold;
+    color: #49b1a9;
+    float: right;
+    margin-right: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.zm-radioLoad-top2:hover{
+background-color: #f0fcff;
+}
+.zm-radioLoad-middle{
+    position: relative;
+    width: 1150px;
+    height: 760px;
+}
+.zm-radioLoad-middleL{
+    text-align: right;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 145px;
+    height: 760px;
+}
+.zm-radioLoad-middleL div{
+   font-size: 14px;
+}
+.zm-radioLoad-middleR{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 1005px;
+    height: 760px;
+}
+.zm-radioyp{
+    width: 260px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.zm-radioyp:focus{
+    box-shadow: 0px 0px 1px 1px #a4d9d3;
+}
+.zm-radioLoadR11{
+    width: 250px;
+    height: 27px;
+    margin-top: 10px;
+    margin-left: 5px;
+    line-height: 27px;
+}
+.zm-radioLoadR11 span{
+    font-size: 14px;
+}
+.zm-radioLoadR6{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.zm-radioLoadR7{
+    width: 960px;
+    height: 115px;
+    overflow: hidden;
+    margin-left: 5px;
+}
+.zm-radioLoadR7 input,.zm-radioLoadR7 span{
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.zm-radioLoadR7 input{
+    width: 14px;
+    height: 14px;
+    background-color: #ffffff;
+}
+.zm-radioLoadR7 span{
+    margin-right: 15px;
+    font-size: 14px;
+}
+.zm-radioLoadR7 li{
+    float: left;
+    width: 160px;
+}
+.zm-radioLoadR8{
+    width: 910px;
+    height: 200px;
+    margin-left: 10px;
+    margin-top: 25px;
+    background-color: #f1faf9;
+    border: 0;
+    outline: none;
+    resize: none;
+
+}
+.zm-radioLoadR9{
+    cursor: pointer;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    background-color: #4ab1a7;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 33px;
+    margin-left: 0px;
+    border-radius: 30px;
+}
+.zm-radioLoadR9:hover{
+    background-color:#00c3b0 ;
+}
+.zm-radioLoadR10{
+    cursor: pointer;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    background-color: #aaaaaa;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 33px;
+    margin-left: 20px;
+    border-radius: 30px;
+}
+.zm-radioLoadR10:hover{
+    background-color: #cccccc;
+}
+.zm-radioLoad-middleL1{
+    margin-top: 14px;
+ }
+.zm-radioLoad-middleL2{
+    margin-top: 21px;
+}
+.zm-radioLoad-middleL3{
+    margin-top: 22px;
+}
+.zm-radioLoad-middleL4{
+    margin-top: 19px;
+}
+.zm-radioLoad-middleL5{
+    margin-top: 22px;
+}
+.zm-radioLoad-middleL6{
+    margin-top: 21px;
+}
+.zm-radioLoad-middleL7{
+    margin-top: 22px;
+}
+.zm-radioLoad-middleL8{
+    margin-top: 13px;
+}
+.zm-radioLoad-middleL9{
+    margin-top:110px;
+}
+.zm-radioLdRt{
+    cursor: pointer;
+   padding: 5px 15px;
+    width: 90px;
+    background-color:#49b1a6 ;
+    border-radius: 30px;
+    color: #ffffff;
+}
+.zm-radioLdRt:hover{
+    background-color: #00c3b0;
+}
+.zm-radioCopyToAlbum{
+    display: none;
+    position: absolute;
+    left: 317px;
+    top:45px;
+    width: 540px;
+    height: 450px;
+    box-shadow: 0 0 1px 1px #cccccc;
+    border-radius: 5px;
+}
+.zm-radioCopyToAlbumTop{
+    width: 540px;
+    height: 50px;
+    background-color: #4ab1a7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    line-height: 50px;
+}
+.albumTopL{
+    float: left;
+    margin-left: 20px;
+    color: #ffffff;
+}
+.albumTopR{
+    float: right;
+    width: 26px;
+    height: 26px;
+    border-radius: 26px;
+    background-color: #ffffff;
+    cursor: pointer;
+    color: #4ab1a7;
+    text-align: center;
+    line-height: 23px;
+    margin-top: 12px;
+    margin-right: 20px;
+    font-size: 20px;
+}
+.albumTopR:hover{
+    background-color: #cccccc;
+}
+.zm-radioCopyToAlbumBoot{
+    padding: 20px 20px;
+    width: 540px;
+    height: 400px;
+    background-color: #f1faf9;
+}
+.zm-radioCopyToAlbumBoot1{
+    width: 500px;
+    height:320px;
+    background-color: #ffffff;
+}
+.zm-radioCopyToAlbumBoot12{
+    width: 500px;
+    height:auto;
+    overflow: hidden;
+    /*background-color: #ffffff;*/
+}
+.zm-radioCopyToAlbumBox{
+    width: 300px;
+    height:auto;
+    padding-top: 20px;
+    font-size: 14px;
+    margin-left: 20px;
+
+}
+.zm-radioCopyToAlbumBox1{
+    width: 200px;
+    height: 30px;
+
+}
+.zm-radioCopyToAlbumBox1 .pen-min{
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background-color:#49b1a6 ;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 15px;
+}
+.zm-radioCopyToAlbumBox1 .fa-microphone{
+    margin-left: 6px;
+}
+.album-co{
+    margin-left: 6px;
+}
+.zm-radioCopyToAlbumBox2{
+    width: 100px;
+    height: 170px;
+    margin-left: 29px;
+    /*border: 1px solid red;*/
+}
+.zm-radioCopyToAlbumBox21{
+    position: relative;
+    width: 100px;
+    height:31px ;
+}
+.album-ver{
+    position: absolute;
+    width: 1px;
+    height:31px ;
+    background: #cbece9;
+}
+.album-level{
+    position: absolute;
+    width: 14px;
+    height: 1px;
+    background: #cbece9;
+    top: 30px;
+    left: 0px;
+}
+.album-content{
+    position: absolute;
+    width: 100px;
+    height: 15px;
+    left: 14px;
+    top:21px;
+
+}
+.zm-radioAlbumbtn{
+    width: 240px;
+    height: 30px;
+    margin-left: 120px;
+    margin-top: 15px;
+}
+.zm-radioAlbumbtn div{
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
+    float: left;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    margin-left: 20px;
+}
+.albumbtn1{
+    background-color: #aaaaaa;
+}
+.albumbtn1:hover{
+    background-color: #cccccc;
+}
+.albumbtn2{
+    background-color: #4ab1a7;
+}
+.albumbtn2:hover{
+    background-color: #00c3b0;
+}
+.radioAddAlbum{
+    display: none;
+    position: absolute;
+    left: 200px;
+    top:50px;
+    width: 740px;
+    height: 450px;
+    box-shadow: 0 0 1px 1px #cccccc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #ffffff;
+    z-index: 10;
+}
+.radioAddAlbumtop{
+    width: 740px;
+    height: 50px;
+    background-color: #49b1a9;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.radioAddAlbumtop1{
+    float: left;
+    margin-left: 20px;
+    margin-top: 15px;
+    color: #ffffff;
+
+}
+.radioAddAlbumtop2{
+    float: right;
+    margin-right: 20px;
+    margin-top: 15px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #49b1a9;
+    cursor: pointer;
+    text-align: center;
+    line-height: 18px;
+}
+.radioAddAlbumtop2:hover{
+    background-color: #cccccc;
+}
+.radioAddAlbumBox{
+    font-size: 14px;
+    width: 740px;
+    height: 400px;
+    background-color: #dbefed;
+    padding: 20px 20px;
+}
+.radioAddAlbumBox1{
+    position: relative;
+    width: 700px;
+    height: 330px;
+    background-color: #ffffff;
+}
+.radioAddAlbumBoxL{
+    position: absolute;
+    width: 120px;
+    height: 320px;
+}
+.radioAddAlbumBoxL div{
+    text-align: right;
+}
+.radioAddAlbumBoxL span{
+    color: #ff0000;
+}
+.radioAddAlbumBoxR{
+    position: absolute;
+    width: 570px;
+    height: 320px;
+    left: 130px;
+}
+.radioAddAlbumBoxR div{
+    margin-top: 20px;
+}
+.radioAddAlbumBoxR input{
+    /*border: none;*/
+    border: 1px soli #cccccc;
+    width: 260px;
+    height: 30px;
+    border-radius: 5px;
+}
+.radioAddblumR4{
+    position: relative;
+    width: 260px;
+    height: 150px;
+}
+.radioAddblumR4 div{
+    position: absolute;
+}
+.AddblumRimg{
+    width:130px ;
+    height: 130px;
+    border: 1px solid #cccccc;
+}
+#addblumRimgPic{
+    position: absolute;
+    top:-20px;
+    left: 0px;
+    width: 130px;
+    height: 130px;
+}
+.radioAddblumR4 .addblumfile{
+    cursor: pointer;
+    position: absolute;
+    left: 150px;
+    top: 32px;
+    width: 100px;
+    height: 26px;
+    border-radius: 26px;
+    z-index: 10;
+    opacity: 0;
+}
+.addblumRimgbtn1{
+    width: 100px;
+    height: 26px;
+    top: 10px;
+    left: 150px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 26px;
+    background-color: #4ab1a7;
+}
+
+.addblumRimgbtn2{
+    cursor: pointer;
+    width: 100px;
+    height: 26px;
+    top: 55px;
+    left: 150px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 26px;
+    background-color: #4ab1a7;
+}
+.addblumRimgbtn2:hover{
+    background-color: #00c3b0;
+}
+.radioAddAlbumL1{
+    margin-top: 25px;
+}
+.radioAddAlbumL2{
+    margin-top: 30px;
+}
+.radioAddAlbumL3{
+    margin-top: 30px;
+}
+.radioAddAlbumL4{
+    margin-top: 28px;
+}
+.radioAddAlbumBox2{
+    width: 230px;
+    height: 30px;
+    margin-left: 227px;
+}
+.radioAddAlbumBox2 div{
+    cursor: pointer;
+}
+.addblumRimgbtn3{
+    float: left;
+    width: 100px;
+    margin-top: 10px;
+    height: 30px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 26px;
+    background-color: #aaaaaa;
+}
+.addblumRimgbtn4{
+    float: left;
+    margin-top: 10px;
+    margin-left: 30px;
+    width: 100px;
+    height: 30px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 26px;
+    background-color: #4ab1a7;
+}
+.addblumRimgbtn4:hover{
+    background-color: #00c3b0;
+}
+.addblumRimgbtn3:hover{
+    background-color: #cccccc;
+}
+.addRadioLoad{
+    display: none;
+    position: absolute;
+    left: 200px;
+    top: 50px;
+    width: 540px;
+    height: 450px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 1px 1px #cccccc;
+    z-index: 20;
+}
+.addRadioLoadf{
+    width: 540px;
+    height: 50px;
+    background-color: #4ab1a7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.addRadioLoadf1{
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    color:#ffffff;
+}
+.addRadioLoadf2{
+    float: right;
+    margin-right: 20px;
+    margin-top: 15px;
+    width:20px ;
+    height: 20px;
+    font-size: 32px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    text-align: center;
+    line-height: 15px;
+    color: #49b1a9;
+}
+.addRadioLoads{
+    position: relative;
+    width: 540px;
+    height: 100px;
+    background-color: #dbefed ;
+}
+.radioProgress1{
+    position: absolute;
+    top:20px;
+    left: 20px;
+    width: 500px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+.radioProgress2{
+    width: 0px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: #49b1a9;
+}
+.radioProgress3{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 14px;
+}
+.addRadioLoadt{
+    width: 450px;
+    height: 250px;
+    background-color: #ffffff;
+}
+.addRadioLoadl{
+    width: 540px;
+    height: 50px;
+    border-top: 1px solid #cccccc;
+}
+.addRadioLoadl div{
+    cursor: pointer;
+}
+.addRadioLoadbtn1{
+    float: left;
+    margin-left: 20px;
+    margin-top: 15px;
+    color: #49b1a9;
+    text-decoration: underline;
+}
+.addRadioLoadbtn2{
+    float: right;
+    width: 100px;
+    height: 30px;
+    margin-right: 20px;
+    margin-top: 10px;
+    background-color: #49b1a9;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #ffffff;
+}
+.addRadioLoadbtn2:hover{
+    background-color: #00c3b0;
+}
+.addRadioLoadbtn3{
+    float: right;
+    width: 100px;
+    height: 30px;
+    margin-right: 30px;
+    margin-top: 10px;
+    background-color: #aaaaaa;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #ffffff;
+}
+.addRadioLoadbtn3:hover{
+    background-color: #cccccc;
+}
+.exclico{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 18px;
+    margin-right: 5px;
+    font-size: 16px;
+    border: 1px solid #333333;
+    font-family: "华文宋体";
+    font-weight: bolder;
+    color: #333333;
+}
+.zm-newsMiddleLeft{
+    position: absolute;
+    width: 242px;
+    height: 490px;
+    top:40px;
+    left: 0px;
+    background-color:#f1faf8 ;
+}
+.zm-newsLeftop{
+    width: 242px;
+    height: 440px;
+    background-color:#f1faf8 ;
+}
+
+.zm-radioRt .fa-search {
+    position: absolute;
+    left: 270px;
+    top: 9px;
+    font-size: 18px;
+    font-weight: 100;
+    color: #00AA91;
+}
+.zm-radioAlbumTop1 .fa-search {
+    position: absolute;
+    left: 270px;
+    top: 9px;
+    font-size: 18px;
+    font-weight: 100;
+    color: #00AA91;
+}
+
+
+
+
+
+
+
+
+
+
+

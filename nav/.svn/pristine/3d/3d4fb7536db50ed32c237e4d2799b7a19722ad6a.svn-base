@@ -1,0 +1,117 @@
+/*组件列表中的样式*/
+fieldset li .zm-component-shape-main{
+    padding:0;
+}
+fieldset li .zm-component-shape-main .zm-component-shape-line{
+    stroke-width:2;
+    height: 4px;
+    width: 200px;
+}
+fieldset li .zm-component-shape-main .zm-component-shape-line.vertLine{
+    width: 4px;
+    height: 60px;
+}
+/*组件列表中的样式 end*/
+.zm-component-shape-main{
+    /*padding:12px 10px;*/
+    font-size: 0;
+    transform: rotate(0deg);
+}
+.zm-component-shape-main .zm-component-shape-line{
+    fill: none;
+    stroke:#000;
+    height: 4px;
+    width: 200px;
+    stroke-width:2;
+}
+.zm-component-shape-main .zm-component-shape-line.vertLine{
+    width: 4px;
+    height: 200px;
+}
+/*组件设置项样式*/
+.zm-edit-line-borderStyleBox{
+    float: left;
+    width: 180px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 15px 0;
+    position: relative;
+}
+.zm-edit-line-borderStyleBox:focus{
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #00c3b0;
+    box-shadow: 0 0 3px #00c3b0;
+}
+.zm-edit-line-showBs{
+    width: 80%;
+    margin: 2px 5px;
+    display: inline-block;
+    overflow: hidden;
+}
+.zm-edit-line-showBs svg{
+    width: 100%;
+    height: 4px;
+    stroke: #000;
+}
+.zm-edit-line-bsList{
+    position: absolute;
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #fff;
+    z-index: 3;
+    box-shadow: 0 0 10px 0 #eee;
+    top: 29px;
+}
+.zm-edit-line-bsList li{
+    width: 100%;
+    height: 31px;
+    border-bottom: 1px dotted #dedede;
+    padding: 0 5px;
+}
+.zm-edit-line-bsList li:hover{
+    background-color: #00c3b0;
+}
+.zm-edit-line-bsList li svg{
+    width: 100%;
+    height: 4px;
+    stroke: #000;
+}
+/*垂直样式end*/
+.zm-edit-line-borderStyleBox .zm-edit-line-icon{
+    position: absolute;
+    width: 12%;
+    height: 29px;
+    text-align: center;
+    line-height: 25px;
+}
+/*实体块样式*/
+.zm-component-shape-SVGicon {
+    stroke-width: 0;
+    stroke: transparent;
+    fill: #4ab1a7;
+}
+.zm-component-shape-SVGicon path{
+    vector-effect: non-scaling-stroke;
+}
+.zm-component-shape-main.blockShape{
+    /*padding: 1px;*/
+}
+.zm-component-shape-main.blockShape .zm-component-shape-block{
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+}
+.littleShapeIcon {
+    width: 40px;
+    height: 40px;
+    fill: #3696E5;
+}
+.specielShapeIcon {
+    width: 40px;
+    height: 40px;
+    fill: #747BE8;
+}
+/*实体块样式end*/

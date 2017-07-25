@@ -1,0 +1,88 @@
+
+<div id="zm-component-publish" class="zm-dialog-box zm-movableBox" data-animate="slide" style="width: 90%; height: 90%; ">
+    <link rel="stylesheet" href="manage/css/zmManage.css">
+    <div class="zm-dialog zm-component-publish">
+        <div class="zm-dialog-header zm-movable-header">
+            <span class="zm-dialog-title">我的模板列表</span>
+            <span class="zm-dialog-header-btn zm-tooltip zm-dialog-close " data-zm-title="关闭">×</span>
+            <span class="zm-dialog-header-btn zm-tooltip zm-dialog-help" data-zm-title="帮助中心">?</span>
+        </div>
+        <ul class="zm-myComponents-table-title" style="display: none">
+            <li style="width:3%" > 序</li>
+            <li style="width:18%">模板预览</li>
+            <li style="width:15%" >模板名称</li>
+            <li style="width:8%" >模板大类</li>
+            <li style="width:10%" >模板小类</li>
+            <li style="width:15%" >修改时间</li>
+            <li style="width:8%">状态</li>
+            <li style="width:10%" >备注</li>
+            <li style="width:13%">操作</li>
+        </ul>
+        <div class="zm-dialog-content">
+
+            <table class="zm-myComponents-table">
+                <thead>
+                    <th width="3%">序</th>
+                    <th width="18%">图片预览</th>
+                    <th width="15%">模板名称</th>
+                    <th width="8%">模板大类</th>
+                    <th width="10%">模板小类</th>
+                    <th width="15%">修改时间</th>
+                    <th width="8%">状态</th>
+                    <th width="10%">备注</th>
+                    <th width="13%">操作</th>
+                </thead>
+                <tbody>
+                <tr><td colspan="9">数据库连接出错啦！</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="zm-dialog-footer">
+            <span class="zm-dialog-btnOK" >确 定</span>
+        </div>
+        <script>
+            //编辑
+            $('.zm-myComponents-table').on('click','.zm-myComponents-table-option1 .zm-myComponents-table-item-edit',function(){
+//                console.log('edit')
+                var thisTd = $(this).closest('td');
+                var id=thisTd.attr('data-zm-fId');
+                var name=thisTd.attr('data-zm-fName');
+                var type1=thisTd.attr('data-zm-fType');
+                var type2=thisTd.attr('data-zm-fComponentType');
+                var context =thisTd.find('.zm-myComponents-table-item-html').html();
+                zmManage.component.myList.edit(id,name,context,type1,type2);
+                $(this).zmDialog('remove');
+            })
+            //删除
+            $('.zm-myComponents-table').on('click','.zm-myComponents-table-option1 .zm-myComponents-table-item-delete',function(){
+                var thisTd = $(this).closest('td');
+                var thisTr = thisTd.closest('tr');
+                var thisTrNum = thisTr.index()+1;
+                zmEditor.dialog.open({
+                    title: '提示：',//弹窗标题，（支持文字，html标签，jq对象）
+                    content: '<div class="zm-dialog-msgBox"><img class="zm-dialog-msgImg" src="../imgs/index/warming.png">' +
+                    '<div class="zm-dialog-msg" style="padding-top:15px">确定要删除该组件吗？序号：'+thisTrNum+'<br>【'+thisTr.find('.zm-myComponents-table-item-name').html()+'】</div></div>',//弹窗内容，（支持文字，html标签，jq对象）
+                    footer: '<div class="zm-dialog-footer"><span class="zm-dialog-btnCancel">取 消</span><span class="zm-dialog-btnOK " >确 定</span> </div>',//底部按钮区，（支持文字，html标签，jq对象）
+                    width: 500,//弹窗宽度（只能是数字）
+                    height: 250,//弹窗高度（只能是数字）
+                    movable:true,//弹窗是否可拖动（true：可拖动，false：不可拖动）
+                    animate:'zm-dialog-animate-010',
+                    target: thisTd//弹窗寄生的父级元素，
+                })
+            })
+            //确认删除
+            $('.zm-myComponents-table').on('click','.zm-dialog-btnOK',function(){
+                var thisTd = $(this).closest('td');
+                var thisTr = thisTd.closest('tr');
+                var thisTrIndex = thisTr.index();
+                thisTd.closest('tbody').find('tr:gt('+thisTrIndex+')').each(function(){
+                    var numSpan = $(this).find('td:eq(0) span');
+                    var index = parseInt(numSpan.html());
+                    numSpan.html(index-1)
+                })
+                thisTr.fadeOut(300,function(){thisTr.remove()});
+            })
+        </script>
+    </div>
+</div>
+</div>

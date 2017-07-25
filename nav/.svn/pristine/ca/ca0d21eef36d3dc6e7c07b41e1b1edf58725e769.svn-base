@@ -1,0 +1,40 @@
+/**
+ * Created by Administrator on 2017/2/23.
+ */
+zmEditor.component.text={
+    setting:function(box){
+        var nowEdit = zmEditor.component.nowEdit().children();
+        var tabs=$('<div></div>');
+        var config =[
+            {type:'Family',element:nowEdit,flag:{title:'字体',style:'normal',param:'normal'}},
+            {type:'slider',element: nowEdit,flag: {title: "文字大小<br><span>（像素）</span>", style: "noTab_noColor",isColor:false, param: "fontSize", size: [12,180]}},
+            {type:'slider',element:nowEdit,flag:{title:'文字颜色',style:'noTab_color',isColor:true, param:'color', size: [12,180]}},
+            {type:'slider',element:nowEdit,flag:{title:'背景颜色',style:'noTab_color',isColor:true, param:'backgroundColor', size: [12,180]}},
+            {type:'fontStyle',element:nowEdit,flag:{title:'',style:'normal',param:''}},
+            {type:'paragraphStyle',element:nowEdit,flag:{title:'',style:'normal',param:''}},
+            {type:'slider',element: nowEdit,flag: {title: "字间距<br><span>（像素）</span>", style: "noTab_noColor",isColor:false,param:'fontSpace',size: [-5,200]}},
+            {type:'slider',element: nowEdit,flag: {title: "行间距<br><span>（像素）</span>", style: "noTab_noColor",isColor:false,  param: "lineSpace", size: [-20,100]}},
+            {type:'fontEffect',element:nowEdit,flag:{title:'字体效果',style:'',param:''}},
+            {type:'href',element:nowEdit,flag:{title:'链接',style:'normal',param:''}},
+        ];
+        if(nowEdit.hasClass("zm-edit-component-text-titleCont")){
+            config =[
+                {type:'Family',element:nowEdit,flag:{title:'字体',style:'normal',param:'normal'}},
+                {type:'slider',element: nowEdit,flag: {title: "文字大小<br><span>（像素）</span>", style: "noTab_noColor",isColor:false, param: "fontSize", size: [12,180]}},
+                {type:'slider',element:nowEdit,flag:{title:'文字颜色',style:'noTab_color',isColor:true, param:'color', size: [12,180]}},
+                {type:'slider',element:nowEdit,flag:{title:'背景颜色',style:'noTab_color',isColor:true, param:'backgroundColor', size: [12,180]}},
+                {type:'fontStyle',element:nowEdit.find("p"),flag:{title:'',style:'normal',param:''}},
+                {type:'paragraphStyle',element:nowEdit.find("p"),flag:{title:'',style:'normal',param:''}},
+                {type:'slider',element: nowEdit.find("p"),flag: {title: "字间距<br><span>（像素）</span>", style: "noTab_noColor",isColor:false,param:'fontSpace',size: [0,200]}},
+                {type:'slider',element: nowEdit.find("p"),flag: {title: "行间距<br><span>（像素）</span>", style: "noTab_noColor",isColor:false,  param: "lineSpace", size: [-20,100]}},
+                {type:'fontEffect',element:nowEdit.find("p"),flag:{title:'字体效果',style:'',param:''}},
+                {type:'href',element:nowEdit,flag:{title:'链接',style:'normal',param:''}},
+            ];
+        }
+        var items = zmEditor.component.setItems.config(config);
+        items.forEach(function(e){
+            tabs.append(e);
+        });
+        return tabs
+    }
+};

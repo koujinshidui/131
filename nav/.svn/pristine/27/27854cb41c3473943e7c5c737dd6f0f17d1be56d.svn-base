@@ -1,0 +1,32 @@
+
+<div id="zm-component-publish" class="zm-dialog-box zm-movableBox" data-animate="slide" style="width: 700px; height: 500px; ">
+    <link rel="stylesheet" href="manage/css/zmManage.css">
+    <div class="zm-dialog zm-component-publish">
+        <div class="zm-dialog-header zm-movable-header">
+            <span class="zm-dialog-title">组件发布</span>
+            <span class="zm-dialog-header-btn zm-tooltip zm-dialog-close " data-zm-title="关闭">×</span>
+            <span class="zm-dialog-header-btn zm-tooltip zm-dialog-help" data-zm-title="帮助中心">?</span>
+        </div>
+        <div class="zm-dialog-content zm-component-publish-content">
+            <form id="zm-component-publish-form" method="post">
+            <div class="zm-component-publish-content-main clearFloat">
+            <ul>
+                <input type="hidden" name="fId" >
+                <input type="hidden" name="fStatus" >
+                <input type="hidden" name="fContext" >
+                <li><label><span><span class="zm-component-publish-flag">*</span>组件名称：</span><input type="text" name="fName"><span class="zm-component-publish-tag">组件名称不得包含除"-"外的其他特殊字符</span></label></li>
+                <li><label><span><span class="zm-component-publish-flag">*</span>组件大类：</span><select class="zm-select-component-type1" name="fType" onchange="javascript:zmManage.component.getType2ByType1(this.value);"></select><span class="zm-component-publish-tag">组件大类必选</span></label></li>
+                <li><label><span><span class="zm-component-publish-flag">*</span>组件小类：</span><select class="zm-select-component-type2" name="fComponentType"></select><span class="zm-component-publish-tag">组件小类必选</span></label></li>
+                <li><div class="zm-component-publish-view"></div></li>
+            </ul>
+            </div>
+            </form>
+        </div>
+        <div class="zm-dialog-footer">
+            <span class="zm-dialog-btnCancel" >取 消</span>
+            <span class="zm-dialog-btnOK zm-publish-save-btn" onclick="zmManage.component.publishSave(this)">保 存</span>
+            <span class="zm-dialog-btnOK" onclick="zmManage.component.publishSubmit(this)">提交至待审核</span>
+        </div>
+    </div>
+    </div>
+</div>

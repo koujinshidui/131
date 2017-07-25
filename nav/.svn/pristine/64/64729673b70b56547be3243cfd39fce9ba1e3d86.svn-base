@@ -1,0 +1,416 @@
+/**
+ * Created by liuhuan on 2017/2/23.
+ */
+zmEditor.component.tab={
+    setting:function(box){
+        var nowEdit = zmEditor.component.nowEdit();
+        var tabs1_c1 = $('<div></div>');
+        var config1_c1 = [
+            {type: "channelTab",element: nowEdit.find(".zm-edit-components-tabs-tit-channel"), flag: {title: "是否显示"}},
+            {type: "channelLink",element: nowEdit.find(".zm-edit-components-tabs-tit-channel")},
+            {type: "Family",element: nowEdit.find(".zm-edit-components-tabs-tit-channel"), flag: {title: "字体", style: ""}},
+            {type: "slider",element: nowEdit.find(".zm-edit-components-tabs-tit-channel"),flag: {title: "文字大小<br><span>&nbsp;&nbsp;(像素)</span>", style: "tab_noColor",isColor:false, param: "fontSize", size: [12,80]}},
+            {type: "slider",element: nowEdit.find(".zm-edit-components-tabs-tit-channel"),flag: {title: "文字颜色", style: "tab_color",isColor:true, param: "color"}},
+            {type: "fontStyle",element: nowEdit.find(".zm-edit-components-tabs-tit-channel")},
+            {type: "slider",element: nowEdit.find(".zm-edit-components-tabs-tit-channel"),flag: {title: "文字颜色<br><span>(光标悬停)</span>", style: "tab_color",isColor: true,param: "hoverColor"}}
+        ];
+        var items1_c1 = zmEditor.component.setItems.config(config1_c1);
+        items1_c1.forEach(function(e){
+            tabs1_c1.append(e);
+        });
+        var tabs1_c2 = $('<div></div>');
+        var config1_c2 = [
+            {type: "slider", element: nowEdit.find(".zm-edit-components-tabs-tit"), flag: {title: "头部高度<br><span>&nbsp;&nbsp;(像素)</span>", style: "tab_noColor",isColor:false, param: "height", size: [20,80]}},
+            {type: "slider", element: nowEdit.find(".zm-edit-components-tabs-tit"), flag: {title: "背景颜色", style: "tab_color",isColor:true, param: "backgroundColor"}},
+            {type: "slider", element: nowEdit.find(".zm-edit-components-tabs-tit"), flag: {title: "边框颜色", style: "tab_color",isColor:true, param: "borderColor"}},
+            {type: "slider", element: nowEdit.find(".zm-edit-components-tabs-tit"), flag: {title: "边框宽度<br><span>&nbsp;&nbsp;(像素)</span>", style: "tab_noColor",isColor:false, param: "borderWidth", size: [0,5]}},
+            {type: "tabTopBdCol",element: nowEdit.find(".zm-edit-components-tabs-tit")},
+            {type: "tabBotBdCol",element: nowEdit.find(".zm-edit-components-tabs-tit")}
+        ];
+        var items1_c2 = zmEditor.component.setItems.config(config1_c2);
+        items1_c2.forEach(function(e){
+            tabs1_c2.append(e);
+        });
+        var tabs1List = [{title:"<span class='fa fa-th-large'></span><br>标题",content:tabs1_c1},{title:"<span class='fa fa-home fa-lg'></span><br>头部",content:tabs1_c2}];
+        var tabs1 = zmEditor.component.setItems.tabs_child(tabs1List);
+        var tabs2_c1 = $('<div></div>');
+        var config2_c1 = [
+            {type: "tabTitLink"}
+        ];
+        var items2_c1 = zmEditor.component.setItems.config(config2_c1);
+        items2_c1.forEach(function(e){
+            tabs2_c1.append(e);
+        });
+        var tabs2_c2 = $('<div></div>');
+        var config2_c2 = [
+            {type: "Family",element: nowEdit.find(".zm-edit-components-tabs-tit-lab"),flag: {title: "字体", style: ""}},
+            {type: "slider",element: nowEdit.find(".zm-edit-components-tabs-tit-lab"),flag: {title: "文字大小<br><span>&nbsp;&nbsp;(像素)</span>", style: "tab_noColor", isColor: false, param: "fontSize", size: [12,80]}},
+            {type: "slider",element: nowEdit.find(".zm-edit-components-tabs-tit-lab"),flag: {title: "文字颜色", style: "tab_color",isColor: true, param: "color"}},
+            {type: "fontStyle",element: nowEdit.find(".zm-edit-components-tabs-tit-lab")}
+        ];
+        var items2_c2 = zmEditor.component.setItems.config(config2_c2);
+        items2_c2.forEach(function(e){
+            tabs2_c2.append(e);
+        });
+        var tabs2_c3 = $('<div></div>');
+        var config2_c3 = [
+            {type: "tabTitAlign",element: nowEdit.find(".zm-edit-components-tabs-tit-lab")}
+        ];
+        var items2_c3 = zmEditor.component.setItems.config(config2_c3);
+        items2_c3.forEach(function(e){
+            tabs2_c3.append(e);
+        });
+        var tabs2_c4 = $('<div></div>');
+        var config2_c4 = [
+            {type: "tabLabTopBdCol",element: nowEdit.find(".zm-edit-components-tabs-tit-lab")},
+            {type: "tabLabBotBdCol",element: nowEdit.find(".zm-edit-components-tabs-tit-lab")},
+            {type: "slider",element: nowEdit.find(".zm-edit-components-tabs-tit-lab"),flag: {title: "文字颜色<br><span>(光标悬停)</span>",style: "tab_color",isColor: true,param: "hoverColor",goal: "li"}},
+            {type: "slider",element: nowEdit.find(".zm-edit-components-tabs-tit-lab"),flag: {title: "背景颜色",style: "tab_color",isColor: true,param: "hoverBackgroundColor",goal: "li"}}
+        ];
+        var items2_c4 = zmEditor.component.setItems.config(config2_c4);
+        items2_c4.forEach(function(e){
+            tabs2_c4.append(e);
+        });
+        var tabs2List = [{title:"<span class='fa fa-list-alt'></span><br>选项",content:tabs2_c1},{title:"<span class='fa fa-font'></span><br>文字",content:tabs2_c2},{title:"<span class='fa fa-cubes'></span><br>布局",content:tabs2_c3},{title:"<span class='fa fa-hand-o-up'></span><br>悬停",content:tabs2_c4}];
+        var tabs2 = zmEditor.component.setItems.tabs_child(tabs2List);
+        var tabs3 = $('<div></div>');
+        var config3 = [
+            {type: "slider",element: nowEdit.find(".zm-edit-components-tabs-cont"),flag: {title: "边框颜色", style:"noTab_color", isColor: true, param:"borderColor"}},
+            {type: "slider",element: nowEdit.find(".zm-edit-components-tabs-cont"),flag: {title: "边框宽度", style: "noTab_noColor", isColor: false, param: "borderWidth", size: [0,5]}},
+            {type: "slider",element: nowEdit.find(".zm-edit-components-tabs-cont"),flag: {title: "背景颜色", style:"noTab_color", isColor: true, param: "backgroundColor"}}
+        ];
+        var items3 = zmEditor.component.setItems.config(config3);
+        items3.forEach(function(e){
+            tabs3.append(e);
+        });
+        var tabs4 = $('<div></div>');
+        var config4 = [
+            {type: "boxShadow",element: nowEdit,flag: {style: "noTab"}}
+            ];
+        var items4 = zmEditor.component.setItems.config(config4);
+        items4.forEach(function(e){
+            tabs4.append(e);
+        });
+        var tabsList = [{title:"常规",content:tabs1},{title:"选项卡",content:tabs2},{title:"内容区",content:tabs3},{title:"阴影",content:tabs4}];
+        var tabs = zmEditor.component.setItems.tabs(tabsList);
+        box.css({"width":"350px","height":"685px"});
+
+        return tabs;
+    },
+    method:{
+        channelTab:function(ele,obj){
+            var e = $('<div class="zm-edit-components-tabs-channel clearFloat">'
+                +'<span class="zm-edit-text-title"></span>'
+                +'<label class="zm-switch-box"><span class="zm-switch"><span class="fa fa-minus"></span></span></label>'
+                +'<div class="zm-edit-components-tabs-channel-shadow"></div>'
+                +'</div>'
+            );
+            var _shadow = e.find(".zm-edit-components-tabs-channel-shadow");
+            var _btn = e.find(".zm-switch-box");
+            e.find(".zm-edit-text-title").text(obj.title);
+            //初始化按钮状态
+            if(ele.attr("data-judge-channel") == "true"){
+                _shadow.hide();
+                _btn.addClass("zm-switch-box-on");
+                _btn.children().children().removeClass("fa-minus").addClass("fa-check");
+            }
+            _btn.on("click",function(){
+                var judge = ele.attr("data-judge-channel");
+                if(judge == "true"){
+                    _shadow.stop().fadeIn('slow');
+                    ele.attr("data-judge-channel","false").stop().slideUp();
+                }else{
+                    _shadow.stop().fadeOut('slow');
+                    ele.attr("data-judge-channel","true").stop().slideDown();
+                }
+            });
+            return e;
+        }, //频道开关 ok
+        channelLink:function(ele){
+            var e = $('<div class="zm-edit-components-tabs-channel-link">'
+                +'<div class="zm-edit-components-tabs-channel-link-name"><span class="zm-edit-text-title">标题名称</span><input type="text" maxlength="10" placeholder="频道名称"/></div>'
+                +'<div class="zm-edit-components-tabs-channel-link-link"><span class="zm-edit-text-title">链接</span><label class="zm-switch-box"><span class="zm-switch"><span class="fa fa-minus"></span></span></label><span class="zm-set-link">设置</span></div>'
+                +'<div class="zm-edit-components-tabs-channel-link-text"><span class="zm-edit-text-title">页面</span><span class="zm-edit-components-tabs-channel-link-text-name"></span></div>'
+                +'</div>'
+            );
+            var _input = e.find(".zm-edit-components-tabs-channel-link-name > input");
+            var onOff = e.find(".zm-switch-box");
+            var _popLink = e.find(".zm-set-link");
+            var _text = e.find(".zm-edit-components-tabs-channel-link-text-name");
+            _input.on("input",function(){
+                var text = $(this).val();
+                ele.find("span").text(text);
+            });
+            onOff.on("click",function(){
+                var _this = $(this);
+                if(_this.hasClass("zm-switch-box-on")){
+                    _this.removeClass(".zm-switch-box-on");
+                    _popLink.removeClass("choiceColor").attr("onclick","");
+                }else{
+                    _this.addClass(".zm-switch-box-on");
+                    _popLink.addClass("choiceColor").attr("onclick","zmEditor.dialog.setHref(this)");
+                }
+            });
+
+            return e;
+        }, //频道链接 ok
+        tabTopBdCol:function(ele) {
+            var e = $('<div class="zm-edit-components-tabs-top-border">'
+                +'<div class="zm-edit-components-tabs-top-border-onOff"><span class="zm-edit-text-title">上边框</span><label class="zm-switch-box"><span class="zm-switch"><span class="fa fa-minus"></span></span></label></div>'
+                +'<div class="zm-edit-components-tabs-top-border-col"></div>'
+                +'<div class="zm-edit-components-tabs-top-border-hei"></div>'
+                +'<div class="zm-edit-components-tabs-top-border-shadow"></div>'
+                +'<div class="zm-edit-components-tabs-temporary"></div>'
+                +'</div>'
+            );
+            var col = zmEditor.component.setItems.slider(ele,{title: "颜色",style: "tab_color",isColor: true,param: "borderTopColor"});
+            var hei = zmEditor.component.setItems.slider(ele,{title: "宽度<br><span>(像素)</span>",style: "tab_noColor",isColor: false,param: "borderTopWidth",size: [0,10]});
+            var _col = e.find(".zm-edit-components-tabs-top-border-col");
+            var _hei = e.find(".zm-edit-components-tabs-top-border-hei");
+            _col.append(col);
+            _hei.append(hei);
+
+            var shadow = e.find(".zm-edit-components-tabs-top-border-shadow");
+            var shadowTop = e.find(".zm-edit-components-tabs-temporary");
+            var onOff = e.find(".zm-switch-box");
+            var initJudge = ele.attr("data-judge-topBorder");
+            if(initJudge == 'true'){
+                onOff.addClass("zm-switch-box-on");
+                shadow.hide();
+            }else{
+                onOff.removeClass("zm-switch-box-on");
+                shadow.show();
+            };
+            onOff.on("click",function(){
+                var judge_t = ele.attr("data-judge-topBorder");
+                var judge_b = ele.attr("data-judge-botBorder");
+                if(judge_t == "true") {
+                    shadow.fadeToggle("500");
+                    shadowTop.fadeToggle("500");
+                    ele.css("borderTopStyle", "none").attr("data-judge-topBorder", "false");
+                    if (judge_b != "true") {
+                        ele.css("borderStyle", "solid");
+                    }
+                }else{
+                    if(judge_b != "true"){
+                        ele.css("borderStyle","none");
+                    }
+                    shadow.fadeToggle("500");
+                    shadowTop.fadeToggle("500");
+                    ele.css("borderTopStyle", "solid").attr("data-judge-topBorder", "true");
+                }
+            });
+            return e;
+        },//上门楣 ok
+        tabBotBdCol:function(ele){
+            var e = $('<div class="zm-edit-components-tabs-bottom-border">'
+                +'<div class="zm-edit-components-tabs-bottom-border-onOff"><span class="zm-edit-text-title">下边框</span><label class="zm-switch-box"><span class="zm-switch"><span class="fa fa-minus"></span></span></label></div>'
+                +'<div class="zm-edit-components-tabs-bottom-border-col"></div>'
+                +'<div class="zm-edit-components-tabs-bottom-border-hei"></div>'
+                +'<div class="zm-edit-components-tabs-bottom-border-shadow"></div>'
+                +'<div class="zm-edit-components-tabs-temporary"></div>'
+                +'</div>'
+            );
+            var col = zmEditor.component.setItems.slider(ele,{title: "颜色",style: "tab_color",isColor: true,param: "borderBottomColor"});
+            var hei = zmEditor.component.setItems.slider(ele,{title: "宽度<br><span>(像素)</span>",style: "tab_noColor",isColor: false,param: "borderBottomWidth",size: [0,10]});
+            var _col = e.find(".zm-edit-components-tabs-bottom-border-col");
+            var _hei = e.find(".zm-edit-components-tabs-bottom-border-hei");
+            _col.append(col);
+            _hei.append(hei);
+            var shadow = e.find(".zm-edit-components-tabs-bottom-border-shadow");
+            var shadowTop = e.find(".zm-edit-components-tabs-temporary");
+            var onOff = e.find(".zm-switch-box");
+            var initJudge = ele.attr("data-judge-botBorder");
+            if(initJudge == 'true'){
+                onOff.addClass("zm-switch-box-on");
+                shadow.hide();
+            }else{
+                onOff.removeClass("zm-switch-box-on");
+                shadow.show();
+            } //初始化
+            onOff.on("click",function(){
+                var judge_b = ele.attr("data-judge-botBorder");
+                var judge_t = ele.attr("data-judge-topBorder");
+                if(judge_b == "true"){
+                    shadow.fadeToggle("500");
+                    shadowTop.fadeToggle("500");
+                    ele.attr("data-judge-botBorder","false").css("borderBottomStyle","none");
+                    if(judge_t != "true"){
+                        ele.css("borderStyle","solid");
+                    }
+                }else{
+                    if(judge_t != "true"){
+                        ele.css("borderStyle","none");
+                    }
+                    shadow.fadeToggle("500");
+                    shadowTop.fadeToggle("500");
+                    ele.attr("data-judge-botBorder","true").css({"borderBottomStyle":"solid"});
+                }
+            });
+            return e;
+        },//下门楣 ok
+        tabTitLink:function(ele){
+            var e = $('<div class="zm-edit-components-tabs-link">'
+                +'<div class="zm-edit-components-tabs-lab"><span>选项名称</span><span>链接开关</span><span>设置</span></div>'
+                +'<div class="zm-edit-components-tabs-cont"></div>'
+                +'<div class="zm-edit-components-tabs-add"><div><i class="fa fa-plus"></i><span>选项</span></div></div>'
+                +'</div>'
+            );
+            var str = '<div class="zm-edit-components-tabs-titleLink"><span class="zm-edit-components-tabs-link-close fa fa-remove"></span><input type="text" maxlength="16"  class="zm-edit-components-tabs-text" placeholder="请输入名称" maxlength="8"/><label class="zm-switch-box"><span class="zm-switch"><span class="fa fa-minus"></span></span></label><span class="zm-edit-components-tabs-popup">设置</span></div>';
+            var wrap = e.find(".zm-edit-components-tabs-cont");
+            var num = ele.find(".zm-edit-components-tabs-tit-lab > li").length;
+            for(var i=0;i<num;i++){
+                wrap.append(str);
+            }
+            var add = e.find(".zm-edit-components-tabs-add > div");
+            add.on("click",function(){
+                var length = e.find(".zm-edit-components-tabs-titleLink").length;
+                if( length < 9){
+                    wrap.append(str);
+                    ele.find(".zm-edit-components-tabs-tit-lab").append("<li><span>标题</span></li>");
+                    ele.find(".zm-edit-components-tabs-cont").append("<div>请自行拖曳内容</div>");
+                    add.removeAttr("disabled");
+                    if(length == 8){
+                        add.attr("disabled","disabled");
+                    }
+                }
+            });
+            e.on("click",".zm-switch-box",function(){
+                var _this = $(this);
+                if(_this.hasClass("zm-switch-box-on")){
+                    _this.removeClass(".zm-switch-box-on");
+                    _this.parent().find(".zm-edit-components-tabs-popup").removeClass("choiceColor").attr("onclick","");
+                }else{
+                    _this.addClass(".zm-switch-box-on");
+                    _this.parent().find(".zm-edit-components-tabs-popup").addClass("choiceColor").attr("onclick","zmEditor.dialog.setHref(this)");
+                }
+            });
+            e.on("click",".zm-edit-components-tabs-link-close",function(){
+                var closeList = e.find(".zm-edit-components-tabs-link-close");
+                var labList = ele.find(".zm-edit-components-tabs-tit-lab > li");
+                var contList = ele.find(".zm-edit-components-tabs-cont > div");
+                var _this = $(this);
+                var _index = closeList.index(_this);
+                labList.eq(_index).remove();
+                contList.eq(_index).remove();
+                $(this).closest(".zm-edit-components-tabs-titleLink").remove();
+                return false;
+            });
+            e.on("focus",".zm-edit-components-tabs-text",function(){
+                var _this = $(this);
+                var _index = e.find(".zm-edit-components-tabs-text").index(_this);
+                var titlist = ele.find(".zm-edit-components-tabs-tit-lab > li > span");
+                e.on("input",".zm-edit-components-tabs-text",function(){
+                    var text = _this.val();
+                    titlist.eq(_index).text(text);
+                });
+            });
+
+            return e;
+        },//网址选择 ok
+        tabTitAlign:function(ele){
+            var e = $('<div class="zm-edit-components-tabs-align">'
+                +'<span class="zm-edit-components-text-title">对齐方式</span>'
+                +'<div class="zm-edit-components-tabs-radios-left"><label class="pickOn"></label><span><i class="fa fa-align-left"></i><i class="fa fa-align-left"></i><i class="fa fa-align-left"></i></span></div>'
+                +'<div class="zm-edit-components-tabs-radios-right"><label></label><span><i class="fa fa-align-right"></i><i class="fa fa-align-right"></i><i class="fa fa-align-right"></i></span></div>'
+                +'<div class="zm-edit-components-tabs-radios-center"><label></label><span><i class="fa fa-align-center"></i><i class="fa fa-align-center"></i><i class="fa fa-align-center"></i></span></div>'
+                +'</div>'
+            );
+            var _radios = e.find("label");
+            _radios.on("click",function(){
+                var _this = $(this);
+                var _index = _radios.index(this);
+                switch(_index){
+                    case 0 :
+                        ele.css("justify-content","flex-start");
+                        ele.find("li").css("flex","");
+                        break;
+                    case 1 :
+                        ele.css("justify-content","flex-end");
+                        ele.find("li").css("flex","");
+                        break;
+                    case 2 :
+                        ele.find("li").css("flex","1");
+                        break;
+                }
+                _radios.removeClass("pickOn");
+                _this.addClass("pickOn");
+            });
+            return e;
+        },//对齐方式 ok
+        tabLabTopBdCol:function(ele) {
+            var e = $('<div class="zm-edit-components-tabs-top-border">'
+                +'<div class="zm-edit-components-tabs-top-border-onOff"><span class="zm-edit-text-title">上边线</span><label class="zm-switch-box"><span class="zm-switch"><span class="fa fa-minus"></span></span></label></div>'
+                +'<div class="zm-edit-components-tabs-top-border-col"></div>'
+                +'<div class="zm-edit-components-tabs-top-border-hei"></div>'
+                +'<div class="zm-edit-components-tabs-top-border-shadow"></div>'
+                +'</div>'
+            );
+            var col = zmEditor.component.setItems.slider(ele,{title: "颜色",style: "tab_color",isColor: true,param: "hoverBorderTopColor",goal: "li"});
+            var hei = zmEditor.component.setItems.slider(ele,{title: "宽度",style: "tab_noColor",isColor: false,param: "hoverBorderTopWidth",size: [0,10],goal: "li"});
+            var _col = e.find(".zm-edit-components-tabs-top-border-col");
+            var _hei = e.find(".zm-edit-components-tabs-top-border-hei");
+            _col.append(col);
+            _hei.append(hei);
+            var shadow = e.find(".zm-edit-components-tabs-top-border-shadow");
+            var onOff = e.find(".zm-switch-box");
+            var initJudge = ele.find("li").attr("data-judge-HTC");
+            if(initJudge == "true"){
+                shadow .hide();
+                onOff.addClass("zm-switch-box-on");
+            }else{
+                shadow.show();
+                onOff.removeClass("zm-switch-box-on");
+            }
+            onOff.on("click",function(){
+                var judge = ele.find("li").attr("data-judge-HTC");
+                if(judge == "true"){
+                    shadow.fadeIn('500');
+                    ele.find("li").attr("data-judge-HTC","false");
+                    ele.find("li").css('borderTopStyle','none');
+                }else{
+                    shadow.fadeOut('500');
+                    ele.find("li").attr("data-judge-HTC","true");
+                    ele.find("li").css('borderTopStyle','solid');
+                }
+            });
+            return e;
+        },//上边线 ok
+        tabLabBotBdCol:function(ele){
+            var e = $('<div class="zm-edit-components-tabs-bottom-border">'
+                +'<div class="zm-edit-components-tabs-bottom-border-onOff"><span class="zm-edit-text-title">下边线</span><label class="zm-switch-box"><span class="zm-switch"><span class="fa fa-minus"></span></span></label></div>'
+                +'<div class="zm-edit-components-tabs-bottom-border-col"></div>'
+                +'<div class="zm-edit-components-tabs-bottom-border-hei"></div>'
+                +'<div class="zm-edit-components-tabs-bottom-border-shadow"></div>'
+                +'</div>'
+            );
+            var col = zmEditor.component.setItems.slider(ele,{title: "颜色",style: "tab_color",isColor: true,param: "hoverBorderBottomColor",goal: "li"});
+            var hei = zmEditor.component.setItems.slider(ele,{title: "宽度",style: "tab_noColor",isColor: false,param: "hoverBorderBottomWidth",size: [0,10],goal: "li"});
+            var _col = e.find(".zm-edit-components-tabs-bottom-border-col");
+            var _hei = e.find(".zm-edit-components-tabs-bottom-border-hei");
+            _col.append(col);
+            _hei.append(hei);
+            var shadow = e.find(".zm-edit-components-tabs-bottom-border-shadow");
+            var onOff = e.find(".zm-switch-box");
+            var initJudge = ele.find("li").attr("data-judge-HBC");
+            if(initJudge == "true"){
+                shadow.hide();
+                onOff.addClass("zm-switch-box-on");
+            }else{
+                shadow.show();
+                onOff.removeClass("zm-switch-box-on");
+            }
+            onOff.on("click",function(){
+                var judge = ele.find("li").attr("data-judge-HBC");
+                if(judge == "true"){
+                    shadow.stop().fadeIn('500');
+                    ele.find("li").css('borderBottomStyle','none').attr("data-judge-HBC","false");
+                }else{
+                    shadow.stop().fadeOut('500');
+                    ele.find("li").css('borderBottomStyle','solid').attr("data-judge-HBC","true");
+                }
+            });
+            return e;
+        } //下边线 ok
+    }
+};

@@ -1,0 +1,21 @@
+.zm-components-detail-term fieldset li .zm-component-map-main{
+    overflow: hidden;
+    width: 300px;
+    height: 130px;
+    position: relative;
+    border: 1px dashed transparent;
+}
+.zm-components-detail-term fieldset li .zm-component-map-main:hover{
+    border: 1px dashed #4ab1a7;
+}
+.zm-components-detail-term fieldset li .zm-component-map-main .zm-component-map-content,
+.zm-components-detail-term fieldset li .zm-component-map-main .zm-component-map-content img{
+    width: 300px;
+    height: 130px;
+}
+.zm-component-map-main .zm-component-map-content{
+    width: 100%;
+    height:100%;
+    min-width: 600px;
+    min-height: 400px;
+}
